@@ -39,5 +39,3 @@ TODO:
 ### Microcontroller
 
 ESP32
-
-Translated with www.DeepL.com/Translator (free version)
