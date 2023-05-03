@@ -1,31 +1,30 @@
 from math import pi, sin
 
 lineFrequency = 50
-samplingFrequency = 20_000
-timesStepMicroSeconds = 1 / samplingFrequency * 1_000_000
+samplingFrequency = 200_000
 numOfSamples = samplingFrequency // lineFrequency + 1
+timesStepMicroSeconds = 1 / samplingFrequency * 1_000_000
+edgeTimeMicroSeconds = timesStepMicroSeconds / 1000
+maxDutyCycle = 0.9
 # print information about the signal
-print(f"Line frequency: {lineFrequency} Hz")
-print(f"Sampling frequency: {samplingFrequency} Hz")
-print(f"Time step: {timesStepMicroSeconds} us")
-print(f"Number of samples: {numOfSamples}")
+print(f"Line frequency:          {lineFrequency} Hz")
+print(f"Sampling frequency:      {samplingFrequency // 1000} kHz")
+print(f"Number of samples:       {numOfSamples}")
+print(f"Time step:               {timesStepMicroSeconds} us")
+print(f"Edge time:               {edgeTimeMicroSeconds} us")
+print(f"Push-Pull PWM frequency: {samplingFrequency // 2 // 1000} kHz")
+print(f"Max duty cycle:          {maxDutyCycle}")
+
 samples = list(
     sin(2 * pi * lineFrequency * t / samplingFrequency) for t in range(0, numOfSamples)
 )
+dutyCycles = list(abs(sample) for sample in samples)
 
 with open("sine.txt", "w") as file:
     file.write(f"0 {samples[0]}\n")
     for i in range(1, numOfSamples):
         file.write(f"+{timesStepMicroSeconds}u {samples[i]:.6}\n")
 
-dutyCycles = list(abs(sample) for sample in samples)
-with open("duty-cycle.txt", "w") as file:
-    file.write(f"0 {samples[0]}\n")
-    for i in range(1, numOfSamples):
-        file.write(f"+{timesStepMicroSeconds}u {dutyCycles[i]:.6}\n")
-
-edgeTimeMicroSeconds = timesStepMicroSeconds / 1000
-print(f"Edge time: {edgeTimeMicroSeconds} us")
 with open("steps.txt", "w") as file:
     file.write(f"0 0\n")
     file.write(f"+{timesStepMicroSeconds / 2}u 0\n")
@@ -34,9 +33,6 @@ with open("steps.txt", "w") as file:
         file.write(
             f"+{timesStepMicroSeconds - edgeTimeMicroSeconds}u {dutyCycles[i]:.6}\n"
         )
-
-maxDutyCycle = 0.9
-print(f"Max duty cycle: {maxDutyCycle}")
 
 with open("pwm.txt", "w") as pwm:
     pwm.write(f"0 0\n")
