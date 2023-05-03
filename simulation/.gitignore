@@ -1,0 +1,11 @@
+# From: https://github.com/toptal/gitignore/blob/master/templates/LTspice.gitignore
+
+# Logfile
+*.log
+
+# Simulation Outputs
+*.raw
+*.fft
+
+# Netlist
+*.net
