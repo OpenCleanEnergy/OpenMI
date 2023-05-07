@@ -1,4 +1,5 @@
 from math import pi, sin
+import os
 
 lineFrequency = 50
 samplingFrequency = 200_000
@@ -7,13 +8,22 @@ timesStepMicroSeconds = 1 / samplingFrequency * 1_000_000
 edgeTimeMicroSeconds = timesStepMicroSeconds / 1000
 maxDutyCycle = 0.9
 # print information about the signal
-print(f"Line frequency:          {lineFrequency} Hz")
-print(f"Sampling frequency:      {samplingFrequency // 1000} kHz")
-print(f"Number of samples:       {numOfSamples}")
-print(f"Time step:               {timesStepMicroSeconds} us")
-print(f"Edge time:               {edgeTimeMicroSeconds} us")
-print(f"Push-Pull PWM frequency: {samplingFrequency // 2 // 1000} kHz")
-print(f"Max duty cycle:          {maxDutyCycle}")
+print("Information about the generated signal:")
+print(f"  Line frequency:          {lineFrequency} Hz")
+print(f"  Sampling frequency:      {samplingFrequency // 1000} kHz")
+print(f"  Number of samples:       {numOfSamples}")
+print(f"  Time step:               {timesStepMicroSeconds} us")
+print(f"  Edge time:               {edgeTimeMicroSeconds} us")
+print(f"  Push-Pull PWM frequency: {samplingFrequency // 2 // 1000} kHz")
+print(f"  Max duty cycle:          {maxDutyCycle}")
+
+# Get the path to the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+# Change the current working directory to the script directory
+os.chdir(script_dir)
+# print information in which directoy the txt files are created
+print("Text files are generated in the directoy:")
+print(f"  {os.getcwd()}")
 
 samples = list(
     sin(2 * pi * lineFrequency * t / samplingFrequency) for t in range(0, numOfSamples)
