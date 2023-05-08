@@ -1,0 +1,41 @@
+*Complex PhotoVoltaic panel library 06.2022 Fesz
+*
+.subckt SEP300W 1 2 3 ; http://sunceco.com/wp-content/uploads/2017/01/SEP300-320.pdf
+xu1 1 2 3 PV_cplx voc=44.71 isc=8.947 vmp=37.23 imp=8.06 tk_voc=-0.0034 tk_isc=0.0005
+.ends
+.subckt CL_SM10P 1 2 3; https://www.tme.eu/Document/f73597b9cc5801bdd87f2781fa4ee352/CL-SM10P.pdf
+xu 1 2 3 PV_cplx voc=22.6 isc=0.59 vmp=18.2 imp=0.55 tk_voc=-0.004 tk_isc=0.00065
+.ends
+.subckt MP3_25 1 2 3 ; https://ro.mouser.com/datasheet/2/1009/Electronic_Component_Spec_Sheet_Cla_77DEA84523C82-1658524.pdf
+xu 1 2 3 PV_cplx voc=4.1 isc=0.035 vmp=3 imp=0.007 tk_voc=-0.004 tk_isc=0.00065
+.ends
+*
+*PhotoVoltaic Cell model
+*
+* necessary parameters
+*voc - open circuit voltage
+*isc - short circuit current
+*vmp - maximum power voltage
+*imp maximum power current
+*tk_voc - open circuit voltage temperature coeffiecient
+*tk_isc - short circuit current temperature coefficient
+*
+.subckt PV_cplx v+ v- illu 
+D1 N002 v- pvdiode2
+Rsh N002 v- R=rsh_t
+Rs N002 v+ R=rs_t
+Bph v- N002 I=ipv_t*v(illu)/1000
+R5 illu 0 100meg
+.param voc_t voc*(1-tk_voc*(25-temp))
+.param isc_t isc*(1-tk_isc*(25-temp))
+.param vmp_t vmp*(1-tk_voc*(25-temp))
+.param imp_t imp*(1-tk_isc*(25-temp))
+.param rs_t (voc_t-vmp_t)/(16*imp_t) ; 2 instead of 16 in original source
+.param rsh_t 5*vmp_t/(isc_t-imp_t) ; 1 instead of 5 in original source
+.model PVDiode2 D(Is=io_t N=a_n Tnom=temp)
+.param io_t ((rs_t+rsh_t)*isc_t-voc_t)/(rsh_t*exp(voc_t/(a_n*vt_t)))
+.param vt_t (1.38e-23*(273+temp))/1.6e-19
+.param ipv_t isc_t*(rsh_t+rs_t)/rsh_t
+.param a_n 1.3*voc/0.7
+*
+.ends
