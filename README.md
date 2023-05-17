@@ -38,9 +38,9 @@ The Duty Cycle $D$ is determined by the MPPT algorithm and the grid voltage. For
 
 $$ D(t) = D_{max} \cdot k \cdot | sin(2 \pi f t) | $$
 
-$$ D\left(\frac{n}{2f}\right) = 0 ~~|~ n\in \mathbb{N_0} $$
+$$ D\left(\frac{n}{2f}\right) = 0 ~~|~~ n\in \mathbb{N_0} $$
 
-$$ D\left(\frac{2n+1}{4f}\right) = D_{max} \cdot k ~~|~ n \in \mathbb{N_0} $$
+$$ D\left(\frac{2n+1}{4f}\right) = D_{max} \cdot k ~~|~~ n \in \mathbb{N_0} $$
 
 At zero crossing of the line voltage, the duty cycle is $D = 0$. When the line voltage reaches its maximum value, the Duty Cycle is $D = D_{max} \cdot k$. 
 
