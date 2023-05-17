@@ -29,13 +29,26 @@ Optionale Features:
 
 Die technische Umsetzung des Mikro-Wechselrichters wird im Projektverlauf stetig überarbeitet und iterativ verbessert. Anmerkungen und Verbesserungsvorschläge sind hier gerne gesehen!
 
+
+### Regelungssystem
+
+Bei der Grundlagenrecherche sind wir auf das Paper [^1] gestoßen. Das Paper schlägt ein relativ einfaches und kostengünstiges Regelungssystem vor, das vielversprechende Ergebnisse liefert. An diesem Regelungssystem haben wir uns orientiert und es für unsere Zwecke angepasst.
+
+![Control Scheme](docs/control-scheme.drawio.svg)  
+
+Der Duty Cycle $D$ wird durch den MPPT-Algorithmus und die Netzspannung bestimmt. Bei einem gegebenen maximalem Duty Cycle $D_{max}$ und Steuerungswert aus dem MPPT-Algorithmus $k$ wird der Duty Cycle wie folgt berechnet: 
+
+$$ D(t) = D_{max} \cdot k \cdot | sin(2 \pi f t) | $$
+
+$$ D\left(\frac{n}{2f}\right) = 0 ~~|~~ n\in \mathbb{N_0} $$
+
+$$ D\left(\frac{2n+1}{4f}\right) = D_{max} \cdot k ~~|~~ n \in \mathbb{N_0} $$
+
+Im Nulldurchgang der Netzspannung beträgt der Duty Cycle $D = 0$. Erreicht die Netzspannung ihren Höchstwert, so beträgt der Duty Cycle $D = D_{max} \cdot k$.
+
 ### Topologie
 
-TODO: Push-Pull mit Gain usw.
-
-
-
-
+TODO
 
 ### Mikrocontroller
 
@@ -53,18 +66,18 @@ Die vom Solarmodul abgegebene Leistung berechnet sich nach $P_{PV} = U_{PV} \cdo
 
 Zunächst kann für das simulierte Solarmodul der Punkt gefunden werden, an dem die Leistung $P_{PV}$ maximal ist. Dieser Punkt wird auch Maximum Power Point (MPP) und kann in LTSpice grafisch ermittelt werden, indem die Leistung $P_{PV}$ (in der Grafik V(pv1) $\cdot$ I(I1)) über der Stromstärke $I_{PV}$ (in der Grafik I(I1)) des Solarmoduls dargestellt wird.
 
-<img src="simulation/pv-panel-input/pv-panel-mpp.svg" alt="pv-panel-mpp" title="Grafik zur Ermittlung des MPP">
+![Grafik zur Ermittlung des MPP](simulation/pv-panel-input/pv-panel-mpp.svg)
 
 Für das in der Simulation verwendete 300-320 Watt [Solarmodul von sunceco](http://sunceco.com/wp-content/uploads/2017/01/SEP300-320.pdf) ergibt sich ein grafisch ermittelter Maximum Power Point für $P_{MPP} = 312,55$ W für $I_{MPP} = 8,31$ A und $U_{MPP} = 37,61$ V.
 
 Da der Wechselrichter den Strom aus dem Solarmodul entsprechend der Netzfrequenz sinusförmig einspeisen soll, kann zur
 Zur Auslegung der Eingangskapazität eine gleichgerichtete sinusförmige Stromquelle an den Ausgang des Solarmoduls angeschlossen werden.
 
-![pv-panel-grid-current-source-schematic](simulation/pv-panel-input/pv-panel-grid-current-source-schematic.png "Solarmodul mit sinusförmiger Stromquelle")
+![Solarmodul mit sinusförmiger Stromquelle](simulation/pv-panel-input/pv-panel-grid-current-source-schematic.png)
 
 Anschließend können für diesen Aufbau die Werte der Eingangskapazität Cp variiert und dabei die durchschnittliche Ausgangsleistung $P_{out}$ des Solarmoduls gemessen werden. Wird die gemessene Ausgangsleistung $P_{out}$ auf die maximal mögliche Ausgangsleistung $P_{MPP}$ normiert und über verschiedenen Werten von Cp dargestellt, ergibt sich folgende Kurve:
 
-![pv-panel-pout-over-cp](simulation/pv-panel-input/pv-panel-pout-over-cp.png "Normierte Ausgangsleistung des Solarmodules dargestellt über verschiedenen Werten der Eingangskapazität")
+![Normierte Ausgangsleistung des Solarmodules dargestellt über verschiedenen Werten der Eingangskapazität](simulation/pv-panel-input/pv-panel-pout-over-cp.png)
 
 ### Push-Pull Wechselrichter 
 Die [Simulation des Push-Pull Wechselrichters](simulation/push-pull-inverter) ... TODO
@@ -72,3 +85,7 @@ Die [Simulation des Push-Pull Wechselrichters](simulation/push-pull-inverter) ..
 #### Auslegung des Transformators
 
 TODO:
+
+## Fußnoten
+
+[^1]: [Flyback Photovoltaic Micro-Inverter with a Low Cost and Simple Digital-Analog Control Scheme](https://www.researchgate.net/publication/353247133_Flyback_Photovoltaic_Micro-Inverter_with_a_Low_Cost_and_Simple_Digital-Analog_Control_Scheme) | http://dx.doi.org/10.3390/en14144239
