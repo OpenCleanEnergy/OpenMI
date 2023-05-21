@@ -66,18 +66,23 @@ Die vom Solarmodul abgegebene Leistung berechnet sich nach $P_{PV} = U_{PV} \cdo
 
 Zunächst kann für das simulierte Solarmodul der Punkt gefunden werden, an dem die Leistung $P_{PV}$ maximal ist. Dieser Punkt wird auch Maximum Power Point (MPP) und kann in LTSpice grafisch ermittelt werden, indem die Leistung $P_{PV}$ (in der Grafik V(pv1) $\cdot$ I(I1)) über der Stromstärke $I_{PV}$ (in der Grafik I(I1)) des Solarmoduls dargestellt wird.
 
-![Grafik zur Ermittlung des MPP](simulation/pv-panel-input/pv-panel-mpp.svg)
+<p align="center">
+  <img src="simulation/pv-panel-input/pv-panel-mpp.svg" title="Grafik zur Ermittlung des MPP">
+</p>
 
 Für das beispielsweise in der Simulation verwendete 300-320 Watt [Solarmodul von sunceco](http://sunceco.com/wp-content/uploads/2017/01/SEP300-320.pdf) ergibt sich ein grafisch ermittelter Maximum Power Point für $P_{MPP} = 312,55$ W für $I_{MPP} = 8,31$ A und $U_{MPP} = 37,61$ V.
 
 Da der Wechselrichter den Strom aus dem Solarmodul entsprechend der Netzfrequenz sinusförmig einspeisen soll, kann zur Auslegung der Eingangskapazität eine gleichgerichtete sinusförmige Stromquelle an den Ausgang des Solarmoduls angeschlossen werden. Damit der Effektivwert der Stromquelle $I_{MPP}$ entspricht, muss die Amplitude des Sinus mit $\sqrt{2}$ multipliziert werden. Damit die Stromquelle das Solarmodul in der Simulation tatsächlich dazu bringen kann, die maximal mögliche Leistung abzugeben, musste darüber hinaus der empirisch ermittelte Faktor $1,1$ auf die Amplitude multipliziert werden. Der genaue Wert soll hier zweitrangig sein, da das Maximum Power Point Tracking (MPPT) später dafür sorgen wird, dass dem Solarmodul zu jedem Zeitpunkt die maximal mögliche Leistung entnommen werden kann. In diesem Schritt der Simulation liegt der Fokus lediglich auf der Ermittlung der Eingangskapazität.
 
-![Solarmodul mit sinusförmiger Stromquelle](simulation/pv-panel-input/pv-panel-grid-current-source-schematic.png)
+<p align="center">
+  <img src="simulation/pv-panel-input/pv-panel-grid-current-source-schematic.png" title="Solarmodul mit sinusförmiger Stromquelle">
+</p>
 
 Anschließend können für diesen Aufbau die Werte der Eingangskapazität Cp variiert und dabei die durchschnittliche Ausgangsleistung $P_{out}$ des Solarmoduls gemessen werden. Wird die gemessene Ausgangsleistung $P_{out}$ auf die jeweils maximal mögliche Ausgangsleistung $P_{MPP}$ normiert und über verschiedenen Werten von Cp dargestellt, ergiben sich am Beispiel eines 300 Watt und eines 550 Watt Solarmoduls folgende Kurven:
 
-<img src="simulation/pv-panel-input/pv-panel-pout-over-cp.svg" alt="/pv-panel-pout-over-cp" title="Normierte Ausgangsleistung des Solarmodules dargestellt über verschiedenen Werten der Eingangskapazität">
-
+<p align="center">
+  <img src="simulation/pv-panel-input/pv-panel-pout-over-cp.svg" alt="/pv-panel-pout-over-cp" title="Normierte Ausgangsleistung des Solarmodules dargestellt über verschiedenen Werten der Eingangskapazität">
+</p>
 
 ### Push-Pull Wechselrichter 
 Die [Simulation des Push-Pull Wechselrichters](simulation/push-pull-inverter) ... TODO
