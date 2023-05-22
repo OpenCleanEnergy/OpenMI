@@ -75,14 +75,19 @@ Für das beispielsweise in der Simulation verwendete 300-320 Watt [Solarmodul vo
 Da der Wechselrichter den Strom aus dem Solarmodul entsprechend der Netzfrequenz sinusförmig einspeisen soll, kann zur Auslegung der Eingangskapazität eine gleichgerichtete sinusförmige Stromquelle an den Ausgang des Solarmoduls angeschlossen werden. Damit der Effektivwert der Stromquelle $I_{MPP}$ entspricht, muss die Amplitude des Sinus mit $\sqrt{2}$ multipliziert werden. Damit die Stromquelle das Solarmodul in der Simulation tatsächlich dazu bringen kann, die maximal mögliche Leistung abzugeben, musste darüber hinaus der empirisch ermittelte Faktor $1,1$ auf die Amplitude multipliziert werden. Der genaue Wert soll hier zweitrangig sein, da das Maximum Power Point Tracking (MPPT) später dafür sorgen wird, dass dem Solarmodul zu jedem Zeitpunkt die maximal mögliche Leistung entnommen werden kann. In diesem Schritt der Simulation liegt der Fokus lediglich auf der Ermittlung der Eingangskapazität.
 
 <p align="center">
-  <img src="simulation/pv-panel-input/pv-panel-grid-current-source-schematic.png" title="Solarmodul mit sinusförmiger Stromquelle">
+  <img src="simulation/pv-panel-input/pv-panel-grid-current-source-schematic.png" width="70%"  title="Solarmodul mit sinusförmiger Stromquelle">
 </p>
 
-Anschließend können für diesen Aufbau die Werte der Eingangskapazität Cp variiert und dabei die durchschnittliche Ausgangsleistung $P_{out}$ des Solarmoduls gemessen werden. Wird die gemessene Ausgangsleistung $P_{out}$ auf die jeweils maximal mögliche Ausgangsleistung $P_{MPP}$ normiert und über verschiedenen Werten von Cp dargestellt, ergiben sich am Beispiel eines 300 Watt und eines 550 Watt Solarmoduls folgende Kurven:
+Anschließend können für diesen Aufbau die Werte der Eingangskapazität Cp variiert und dabei die durchschnittliche Ausgangsleistung $P_{out}$ des Solarmoduls gemessen werden. Wird die gemessene Ausgangsleistung $P_{out}$ auf die jeweils maximal mögliche Ausgangsleistung $P_{MPP}$ normiert und über verschiedenen Werten von Cp dargestellt, ergeben sich am Beispiel eines 300 Watt und eines 550 Watt Solarmoduls folgende Kurven:
 
 <p align="center">
   <img src="simulation/pv-panel-input/pv-panel-pout-over-cp.svg" alt="/pv-panel-pout-over-cp" title="Normierte Ausgangsleistung des Solarmodules dargestellt über verschiedenen Werten der Eingangskapazität">
 </p>
+
+Bei Betrachtung der dargestellten Kurven wird für die Wahl der Eingangskapazität eine Auswahl von vier 2200 µF Elektrolytkondensatoren als geeignet empfunden. Dies deckt sich mit Berichten für die Wahl der Eingangskapazität in Enphase Mikro-Wechselrichtern [^2].
+
+Hinsichtlich der erwartbaren Lebensdauer der Elektrolytkondensatoren sollte es bei korrekter Auslegung der Schaltung und der Auswahl hochwertiger Bauteile keine Bedenken geben wie Enphase Energy in einer Zuverlässigkeitsstudie von Elektrolytkondensatoren in einem Mikrowechselrichter zeigen konnte [^3].
+
 
 ### Push-Pull Wechselrichter 
 Die [Simulation des Push-Pull Wechselrichters](simulation/push-pull-inverter) ... TODO
@@ -94,3 +99,7 @@ TODO:
 ## Fußnoten
 
 [^1]: [Flyback Photovoltaic Micro-Inverter with a Low Cost and Simple Digital-Analog Control Scheme](https://www.researchgate.net/publication/353247133_Flyback_Photovoltaic_Micro-Inverter_with_a_Low_Cost_and_Simple_Digital-Analog_Control_Scheme) | http://dx.doi.org/10.3390/en14144239
+
+[^2]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
+
+[^3]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)
