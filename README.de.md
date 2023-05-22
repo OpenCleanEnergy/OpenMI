@@ -70,7 +70,7 @@ Zunächst kann für das simulierte Solarmodul der Punkt gefunden werden, an dem 
   <img src="simulation/pv-panel-input/pv-panel-mpp.svg" title="Grafik zur Ermittlung des MPP">
 </p>
 
-Für das beispielsweise in der Simulation verwendete 300-320 Watt [Solarmodul von sunceco](http://sunceco.com/wp-content/uploads/2017/01/SEP300-320.pdf) ergibt sich ein grafisch ermittelter Maximum Power Point für $P_{MPP} = 312,55$ W für $I_{MPP} = 8,31$ A und $U_{MPP} = 37,61$ V.
+Für das beispielsweise in der Simulation verwendete 300-320 Watt [Solarmodul von sunceco](http://sunceco.com/wp-content/uploads/2017/01/SEP300-320.pdf) ergibt sich ein grafisch ermittelter Maximum Power Point $P_{MPP} = 312,55$ W für $I_{MPP} = 8,31$ A und $U_{MPP} = 37,61$ V.
 
 Da der Wechselrichter den Strom aus dem Solarmodul entsprechend der Netzfrequenz sinusförmig einspeisen soll, kann zur Auslegung der Eingangskapazität eine gleichgerichtete sinusförmige Stromquelle an den Ausgang des Solarmoduls angeschlossen werden. Damit der Effektivwert der Stromquelle $I_{MPP}$ entspricht, muss die Amplitude des Sinus mit $\sqrt{2}$ multipliziert werden. Damit die Stromquelle das Solarmodul in der Simulation tatsächlich dazu bringen kann, die maximal mögliche Leistung abzugeben, musste darüber hinaus der empirisch ermittelte Faktor $1,1$ auf die Amplitude multipliziert werden. Der genaue Wert soll hier zweitrangig sein, da das Maximum Power Point Tracking (MPPT) später dafür sorgen wird, dass dem Solarmodul zu jedem Zeitpunkt die maximal mögliche Leistung entnommen werden kann. In diesem Schritt der Simulation liegt der Fokus lediglich auf der Ermittlung der Eingangskapazität.
 
