@@ -32,7 +32,7 @@ Die technische Umsetzung des Mikro-Wechselrichters wird im Projektverlauf stetig
 
 ### Topologie
 
-Bei der Grundlagenrecherche sind wir auf die Application Note [^1] gestoßen. Die Application Note beschreibt die Implementierung eines 250W netzgekoppleten Mikro-Wechselrichters. Das Design basiert auf 2 Leistungsstufen, nämlich einem überlappenden isolierten DC-DC-Aufwärtswandler und einem DC-AC-Wandler.
+Bei der Grundlagenrecherche sind wir auf die Application Note [^AN4070] gestoßen. Die Application Note beschreibt die Implementierung eines 250W netzgekoppleten Mikro-Wechselrichters. Das Design basiert auf 2 Leistungsstufen, nämlich einem überlappenden isolierten DC-DC-Aufwärtswandler und einem DC-AC-Wandler.
 
 ![Block Scheme](docs/block-scheme.drawio.svg)  
 
@@ -109,7 +109,7 @@ TODO:
 
 ## Fußnoten
 
-[^1]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
+[^AN4070]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
 
 [^2]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
 

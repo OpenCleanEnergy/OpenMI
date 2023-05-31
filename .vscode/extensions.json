@@ -1,3 +1,6 @@
 {
-  "recommendations": ["bierner.markdown-footnotes", "hediet.vscode-drawio"]
+  "recommendations": [
+    "houkanshan.vscode-markdown-footnote",
+    "hediet.vscode-drawio"
+  ]
 }
