@@ -35,12 +35,12 @@ During basic research, we came across the application note [^1]. The application
 ![Block Scheme](docs/block-scheme.drawio.svg)  
 
 The application note provides a detailed description of the operation and component selection.  
-The system presented is relatively simple and requires relatively few components. It has an efficiency $ > 90 \% $ and avoids flux-walk problems due to the DC-DC boost converter being current-fed. The capacitors required are of such low capacitance that they can be implemented as film capacitors, which avoids the eventual lifetime issues with electrolytic capacitors.
+The system presented is relatively simple and requires relatively few components. It has an efficiency $ > 90 \% $ and avoids flux-walk problems due to the DC-DC boost converter being current-fed [^2]. The capacitors required are of such low capacitance that they can be implemented as film capacitors, which avoids the eventual lifetime issues with electrolytic capacitors.
 For these reasons, we decided to adopt and extend the design.
 
 #### DC bus power decoupling
 
-The required capacitance of the capacitor $C$ can be calculated with the following formula [^4]:
+The required capacitance of the capacitor $C$ can be calculated with the following formula [^3]:
 
 $$ C = \frac{P_0}{2 \cdot \pi \cdot f \cdot V_{DC} \cdot \Delta V } $$
 
@@ -93,9 +93,9 @@ Subsequently, the values of the input capacitance Cp can be varied for this setu
   <img src="simulation/pv-panel-input/pv-panel-pout-over-cp.svg" alt="/pv-panel-pout-over-cp" title="Normalized output power of solar module plotted over different values of input capacitance">.
 </p>
 
-Looking at the curves shown, a selection of four 2200 µF electrolytic capacitors is found to be suitable for the choice of input capacitance. This is consistent with reports for input capacitance selection in Enphase microinverters [^2].
+Looking at the curves shown, a selection of four 2200 µF electrolytic capacitors is found to be suitable for the choice of input capacitance. This is consistent with reports for input capacitance selection in Enphase microinverters [^4].
 
-In terms of the expected life of the electrolytic capacitors, if the circuit is designed correctly and high quality components are selected, there should be no concerns as Enphase Energy was able to show in a reliability study of electrolytic capacitors in a microinverter [^3].
+In terms of the expected life of the electrolytic capacitors, if the circuit is designed correctly and high quality components are selected, there should be no concerns as Enphase Energy was able to show in a reliability study of electrolytic capacitors in a microinverter [^5].
 
 
 ### Push-pull inverter 
@@ -107,8 +107,12 @@ TODO:
 
 ## Footnotes
 
-[^1]: [Flyback Photovoltaic Micro-Inverter with a Low Cost and Simple Digital-Analog Control Scheme](https://www.researchgate.net/publication/353247133_Flyback_Photovoltaic_Micro-Inverter_with_a_Low_Cost_and_Simple_Digital-Analog_Control_Scheme) | http://dx.doi.org/10.3390/en14144239
+[^1]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
 
-[^2]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
+[^2]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
 
-[^3]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)
+[^3]: [DC-Bus Design with Hybrid Capacitor Bank in Single-Phase PV Inverters](https://intelligentpower.engr.uga.edu/wp-content/uploads/2019/10/deqiang2017Dc-bus.pdf) | https://doi.org/10.1109/IECON.2017.8216408
+
+[^4]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
+
+[^5]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)

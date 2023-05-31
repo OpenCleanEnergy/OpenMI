@@ -37,12 +37,12 @@ Bei der Grundlagenrecherche sind wir auf die Application Note [^1] gestoßen. Di
 ![Block Scheme](docs/block-scheme.drawio.svg)  
 
 Die Application Note liefert eine detaillierte Beschreibung der Funktionsweise und Bauteileauswahl.  
-Das vorgestellte System ist relativ einfach, benötigt relativ wenig Komponenten. Es hat einen Wirkungsgrad $ > 90 \% $ und vermeidet Probleme mit Flux-Walk, weil der DC-DC-Aufwärtswandler stromgespeist ist. Die benötigten Kondensatoren haben eine so geringe Kapazität, dass sie als Folienkondensatoren realisiert werden können, was die etwaigen Probleme mit der Lebensdauer von Elektrolytkondensatoren vermeidet.
+Das vorgestellte System ist relativ einfach, benötigt relativ wenig Komponenten. Es hat einen Wirkungsgrad $ > 90 \% $ und vermeidet Probleme mit Flux-Walk, weil der DC-DC-Aufwärtswandler stromgespeist ist[^2]. Die benötigten Kondensatoren haben eine so geringe Kapazität, dass sie als Folienkondensatoren realisiert werden können, was die etwaigen Probleme mit der Lebensdauer von Elektrolytkondensatoren vermeidet.
 Aus diesen Gründen haben wir uns entschieden, das Design zu übernehmen und zu erweitern.
 
 #### DC-Bus Leistungsentkopplung
 
-Die benötigte Kapazität des Kondensators $C$ kann mit der folgenden Formel [^2] berechnet werden:
+Die benötigte Kapazität des Kondensators $C$ kann mit der folgenden Formel [^3] berechnet werden:
 
 $$ C = \frac{P_0}{2 \cdot \pi \cdot f \cdot V_{DC} \cdot \Delta V } $$
 
@@ -95,9 +95,9 @@ Anschließend können für diesen Aufbau die Werte der Eingangskapazität Cp var
   <img src="simulation/pv-panel-input/pv-panel-pout-over-cp.svg" alt="/pv-panel-pout-over-cp" title="Normierte Ausgangsleistung des Solarmodules dargestellt über verschiedenen Werten der Eingangskapazität">
 </p>
 
-Bei Betrachtung der dargestellten Kurven wird für die Wahl der Eingangskapazität eine Auswahl von vier 2200 µF Elektrolytkondensatoren als geeignet empfunden. Dies deckt sich mit Berichten für die Wahl der Eingangskapazität in Enphase Mikro-Wechselrichtern [^3].
+Bei Betrachtung der dargestellten Kurven wird für die Wahl der Eingangskapazität eine Auswahl von vier 2200 µF Elektrolytkondensatoren als geeignet empfunden. Dies deckt sich mit Berichten für die Wahl der Eingangskapazität in Enphase Mikro-Wechselrichtern [^4].
 
-Hinsichtlich der erwartbaren Lebensdauer der Elektrolytkondensatoren sollte es bei korrekter Auslegung der Schaltung und der Auswahl hochwertiger Bauteile keine Bedenken geben wie Enphase Energy in einer Zuverlässigkeitsstudie von Elektrolytkondensatoren in einem Mikrowechselrichter zeigen konnte [^4].
+Hinsichtlich der erwartbaren Lebensdauer der Elektrolytkondensatoren sollte es bei korrekter Auslegung der Schaltung und der Auswahl hochwertiger Bauteile keine Bedenken geben wie Enphase Energy in einer Zuverlässigkeitsstudie von Elektrolytkondensatoren in einem Mikrowechselrichter zeigen konnte [^5].
 
 
 ### Push-Pull Wechselrichter 
@@ -111,8 +111,10 @@ TODO:
 
 [^1]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
 
-[^2]: [DC-Bus Design with Hybrid Capacitor Bank in Single-Phase PV Inverters](https://intelligentpower.engr.uga.edu/wp-content/uploads/2019/10/deqiang2017Dc-bus.pdf) | https://doi.org/10.1109/IECON.2017.8216408
+[^2]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
 
-[^3]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
+[^3]: [DC-Bus Design with Hybrid Capacitor Bank in Single-Phase PV Inverters](https://intelligentpower.engr.uga.edu/wp-content/uploads/2019/10/deqiang2017Dc-bus.pdf) | https://doi.org/10.1109/IECON.2017.8216408
 
-[^4]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)
+[^4]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
+
+[^5]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)
