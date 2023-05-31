@@ -30,27 +30,19 @@ Optionale Features:
 Die technische Umsetzung des Mikro-Wechselrichters wird im Projektverlauf stetig überarbeitet und iterativ verbessert. Anmerkungen und Verbesserungsvorschläge sind hier gerne gesehen!
 
 
-### Regelungssystem
-
-Bei der Grundlagenrecherche sind wir auf das Paper [^1] gestoßen. Das Paper schlägt ein relativ einfaches und kostengünstiges Regelungssystem vor, das vielversprechende Ergebnisse liefert. An diesem Regelungssystem haben wir uns orientiert und es für unsere Zwecke angepasst.
-
-![Control Scheme](docs/control-scheme.drawio.svg)  
-
-Der Duty Cycle $D$ wird durch den MPPT-Algorithmus und die Netzspannung bestimmt. Bei einem gegebenen maximalem Duty Cycle $D_{max}$ und Steuerungswert aus dem MPPT-Algorithmus $k$ wird der Duty Cycle wie folgt berechnet: 
-
-$$ D(t) = D_{max} \cdot k \cdot | sin(2 \pi f t) | $$
-
-$$ D\left(\frac{n}{2f}\right) = 0 ~~|~~ n\in \mathbb{N_0} $$
-
-$$ D\left(\frac{2n+1}{4f}\right) = D_{max} \cdot k ~~|~~ n \in \mathbb{N_0} $$
-
-Im Nulldurchgang der Netzspannung beträgt der Duty Cycle $D = 0$. Erreicht die Netzspannung ihren Höchstwert, so beträgt der Duty Cycle $D = D_{max} \cdot k$.
-
 ### Topologie
 
-#### DC-Bus Kondensator
+Bei der Grundlagenrecherche sind wir auf die Application Note [^1] gestoßen. Die Application Note beschreibt die Implementierung eines 250W netzgekoppleten Mikro-Wechselrichters. Das Design basiert auf 2 Leistungsstufen, nämlich einem überlappenden isolierten DC-DC-Aufwärtswandler und einem DC-AC-Wandler.
 
-Die benötigte Kapazität des Kondensators $C$ kann mit der folgenden Formel [^4] berechnet werden:
+![Block Scheme](docs/block-scheme.drawio.svg)  
+
+Die Application Note liefert eine detaillierte Beschreibung der Funktionsweise und Bauteileauswahl.  
+Das vorgestellte System ist relativ einfach, benötigt relativ wenig Komponenten. Es hat einen Wirkungsgrad $ > 90 \% $ und vermeidet Probleme mit Flux-Walk, weil der DC-DC-Aufwärtswandler stromgespeist ist. Die benötigten Kondensatoren haben eine so geringe Kapazität, dass sie als Folienkondensatoren realisiert werden können, was die etwaigen Probleme mit der Lebensdauer von Elektrolytkondensatoren vermeidet.
+Aus diesen Gründen haben wir uns entschieden, das Design zu übernehmen und zu erweitern.
+
+#### DC-Bus Leistungsentkopplung
+
+Die benötigte Kapazität des Kondensators $C$ kann mit der folgenden Formel [^2] berechnet werden:
 
 $$ C = \frac{P_0}{2 \cdot \pi \cdot f \cdot V_{DC} \cdot \Delta V } $$
 
@@ -65,7 +57,7 @@ Damit ergibt sich für die benötigte Kapazität des Kondensators $C$:
 - $P_0 = 400W$
 - $f = 50Hz$
 - $V_{DC} = 380V$
-- $\Delta V = 40V$ ($V_{DC_{min}} = 360V$ und $V_{DC_{max}} = 400V$)
+- $\Delta V = 40V \rArr V_{DC_{min}} = 360V; V_{DC_{max}} = 400V$
 
 $$ C = \frac{400W}{2 \cdot \pi \cdot 50Hz \cdot 380V \cdot 40V} = 83.77\mu F $$
 
@@ -103,9 +95,9 @@ Anschließend können für diesen Aufbau die Werte der Eingangskapazität Cp var
   <img src="simulation/pv-panel-input/pv-panel-pout-over-cp.svg" alt="/pv-panel-pout-over-cp" title="Normierte Ausgangsleistung des Solarmodules dargestellt über verschiedenen Werten der Eingangskapazität">
 </p>
 
-Bei Betrachtung der dargestellten Kurven wird für die Wahl der Eingangskapazität eine Auswahl von vier 2200 µF Elektrolytkondensatoren als geeignet empfunden. Dies deckt sich mit Berichten für die Wahl der Eingangskapazität in Enphase Mikro-Wechselrichtern [^2].
+Bei Betrachtung der dargestellten Kurven wird für die Wahl der Eingangskapazität eine Auswahl von vier 2200 µF Elektrolytkondensatoren als geeignet empfunden. Dies deckt sich mit Berichten für die Wahl der Eingangskapazität in Enphase Mikro-Wechselrichtern [^3].
 
-Hinsichtlich der erwartbaren Lebensdauer der Elektrolytkondensatoren sollte es bei korrekter Auslegung der Schaltung und der Auswahl hochwertiger Bauteile keine Bedenken geben wie Enphase Energy in einer Zuverlässigkeitsstudie von Elektrolytkondensatoren in einem Mikrowechselrichter zeigen konnte [^3].
+Hinsichtlich der erwartbaren Lebensdauer der Elektrolytkondensatoren sollte es bei korrekter Auslegung der Schaltung und der Auswahl hochwertiger Bauteile keine Bedenken geben wie Enphase Energy in einer Zuverlässigkeitsstudie von Elektrolytkondensatoren in einem Mikrowechselrichter zeigen konnte [^4].
 
 
 ### Push-Pull Wechselrichter 
@@ -117,10 +109,10 @@ TODO:
 
 ## Fußnoten
 
-[^1]: [Flyback Photovoltaic Micro-Inverter with a Low Cost and Simple Digital-Analog Control Scheme](https://www.researchgate.net/publication/353247133_Flyback_Photovoltaic_Micro-Inverter_with_a_Low_Cost_and_Simple_Digital-Analog_Control_Scheme) | http://dx.doi.org/10.3390/en14144239
+[^1]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
 
-[^2]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
+[^2]: [DC-Bus Design with Hybrid Capacitor Bank in Single-Phase PV Inverters](https://intelligentpower.engr.uga.edu/wp-content/uploads/2019/10/deqiang2017Dc-bus.pdf) | https://doi.org/10.1109/IECON.2017.8216408
 
-[^3]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)
+[^3]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
 
-[^4]: [DC-Bus Design with Hybrid Capacitor Bank in Single-Phase PV Inverters](https://intelligentpower.engr.uga.edu/wp-content/uploads/2019/10/deqiang2017Dc-bus.pdf) | https://doi.org/10.1109/IECON.2017.8216408
+[^4]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)

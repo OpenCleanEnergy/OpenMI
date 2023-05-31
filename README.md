@@ -28,25 +28,17 @@ Optional features:
 
 The technical implementation of the micro-inverter will be continuously revised and iteratively improved during the course of the project. Comments and suggestions for improvement are welcome here!
 
-### Control system
-
-During basic research, we came across the paper [^1]. The paper proposes a relatively simple and low-cost control system that yields promising results. We took our cue from this control scheme and adapted it for our purposes.
-
-![Control Scheme](docs/control-scheme.drawio.svg)  
-
-The Duty Cycle $D$ is determined by the MPPT algorithm and the grid voltage. For a given maximum duty cycle $D_{max}$ and control value from the MPPT algorithm $k$, the duty cycle is calculated as follows: 
-
-$$ D(t) = D_{max} \cdot k \cdot | sin(2 \pi f t) | $$
-
-$$ D\left(\frac{n}{2f}\right) = 0 ~~|~~ n\in \mathbb{N_0} $$
-
-$$ D\left(\frac{2n+1}{4f}\right) = D_{max} \cdot k ~~|~~ n \in \mathbb{N_0} $$
-
-At zero crossing of the line voltage, the duty cycle is $D = 0$. When the line voltage reaches its maximum value, the Duty Cycle is $D = D_{max} \cdot k$. 
-
 ### Topology
 
-#### DC bus capacitor
+During basic research, we came across the application note [^1]. The application note describes the implementation of a 250W grid-connected micro-inverter. The design is based on 2 power stages, namely an interleaved isolated DC-DC boost converter and a DC-AC converter.
+
+![Block Scheme](docs/block-scheme.drawio.svg)  
+
+The application note provides a detailed description of the operation and component selection.  
+The system presented is relatively simple and requires relatively few components. It has an efficiency $ > 90 \% $ and avoids flux-walk problems due to the DC-DC boost converter being current-fed. The capacitors required are of such low capacitance that they can be implemented as film capacitors, which avoids the eventual lifetime issues with electrolytic capacitors.
+For these reasons, we decided to adopt and extend the design.
+
+#### DC bus power decoupling
 
 The required capacitance of the capacitor $C$ can be calculated with the following formula [^4]:
 
@@ -63,7 +55,7 @@ This gives the required capacitance of the capacitor $C$:
 - $P_0 = 400W$
 - $f = 50Hz$
 - $V_{DC} = 380V$
-- $\Delta V = 40V$ ($V_{DC_{min}} = 360V$ and $V_{DC_{max}} = 400V$)
+- $\Delta V = 40V \rArr V_{DC_{min}} = 360V; V_{DC_{max}} = 400V$
 
 $$ C = \frac{400W}{2 \cdot \pi \cdot 50Hz \cdot 380V \cdot 40V} = 83.77\mu F $$
 
