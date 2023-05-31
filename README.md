@@ -55,7 +55,7 @@ This gives the required capacitance of the capacitor $C$:
 - $P_0 = 400W$
 - $f = 50Hz$
 - $V_{DC} = 380V$
-- $\Delta V = 40V \rArr V_{DC_{min}} = 360V; V_{DC_{max}} = 400V$
+- $\Delta V = 40V \Rightarrow V_{DC_{min}} = 360V; V_{DC_{max}} = 400V$
 
 $$ C = \frac{400W}{2 \cdot \pi \cdot 50Hz \cdot 380V \cdot 40V} = 83.77\mu F $$
 
