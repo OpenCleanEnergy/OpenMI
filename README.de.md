@@ -48,7 +48,26 @@ Im Nulldurchgang der Netzspannung beträgt der Duty Cycle $D = 0$. Erreicht die 
 
 ### Topologie
 
-TODO
+#### DC-Bus Kondensator
+
+Die benötigte Kapazität des Kondensators $C$ kann mit der folgenden Formel [^4] berechnet werden:
+
+$$ C = \frac{P_0}{2 \cdot \pi \cdot f \cdot V_{DC} \cdot \Delta V } $$
+
+Dabei ist 
+- $P_0$ die Ausgangsleistung, 
+- $f$ die Netzfrequenz, 
+- $V_{DC}$ die Spannung des DC Busses und 
+- $\Delta V$ die zulässige peak-to-peak Spannungsschwankung.
+
+Damit ergibt sich für die benötigte Kapazität des Kondensators $C$:
+
+- $P_0 = 400W$
+- $f = 50Hz$
+- $V_{DC} = 380V$
+- $\Delta V = 40V$ ($V_{DC_{min}} = 360V$ und $V_{DC_{max}} = 400V$)
+
+$$ C = \frac{400W}{2 \cdot \pi \cdot 50Hz \cdot 380V \cdot 40V} = 83.77\mu F $$
 
 ### Mikrocontroller
 
@@ -103,3 +122,5 @@ TODO:
 [^2]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
 
 [^3]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)
+
+[^4]: [DC-Bus Design with Hybrid Capacitor Bank in Single-Phase PV Inverters](https://intelligentpower.engr.uga.edu/wp-content/uploads/2019/10/deqiang2017Dc-bus.pdf) | https://doi.org/10.1109/IECON.2017.8216408

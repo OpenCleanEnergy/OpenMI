@@ -46,7 +46,26 @@ At zero crossing of the line voltage, the duty cycle is $D = 0$. When the line v
 
 ### Topology
 
-TODO
+#### DC bus capacitor
+
+The required capacitance of the capacitor $C$ can be calculated with the following formula [^4]:
+
+$$ C = \frac{P_0}{2 \cdot \pi \cdot f \cdot V_{DC} \cdot \Delta V } $$
+
+Where 
+- $P_0$ is the output power, 
+- $f$ the line frequency, 
+- $V_{DC}$ the voltage of the DC bus and 
+- $\Delta V$ is the allowed peak-to-peak voltage variation.
+
+This gives the required capacitance of the capacitor $C$:
+
+- $P_0 = 400W$
+- $f = 50Hz$
+- $V_{DC} = 380V$
+- $\Delta V = 40V$ ($V_{DC_{min}} = 360V$ and $V_{DC_{max}} = 400V$)
+
+$$ C = \frac{400W}{2 \cdot \pi \cdot 50Hz \cdot 380V \cdot 40V} = 83.77\mu F $$
 
 ### Microcontroller
 
