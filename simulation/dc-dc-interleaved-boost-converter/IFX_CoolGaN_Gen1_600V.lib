@@ -1,0 +1,1099 @@
+*****************************************************************
+* INFINEON Power Transistors                                    *
+* Content:        SPICE Model Library                           *
+* Device:         CoolGaN                                       *
+* Model Types:    L0 L1 L3                                      *
+* Technology:     Gen1 600V                                     *
+* Date and time:  08.03.2023  14:48:00                          *
+* Version:        1018                                          *
+*****************************************************************
+*                                                               *
+* The models for Infineon Power MOSFET are evaluated with       *
+* SIMetrixTM-SPICE simulator. The Infineon Power MOSFET models  *
+* are tested, verified and provided in SPICE simulation code.   *
+*                                                               *
+* Infineon | Terminals | Usage suggestion                       *
+* Level    |           |                                        *
+* ------------------------------------------------------------- *
+* L0       | G, D, S   | General electrical simulations/ whole  *
+*          |           | application circuits.                  *
+* ------------------------------------------------------------- *
+* L1       | G, D, S   | Transient, switching losses and        *
+*          |           | efficiency analyses. Behavior of       *
+*          |           | device over full temperature range.    *
+* ------------------------------------------------------------- *
+* L2       | G, D, S,  | Same as L1 but with individual device  *
+*          | Tj, Tcase | temperature. This model is not         *
+*          |           | supported because it is covered by     *
+*          |           | L3-model.                              *
+* ------------------------------------------------------------- *
+* L3       | G, D, S,  | Self-heating effects, modeling of heat *
+*          | Tj, Tcase | flow including thermal models of       *
+*          |           | application.                           *
+*                                                               *
+*****************************************************************
+* Detailed Informations:                                        *
+*                                                               *
+* The model files are available on the Infineon web page:       *
+* http://www.infineon.com                                       *
+*                                                               *
+* This library contains models of the following INFINEON        *
+* CoolGaN transistors:                                          *
+*                                                               *
+*   Gen1 600V                                                   *
+*      IGLD60R190D1      IGOT60R070D1      IGO60R070D1          *
+*      IGT60R070D1       IGT60R190D1       IGLD60R070D1         *
+*      IGLR60R190D1      IGLR60R260D1      IGLR60R340D1         *
+*      IGO60R042D1       IGOT60R042D1                           *
+*                                                               *
+*****************************************************************
+**********************************************************************
+************************ L1 TECHNOLOGY MODEL *************************
+**********************************************************************
+
+.SUBCKT GaN_var_600V_NormOFF dd g s sk Tj PARAMS: a=1  w=1  fpar86=0
+.PARAM  fpar46=5.20     fpar47=261m
+.PARAM  fpar48=0.0    fpar49=0.1       fpar50=0.7      fpar51=1.0       fpar52=1
+.PARAM  fpar43=0.995    fpar53=1.5     fpar54=1.65m
+.PARAM  fpar55=922  fpar56=100
+.PARAM  fpar57=3.3          fpar58=-5m       fpar59=0u
+.PARAM  fpar60=3.25         fpar39=298        fpar38=273
+.PARAM  fpar63=0.4           fpar64=3.5
+.PARAM  fpar65=1.52    fpar66=0.003
+.PARAM  fpar67=1.52    fpar68=0.003
+.PARAM  fpar37=85.8u          fpar70=110      fpar71={50m*0}
+.PARAM  fpar72=4.7           fpar73={10.4}
+.PARAM  fpar74={1.3E8}       fpar75=-1.64       fpar76={0.052}
+.PARAM  fpar77=58     fpar78=-67     fpar79=32
+.PARAM  fpar80=2.23     fpar81=-5.54     fpar82=4.66
+.PARAM  dRs={2.0/w}
+.PARAM  dRd={10.5/w}
+.PARAM  fpar85=70
+.PARAM  fpar87={70.05p/fpar46}    fpar88={1284.6p/fpar46}
+.PARAM  fpar89={-6414p/fpar46}     fpar90={5247.2p/fpar46}      fpar91=0
+.PARAM  fpar92=-0.027429            fpar93=-0.041895          fpar94=-0.045048            fpar95=1p
+.PARAM  fpar96={fpar87+fpar88+fpar89+fpar90+fpar91}
+.PARAM  fpar97={0.4757p/fpar46}       fpar98={-1.1616p/fpar46}      fpar99={42.533p/fpar46}
+.PARAM  fpar100={5.838p/fpar46}        fpar101=1.619
+.PARAM  fpar102=-0.006106             fpar103=-0.02715
+.PARAM  fpar104=8
+.PARAM  fpar105={a*( fpar97 + fpar98 + fpar99 + fpar100*fpar104**fpar101 )}
+.PARAM  fpar106=-4.83    fpar107=1.02   fpar108=1.86  fpar109={250p/fpar46}   fpar110={392p/fpar46}  fpar111={1000p/fpar46}
+.PARAM  fpar112={( fpar110 - fpar109 )/( fpar107 - fpar106 )}
+.PARAM  fpar113={( fpar110 - fpar109 )/( fpar107 - fpar106 )}   fpar114={( fpar111 - fpar110 )/( fpar108 - fpar107 )}
+.PARAM  fpar115={a*fpar109}
+.PARAM  fpar116={0}
+.PARAM  fpar117=1Meg
+.PARAM  R_Cds={1*10}  R_Cdg={1*10m}  R_Cgs={1*10m}
+.FUNC Qds_range1(x,a0,c0,a) {x*(1-a0*a/C0)}
+.FUNC Qds_range2(x,a1,b1,a2,b2,a3,b3,a4,b4,c0,a)
++ {( (1-exp(b1*x))*a1/b1 + (1-exp(b2*x))*a2/b2 + (1-exp(b3*x))*a3/b3 + (1-exp(b4*x))*a4/b4 )*a/C0}
+E_Eds dd edep VALUE { Qds_range1(V(dd,s),fpar87,fpar96,a) +
++ Qds_range2(V(dd,s),fpar88,fpar92,fpar89,fpar93,fpar90,fpar94,fpar91,fpar95,fpar96,a) }
+C_Cds edep edep2  {fpar96}
+R_Cds edep2 s R_Cds
+.FUNC Qgd_range1(x,a0,a1,a2,b1,b2,c1,c2)
++ { (a0+a2)*x + (a1/b1)*(exp(x*b1)-1) + c1/(c2+1)*( fpar104**(c2+1) - (fpar104-x)**(c2+1) ) }
+.FUNC Qgd_range2(x,a0,a1,a2,b1,b2,c1,c2)
++ { a0*(x-fpar104) + (a1/b1)*(exp(x*b1)-exp(fpar104*b1)) + (a2/b2)*(exp((x-fpar104)*b2)-1) }
+E_Egd dd ox VALUE { if( V(dd,gg)+fpar116<fpar104,
++   V(dd,gg)+fpar116 - Qgd_range1( V(dd,gg)+fpar116, fpar97, fpar98, fpar99, fpar102, fpar103, fpar100, fpar101 )*a/fpar105,
++   V(dd,gg)+fpar116 - Qgd_range1( fpar104, fpar97, fpar98, fpar99, fpar102, fpar103, fpar100, fpar101 )*a/fpar105 -
++           Qgd_range2( V(dd,gg)+fpar116, fpar97, fpar98, fpar99, fpar102, fpar103, fpar100, fpar101 )*a/fpar105 ) }
+C_Cgd ox ox2  {fpar105}
+R_Cdg ox2  gg R_Cdg
+.FUNC Qgs(x,x1,x2,x3,y1,y2,y3,k21,k32)
++ {- (k21/(2*y1))*IF(x<x1,0,(MIN(x,x2)-x1)**2) - (k32/(2*y1))*IF(x<x2,0,(MIN(x,x3)-x2)**2)
++  - IF(x<x2,0,IF(x<x3,(y2/y1-1)*(x-x2), (y3/y1-1)*x + (y1-y2)/y1*x2 + (y2-y3)/y1*x3) ) }
+E_Egs gg ogs VALUE {Qgs(V(gg,s),fpar106,fpar107,fpar108,fpar109,fpar110,fpar111,fpar113,fpar114)}
+Cgs ogs ogs2 {fpar115}
+R_Cgs ogs2 s  R_Cgs
+.FUNC  Jh(d,g1,g2,T,da)   { if(d>0, (fpar46*w/fpar47*(Igh(da,T,(fpar57+(fpar58+fpar59*T)*T)*fpar37*T,g1-fpar53+fpar54*(T-fpar39)+fpar48*tanh(fpar50*d) ** fpar51,fpar43)+limit(exp(d-fpar55),-23,23))),
++                                    (-fpar46*w/fpar47*(Igh(da,T,(fpar57+(fpar58+fpar59*T)*T)*fpar37*T,g2-fpar53+fpar54*(T-fpar39)+fpar48*tanh(fpar50*abs(d)) ** fpar51,fpar43)+limit(exp(d-fpar56),-23,23))) ) }
+.FUNC  Igh(Uds,T,p,Uee,x)  {fpar85*(fpar39/T)**fpar64*I0h(Uee,p,min(2*p,p+x*Uds),min(Uds,Uee/(2*x)),x)}
+.FUNC  I0h(Uee,p,pp,z1,x)  {if(Uee>pp,(Uee-x*z1)*z1,p*(pp-p)/x*exp((Uee-pp)/p))}
+.FUNC  KF(d,j) {if(d>0, 1+fpar66*(fpar47/w*j)**fpar65, 1+fpar68*(fpar47/w*j)**fpar67)}
+.FUNC Imgs(V,V1,T)   {w/fpar47*fpar73*(exp(min((V-fpar72+fpar71*V1)/(fpar70*fpar37*T**0.55),23))-exp(min(-(fpar72+fpar71*V1)/(fpar70*fpar37*T**0.55),7)))}
+.FUNC IRdio(V,T)     {V/{fpar47/w*(fpar82 + (fpar81 + fpar80 * T/fpar39) * T/fpar39)}}
+.FUNC Iesd(V,T)      {fpar76*(exp(min((V-(17.8-4.0*T/fpar39))/(fpar74*fpar37*T**fpar75),37))-exp(min(-(17.8-4.0*T/fpar39)/(fpar74*fpar37*T**fpar75),7)))}
+.FUNC IResd(V,T)     {V/(fpar77 * (T/fpar39) ** 2 + fpar78 * (T/fpar39) + fpar79)}
+.FUNC Dideal(V)      {if(V>0, fpar117 * V**2, 0)}
+Vs_Rd  dd     d1  0
+X_Rd   d1      d  Tj  Res_2DEG_v2  PARAMS: length={12.4u}  fpar44={w}  contacts={1}
+Rd01     d1      d  1k
+G_chan    d       sx1  VALUE={ Jh(limit(V(d,sx1),-1k,1k),V(gg,sx1),V(gg,d),fpar38+limit(V(Tj),-200,300),max(0,(SQRT(1+4*fpar52*abs(V(d,sx1)))-1)/2/fpar52)) /
++ KF(V(d1,d),I(Vs_chan)) }
+Rd02      d       sx1  50G
+Vs_chan    sx1     sx  0
+X_Rs      sx      s1   Tj   Res_2DEG_v2  PARAMS: length={1.3u}  fpar44={w}  contacts={1}
+Rd03      sx      s1  1k
+Vs_Rs     s1      s   0
+Rg_int    g       gg   {fpar86}
+G_dio     gg     gm  VALUE {Imgs(V(gg,gm),V(d,gg),fpar38+limit(V(Tj),-200,300))}
+Vs_Dio    gm     gm1   0
+G_Rdio    gm1     gs  VALUE {IRdio(V(gm1,gs),fpar38+limit(V(Tj),-200,300))}
+G_gss     gs     sx  VALUE {Dideal(V(gs,sx))}
+R_gss     gs     sx  50G
+G_gsd     gs     d   VALUE {Dideal(V(gs,d))}
+R_gsd     gs     d   50G
+R1        gg      s1  10G
+Rsk       s    sk  1n
+G_TH    0 Tj VALUE {V(d,sx)*I(Vs_chan)+V(d1,d)*I(Vs_Rd)+V(sx,s)*I(Vs_Rs)+V(g,gs)*I(Vs_Dio)}
+.ENDS
+
+.SUBCKT Res_2DEG_v2 fpar58 fpar59 Tj PARAMS: length=1u fpar44=1m contacts=1
+.PARAM  fpar121={0.65e-3}
+.PARAM  fpar122=8.66e-3
+.PARAM  fpar123=0.1728  fpar124=-1.182e-3  fpar125=2.907e-6
+.PARAM  fpar126=864  fpar127=0  fpar128=0
+.PARAM  fpar129=0.001
+.FUNC T()          {V(Tj)}
+.FUNC mu(T)        {fpar123 + fpar124*T + fpar125*T**2}
+.FUNC Res(T)       {length/(fpar122*mu(T)*fpar44) + contacts*fpar121/fpar44}
+.FUNC Isat(T)      {fpar44*(fpar126 + fpar127*(T-25) + fpar128*(T-25)**2)}
+G1    fpar58 m    VALUE={tanh(1/(fpar129 * Res(T()) * Isat(T())) * V(fpar58, m)) * Isat(T())}
+G2    m      fpar59 VALUE={V(m, fpar59)/((1 - fpar129) * Res(T()))}
+.ENDS
+
+**********************************************************************
+**********************************************************************
+************************ L0 TECHNOLOGY MODEL *************************
+**********************************************************************
+
+.SUBCKT CoolGaN_tech0 dd g s PARAMS: fpar40=1 fpar44=1 fpar86=0
+.PARAM  Ls=0.8n          Ld=1.3n          Lg=4.3n         Rssk=54m
+.PARAM  Rd={10.5m/fpar44}      Rd_TC1=7.0m      Rd_TC2=21.7u    Rd_DTEMP=2
+.PARAM  Rg={5.0+fpar86}   Rg_TC1=-3.3m     Rg_TC2=4.0u     Rg_DTEMP=300
+.PARAM  Rs={2m/fpar44}         Rs_TC1=7.0m      Rs_TC2=21.7u    Rs_DTEMP=2
+.PARAM  DGate_IS={500p/fpar44} DGate_N={8.5*(419m/fpar44)**0.1}      DGate_RS=1m     DGate_EG=3.95    DGate_TT=250n    DGate_XTI=10
+.PARAM  Dideal_IS=1e-14  Dideal_N=0.0001  Dideal_RS=100u  Dideal_CJO=0     Dideal_T_ABS=27
+.PARAM  FMOS_Vth=1.3     FMOS_KP=80       FMOS_THETA=0    FMOS_VMAX={6000k*fpar44*fpar44} FMOS_ETA=0       FMOS_IS=1n    FMOS_T_ABS=27    Ech=1
+.PARAM  Cds0={0.17n*fpar44}   Cgs={1.4n*fpar44}       Cgd={2.1n*fpar44}     RCds=2
+.PARAM  Dbt_BV=660       Dbt_M=1.0        Dbt_CJO=7.0n    Dbt_VJ=0.5       Dbt_FC=0.5       DbtX=15       D_T_ABS=27
+.PARAM  Mdgd_Vth=0.0     Mdgd_KP=10.0     Edgd=1.0
+.PARAM  Mgd_Vth=0.0      Mgd_KP=10.0      Egd=-1.0
+.PARAM  DGD_M=0.9        DGD_CJO={1.68n*fpar44}     DGD_VJ=0.8
+.PARAM  RConv=1G         RConv2=1G        RConv3=1G    CConv=0.1p
+.MODEL  DGate   D(LEVEL=1  IS=DGate_IS  N=DGate_N  RS=DGate_RS  EG=DGate_EG  TT=DGate_TT XTI=DGate_XTI)
+.MODEL  Dideal  D(IS=Dideal_IS CJO=Dideal_CJO RS=Dideal_RS N=Dideal_N T_ABS=Dideal_T_ABS)
+.MODEL  CHMOS   NMOS(IS=FMOS_IS  KP=FMOS_KP  VTO=FMOS_Vth  THETA=FMOS_THETA  VMAX=FMOS_VMAX  ETA=FMOS_ETA  L=1u  W=1u  LEVEL=3  T_ABS=FMOS_T_ABS)
+.MODEL  CHMOS2  NMOS(IS=FMOS_IS  KP=FMOS_KP  VTO=FMOS_Vth  THETA=FMOS_THETA  VMAX=FMOS_VMAX  ETA=FMOS_ETA  L=1u  W=1u  LEVEL=3  T_ABS=FMOS_T_ABS)
+.MODEL  Dbt     D(BV=Dbt_BV   M=Dbt_M  CJO=Dbt_CJO  VJ=Dbt_VJ  N=1  FC=Dbt_FC  T_ABS=D_T_ABS)
+.MODEL  DGD     D(M=DGD_M   CJO=DGD_CJO   VJ=DGD_VJ  T_ABS=D_T_ABS)
+.MODEL  Mdgd    NMOS(VTO=Mdgd_Vth  KP=Mdgd_KP   LEVEL=1)
+.MODEL  Mgd     NMOS(VTO=Mgd_Vth  KP=Mgd_KP   LEVEL=1)
+Rd     dd        d2   Rd   TC1=Rd_TC1  TC2=Rd_TC2  DTEMP=Rd_DTEMP
+Rg     g        g2   Rg   TC1=Rg_TC1  TC2=Rg_TC2  DTEMP=Rg_DTEMP
+Rs     s        s2   Rs   TC1=Rs_TC1  TC2=Rs_TC2  DTEMP=Rs_DTEMP
+DGate  g2        gm   DGate area=fpar40
+DIgd   gm        d2   Dideal
+RIgd   gm        d2   RConv
+CIgd   gm        d2   CConv
+DIgs   gm        s2   Dideal
+RIgs   gm        s2   RConv
+CIgs   gm        s2   CConv
+MF     d2        gf   sf   sf   CHMOS
+DF     sf        s2   Dideal
+RF     sf        s2   RConv2
+CF     sf        s2   CConv
+RF2    d2        sf   RConv2
+EF     gf        sf   g2   sf   Ech
+MR     s2        gr   dr   dr   CHMOS2
+DR     dr        d2   Dideal
+ER     gr        dr   g2   dr   Ech
+RR     dr        d2   RConv2
+CR     dr        d2   CConv
+RR2    s2        dr   RConv2
+RCds   d2        dd1  RCds
+Cds0   dd1        s2   Cds0
+Dbd    s2        dd2  Dbt
+EDbd   dd2       dd1   Value={DbtX}
+Mdgd   g2        m_b  m_a    m_a    Mdgd
+Edgd   m_b       m_a  d2     g2     Edgd
+Dgd    m_a       d2   DGD
+Cgs    g2        s2   Cgs
+Mgd    m_c       m_d  g2    g2   Mgd
+Egd    m_d       g2   d2    g2   Egd
+Cgd    m_c       d2   Cgd
+RCgd   m_c       d2   RConv3
+.ENDS
+
+**********************************************************************
+
+.SUBCKT IGLD60R190D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=8.51E-10 Ld=1.50E-09 Lg=2.87E-09
+.PARAM Rs=6.58E-03      Rgext=4.63E-02       Rd=9.16E-03
+.PARAM Lss=1.62E-09    Rss=3.12E-02
+.PARAM fpar44=101m
+.PARAM fpar40=1.98
+.PARAM fpar86=0.74
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLD60R190D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=8.51E-10 Ld=1.50E-09 Lg=2.87E-09
+.PARAM Rs=6.58E-03      Rgext=4.63E-02       Rd=9.16E-03      Rm=102u
+.PARAM Lss=1.62E-09    Rss=3.12E-02
+.PARAM fpar44=101m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.74
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLD60R190D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=8.51E-10 Ld=1.50E-09 Lg=2.87E-09 Zthtype=0
+.PARAM Rs=6.58E-03      Rgext=4.63E-02       Rd=9.16E-03      Rm=102u
+.PARAM Lss=1.62E-09    Rss=3.12E-02
+.PARAM fpar44=101m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.74
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {1.000000e-06+lzth*-1.456959e-07}
+C_Czth2      0      1      {1.154670e-04+lzth*-1.682307e-05}
+C_Czth3      0      2      {4.502570e-04+lzth*-6.560062e-05}
+C_Czth4      0      3      {1.319510e-03+lzth*-1.922473e-04}
+C_Czth5      0      4      {1.190110e-02+lzth*-1.733942e-03}
+R_Rth1       Tj     1      {1.446410e-02+lzth*2.466757e-03}
+R_Rth2       1      2      {8.579900e-02+lzth*1.463246e-02}
+R_Rth3       2      3      {3.286460e-01+lzth*5.604842e-02}
+R_Rth4       3      4      {6.853890e-01+lzth*1.168886e-01}
+R_Rth5       4      Tcase  {5.943100e-01+lzth*1.013557e-01}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGOT60R070D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=1.63E-09 Ld=1.51E-09 Lg=5.58E-09
+.PARAM Rs=3.30E-03      Rgext=5.85E-02       Rd=3.32E-03
+.PARAM Lss=3.47E-09    Rss=4.71E-02
+.PARAM fpar44=261m
+.PARAM fpar40=5.08
+.PARAM fpar86=0.78
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGOT60R070D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=1.63E-09 Ld=1.51E-09 Lg=5.58E-09
+.PARAM Rs=3.30E-03      Rgext=5.85E-02       Rd=3.32E-03      Rm=102u
+.PARAM Lss=3.47E-09    Rss=4.71E-02
+.PARAM fpar44=261m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.78
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGOT60R070D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=1.63E-09 Ld=1.51E-09 Lg=5.58E-09 Zthtype=0
+.PARAM Rs=3.30E-03      Rgext=5.85E-02       Rd=3.32E-03      Rm=102u
+.PARAM Lss=3.47E-09    Rss=4.71E-02
+.PARAM fpar44=261m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.78
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {7.522330e-05+lzth*-1.550065e-05}
+C_Czth2      0      1      {3.322250e-04+lzth*-6.845888e-05}
+C_Czth3      0      2      {7.025900e-04+lzth*-1.447770e-04}
+C_Czth4      0      3      {2.242440e-03+lzth*-4.620812e-04}
+C_Czth5      0      4      {1.816560e-02+lzth*-3.743236e-03}
+R_Rth1       Tj     1      {1.461410e-02+lzth*3.793000e-03}
+R_Rth2       1      2      {3.453020e-02+lzth*8.962102e-03}
+R_Rth3       2      3      {8.214790e-02+lzth*2.132098e-02}
+R_Rth4       3      4      {3.612750e-01+lzth*9.376671e-02}
+R_Rth5       4      Tcase  {3.013710e-01+lzth*7.821900e-02}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGO60R070D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=1.63E-09 Ld=1.51E-09 Lg=5.58E-09
+.PARAM Rs=3.30E-03      Rgext=5.85E-02       Rd=3.32E-03
+.PARAM Lss=3.47E-09    Rss=4.71E-02
+.PARAM fpar44=261m
+.PARAM fpar40=5.08
+.PARAM fpar86=0.78
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGO60R070D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=1.63E-09 Ld=1.51E-09 Lg=5.58E-09
+.PARAM Rs=3.30E-03      Rgext=5.85E-02       Rd=3.32E-03      Rm=102u
+.PARAM Lss=3.47E-09    Rss=4.71E-02
+.PARAM fpar44=261m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.78
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGO60R070D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=1.63E-09 Ld=1.51E-09 Lg=5.58E-09 Zthtype=0
+.PARAM Rs=3.30E-03      Rgext=5.85E-02       Rd=3.32E-03      Rm=102u
+.PARAM Lss=3.47E-09    Rss=4.71E-02
+.PARAM fpar44=261m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.78
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {7.522330e-05+lzth*-1.550065e-05}
+C_Czth2      0      1      {3.322250e-04+lzth*-6.845888e-05}
+C_Czth3      0      2      {7.025900e-04+lzth*-1.447770e-04}
+C_Czth4      0      3      {2.242440e-03+lzth*-4.620812e-04}
+C_Czth5      0      4      {1.816560e-02+lzth*-3.743236e-03}
+R_Rth1       Tj     1      {1.461410e-02+lzth*3.793000e-03}
+R_Rth2       1      2      {3.453020e-02+lzth*8.962102e-03}
+R_Rth3       2      3      {8.214790e-02+lzth*2.132098e-02}
+R_Rth4       3      4      {3.612750e-01+lzth*9.376671e-02}
+R_Rth5       4      Tcase  {3.013710e-01+lzth*7.821900e-02}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGT60R070D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=8.72E-10 Ld=1.10E-09 Lg=4.17E-09
+.PARAM Rs=2.87E-03      Rgext=5.99E-02       Rd=3.76E-03
+.PARAM Lss=2.63E-09    Rss=5.09E-02
+.PARAM fpar44=261m
+.PARAM fpar40=5.08
+.PARAM fpar86=0.78
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGT60R070D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=8.72E-10 Ld=1.10E-09 Lg=4.17E-09
+.PARAM Rs=2.87E-03      Rgext=5.99E-02       Rd=3.76E-03      Rm=102u
+.PARAM Lss=2.63E-09    Rss=5.09E-02
+.PARAM fpar44=261m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.78
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGT60R070D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=8.72E-10 Ld=1.10E-09 Lg=4.17E-09 Zthtype=0
+.PARAM Rs=2.87E-03      Rgext=5.99E-02       Rd=3.76E-03      Rm=102u
+.PARAM Lss=2.63E-09    Rss=5.09E-02
+.PARAM fpar44=261m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.78
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {7.522330e-05+lzth*-1.550065e-05}
+C_Czth2      0      1      {3.322250e-04+lzth*-6.845888e-05}
+C_Czth3      0      2      {7.025900e-04+lzth*-1.447770e-04}
+C_Czth4      0      3      {2.242440e-03+lzth*-4.620812e-04}
+C_Czth5      0      4      {1.816560e-02+lzth*-3.743236e-03}
+R_Rth1       Tj     1      {1.461410e-02+lzth*3.793000e-03}
+R_Rth2       1      2      {3.453020e-02+lzth*8.962102e-03}
+R_Rth3       2      3      {8.214790e-02+lzth*2.132098e-02}
+R_Rth4       3      4      {3.612750e-01+lzth*9.376671e-02}
+R_Rth5       4      Tcase  {3.013710e-01+lzth*7.821900e-02}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGT60R190D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=1.18E-09 Ld=1.63E-09 Lg=4.77E-09
+.PARAM Rs=6.68E-03      Rgext=7.01E-02       Rd=8.75E-03
+.PARAM Lss=2.67E-09    Rss=5.58E-02
+.PARAM fpar44=101m
+.PARAM fpar40=1.98
+.PARAM fpar86=0.74
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGT60R190D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=1.18E-09 Ld=1.63E-09 Lg=4.77E-09
+.PARAM Rs=6.68E-03      Rgext=7.01E-02       Rd=8.75E-03      Rm=102u
+.PARAM Lss=2.67E-09    Rss=5.58E-02
+.PARAM fpar44=101m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.74
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGT60R190D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=1.18E-09 Ld=1.63E-09 Lg=4.77E-09 Zthtype=0
+.PARAM Rs=6.68E-03      Rgext=7.01E-02       Rd=8.75E-03      Rm=102u
+.PARAM Lss=2.67E-09    Rss=5.58E-02
+.PARAM fpar44=101m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.74
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {1.000000e-06+lzth*-2.880800e-07}
+C_Czth2      0      1      {1.154670e-04+lzth*-3.326373e-05}
+C_Czth3      0      2      {4.502570e-04+lzth*-1.297100e-04}
+C_Czth4      0      3      {1.319510e-03+lzth*-3.801244e-04}
+C_Czth5      0      4      {1.190110e-02+lzth*-3.428468e-03}
+R_Rth1       Tj     1      {1.446410e-02+lzth*5.852929e-03}
+R_Rth2       1      2      {8.579900e-02+lzth*3.471875e-02}
+R_Rth3       2      3      {3.286460e-01+lzth*1.329873e-01}
+R_Rth4       3      4      {6.853890e-01+lzth*2.773441e-01}
+R_Rth5       4      Tcase  {5.943100e-01+lzth*2.404888e-01}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLD60R070D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=6.28E-10 Ld=8.24E-10 Lg=2.41E-09
+.PARAM Rs=4.76E-03      Rgext=3.97E-02       Rd=3.90E-03
+.PARAM Lss=1.72E-09    Rss=3.30E-02
+.PARAM fpar44=261m
+.PARAM fpar40=5.08
+.PARAM fpar86=0.78
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLD60R070D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=6.28E-10 Ld=8.24E-10 Lg=2.41E-09
+.PARAM Rs=4.76E-03      Rgext=3.97E-02       Rd=3.90E-03      Rm=102u
+.PARAM Lss=1.72E-09    Rss=3.30E-02
+.PARAM fpar44=261m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.78
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLD60R070D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=6.28E-10 Ld=8.24E-10 Lg=2.41E-09 Zthtype=0
+.PARAM Rs=4.76E-03      Rgext=3.97E-02       Rd=3.90E-03      Rm=102u
+.PARAM Lss=1.72E-09    Rss=3.30E-02
+.PARAM fpar44=261m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.78
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {8.109630e-05+lzth*-2.029967e-05}
+C_Czth2      0      1      {4.537340e-04+lzth*-1.135767e-04}
+C_Czth3      0      2      {1.967210e-03+lzth*-4.924234e-04}
+C_Czth4      0      3      {1.961360e-02+lzth*-4.909591e-03}
+C_Czth5      0      4      {7.040610e-03+lzth*-1.762375e-03}
+R_Rth1       Tj     1      {1.616860e-02+lzth*5.398610e-03}
+R_Rth2       1      2      {6.346320e-02+lzth*2.119003e-02}
+R_Rth3       2      3      {2.812280e-01+lzth*9.390054e-02}
+R_Rth4       3      4      {1.790120e-01+lzth*5.977116e-02}
+R_Rth5       4      Tcase  {2.847810e-01+lzth*9.508687e-02}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R190D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=2.67E-10 Ld=5.49E-10 Lg=1.39E-09
+.PARAM Rs=2.56E-03      Rgext=1.99E-02       Rd=3.07E-03
+.PARAM Lss=7.40E-10    Rss=1.24E-02
+.PARAM fpar44=101m
+.PARAM fpar40=1.98
+.PARAM fpar86=0.69
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R190D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=2.67E-10 Ld=5.49E-10 Lg=1.39E-09
+.PARAM Rs=2.56E-03      Rgext=1.99E-02       Rd=3.07E-03      Rm=102u
+.PARAM Lss=7.40E-10    Rss=1.24E-02
+.PARAM fpar44=101m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.69
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R190D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=2.67E-10 Ld=5.49E-10 Lg=1.39E-09 Zthtype=0
+.PARAM Rs=2.56E-03      Rgext=1.99E-02       Rd=3.07E-03      Rm=102u
+.PARAM Lss=7.40E-10    Rss=1.24E-02
+.PARAM fpar44=101m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.69
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {4.937930e-05+lzth*-1.802155e-05}
+C_Czth2      0      1      {1.000000e-06+lzth*-3.649616e-07}
+C_Czth3      0      2      {1.756100e-04+lzth*-6.409090e-05}
+C_Czth4      0      3      {7.490300e-04+lzth*-2.733672e-04}
+C_Czth5      0      4      {3.999710e-03+lzth*-1.459740e-03}
+R_Rth1       Tj     1      {1.203710e-02+lzth*6.917815e-03}
+R_Rth2       1      2      {6.076640e-02+lzth*3.492292e-02}
+R_Rth3       2      3      {2.614730e-01+lzth*1.502706e-01}
+R_Rth4       3      4      {5.104170e-01+lzth*2.933406e-01}
+R_Rth5       4      Tcase  {5.841430e-01+lzth*3.357115e-01}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R260D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=3.55E-10 Ld=6.62E-10 Lg=1.48E-09
+.PARAM Rs=3.96E-03      Rgext=2.11E-02       Rd=4.29E-03
+.PARAM Lss=8.01E-10    Rss=1.36E-02
+.PARAM fpar44=69m
+.PARAM fpar40=1.41
+.PARAM fpar86=0.77
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R260D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=3.55E-10 Ld=6.62E-10 Lg=1.48E-09
+.PARAM Rs=3.96E-03      Rgext=2.11E-02       Rd=4.29E-03      Rm=102u
+.PARAM Lss=8.01E-10    Rss=1.36E-02
+.PARAM fpar44=69m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.77
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R260D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=3.55E-10 Ld=6.62E-10 Lg=1.48E-09 Zthtype=0
+.PARAM Rs=3.96E-03      Rgext=2.11E-02       Rd=4.29E-03      Rm=102u
+.PARAM Lss=8.01E-10    Rss=1.36E-02
+.PARAM fpar44=69m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.77
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {4.512910e-05+lzth*-1.386231e-05}
+C_Czth2      0      1      {1.609880e-04+lzth*-4.945068e-05}
+C_Czth3      0      2      {5.010270e-04+lzth*-1.539005e-04}
+C_Czth4      0      3      {1.925220e-06+lzth*-5.913698e-07}
+C_Czth5      0      4      {1.759100e-03+lzth*-5.403427e-04}
+R_Rth1       Tj     1      {1.325230e-01+lzth*5.875480e-02}
+R_Rth2       1      2      {4.043180e-01+lzth*1.792566e-01}
+R_Rth3       2      3      {3.203100e-01+lzth*1.420112e-01}
+R_Rth4       3      4      {2.203040e-01+lzth*9.767299e-02}
+R_Rth5       4      Tcase  {5.853370e-01+lzth*2.595124e-01}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R340D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=4.16E-10 Ld=7.71E-10 Lg=1.53E-09
+.PARAM Rs=4.98E-03      Rgext=2.18E-02       Rd=5.38E-03
+.PARAM Lss=7.79E-10    Rss=1.31E-02
+.PARAM fpar44=53m
+.PARAM fpar40=1.07
+.PARAM fpar86=0.83
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R340D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=4.16E-10 Ld=7.71E-10 Lg=1.53E-09
+.PARAM Rs=4.98E-03      Rgext=2.18E-02       Rd=5.38E-03      Rm=102u
+.PARAM Lss=7.79E-10    Rss=1.31E-02
+.PARAM fpar44=53m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.83
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGLR60R340D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=4.16E-10 Ld=7.71E-10 Lg=1.53E-09 Zthtype=0
+.PARAM Rs=4.98E-03      Rgext=2.18E-02       Rd=5.38E-03      Rm=102u
+.PARAM Lss=7.79E-10    Rss=1.31E-02
+.PARAM fpar44=53m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.83
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_Czth1      Tj     0      {3.504630e-05+lzth*-1.268120e-05}
+C_Czth2      0      1      {1.275490e-04+lzth*-4.615249e-05}
+C_Czth3      0      2      {3.395320e-04+lzth*-1.228567e-04}
+C_Czth4      0      3      {9.495930e-04+lzth*-3.436020e-04}
+C_Czth5      0      4      {2.846960e-03+lzth*-1.030148e-03}
+R_Rth1       Tj     1      {1.887450e-01+lzth*1.070200e-01}
+R_Rth2       1      2      {5.172080e-01+lzth*2.932612e-01}
+R_Rth3       2      3      {5.508420e-01+lzth*3.123320e-01}
+R_Rth4       3      4      {5.424200e-01+lzth*3.075566e-01}
+R_Rth5       4      Tcase  {1.790770e-01+lzth*1.015381e-01}
+.ENDS
+
+********************************************************************************
+
+**********************************************************************
+************************ L1 TECHNOLOGY MODEL *************************
+**********************************************************************
+
+.SUBCKT GaN_var_600V_NormOFF_42m dd g s sk Tj PARAMS: a=1  w=1  fpar86=0
+.PARAM  fpar46=5.20     fpar47=261m
+.PARAM  fpar48=0.0    fpar49=0.1       fpar50=0.7      fpar51=1.0       fpar52=1
+.PARAM  fpar43=1.205    fpar53=1.1     fpar54=1.65m
+.PARAM  fpar55=922  fpar56=100
+.PARAM  fpar57=3.3          fpar58=-5m       fpar59=0u
+.PARAM  fpar60=3.25         fpar39=298        fpar38=273
+.PARAM  fpar63=0.4           fpar64=2.9
+.PARAM  fpar65=1.52    fpar66=0.003
+.PARAM  fpar67=1.52    fpar68=0.003
+.PARAM  fpar37=85.8u          fpar70=110      fpar71={50m*0}
+.PARAM  fpar72=4.5           fpar73={10.4}
+.PARAM  fpar74={1.3E8}       fpar75=-1.64       fpar76={0.052}
+.PARAM  fpar77=58     fpar78=-67     fpar79=32
+.PARAM  fpar80=2.23     fpar81=-5.54     fpar82=3.86
+.PARAM  dRs={2.0/w}
+.PARAM  dRd={10.5/w}
+.PARAM  fpar85=75
+.PARAM  fpar87={70.05p/fpar46}    fpar88={1284.6p/fpar46}
+.PARAM  fpar89={-6414p/fpar46}     fpar90={5247.2p/fpar46}      fpar91=0
+.PARAM  fpar92=-0.027429            fpar93=-0.041895          fpar94=-0.045048            fpar95=1p
+.PARAM  fpar96={fpar87+fpar88+fpar89+fpar90+fpar91}
+.PARAM  fpar97={0.4757p/fpar46}       fpar98={-1.1616p/fpar46}      fpar99={42.533p/fpar46}
+.PARAM  fpar100={5.838p/fpar46}        fpar101=1.619
+.PARAM  fpar102=-0.006106             fpar103=-0.02715
+.PARAM  fpar104=8
+.PARAM  fpar105={a*( fpar97 + fpar98 + fpar99 + fpar100*fpar104**fpar101 )}
+.PARAM  fpar106=-4.83    fpar107=1.02   fpar108=1.86  fpar109={250p/fpar46}   fpar110={392p/fpar46}  fpar111={1000p/fpar46}
+.PARAM  fpar112={( fpar110 - fpar109 )/( fpar107 - fpar106 )}
+.PARAM  fpar113={( fpar110 - fpar109 )/( fpar107 - fpar106 )}   fpar114={( fpar111 - fpar110 )/( fpar108 - fpar107 )}
+.PARAM  fpar115={a*fpar109}
+.PARAM  fpar116={0}
+.PARAM  fpar117=1Meg
+.PARAM  R_Cds={1*10}  R_Cdg={1*10m}  R_Cgs={1*10m}
+.FUNC Qds_range1(x,a0,c0,a) {x*(1-a0*a/C0)}
+.FUNC Qds_range2(x,a1,b1,a2,b2,a3,b3,a4,b4,c0,a)
++ {( (1-exp(b1*x))*a1/b1 + (1-exp(b2*x))*a2/b2 + (1-exp(b3*x))*a3/b3 + (1-exp(b4*x))*a4/b4 )*a/C0}
+E_Eds dd edep VALUE { Qds_range1(V(dd,s),fpar87,fpar96,a) +
++ Qds_range2(V(dd,s),fpar88,fpar92,fpar89,fpar93,fpar90,fpar94,fpar91,fpar95,fpar96,a) }
+C_Cds edep edep2  {fpar96}
+R_Cds edep2 s R_Cds
+.FUNC Qgd_range1(x,a0,a1,a2,b1,b2,c1,c2)
++ { (a0+a2)*x + (a1/b1)*(exp(x*b1)-1) + c1/(c2+1)*( fpar104**(c2+1) - (fpar104-x)**(c2+1) ) }
+.FUNC Qgd_range2(x,a0,a1,a2,b1,b2,c1,c2)
++ { a0*(x-fpar104) + (a1/b1)*(exp(x*b1)-exp(fpar104*b1)) + (a2/b2)*(exp((x-fpar104)*b2)-1) }
+E_Egd dd ox VALUE { if( V(dd,gg)+fpar116<fpar104,
++   V(dd,gg)+fpar116 - Qgd_range1( V(dd,gg)+fpar116, fpar97, fpar98, fpar99, fpar102, fpar103, fpar100, fpar101 )*a/fpar105,
++   V(dd,gg)+fpar116 - Qgd_range1( fpar104, fpar97, fpar98, fpar99, fpar102, fpar103, fpar100, fpar101 )*a/fpar105 -
++           Qgd_range2( V(dd,gg)+fpar116, fpar97, fpar98, fpar99, fpar102, fpar103, fpar100, fpar101 )*a/fpar105 ) }
+C_Cgd ox ox2  {fpar105}
+R_Cdg ox2  gg R_Cdg
+.FUNC Qgs(x,x1,x2,x3,y1,y2,y3,k21,k32)
++ {- (k21/(2*y1))*IF(x<x1,0,(MIN(x,x2)-x1)**2) - (k32/(2*y1))*IF(x<x2,0,(MIN(x,x3)-x2)**2)
++  - IF(x<x2,0,IF(x<x3,(y2/y1-1)*(x-x2), (y3/y1-1)*x + (y1-y2)/y1*x2 + (y2-y3)/y1*x3) ) }
+E_Egs gg ogs VALUE {Qgs(V(gg,s),fpar106,fpar107,fpar108,fpar109,fpar110,fpar111,fpar113,fpar114)}
+Cgs ogs ogs2 {fpar115}
+R_Cgs ogs2 s  R_Cgs
+.FUNC  Jh(d,g1,g2,T,da)   { if(d>0, (fpar46*w/fpar47*(Igh(da,T,(fpar57+(fpar58+fpar59*T)*T)*fpar37*T,g1-fpar53+fpar54*(T-fpar39)+fpar48*tanh(fpar50*d) ** fpar51,fpar43)+limit(exp(d-fpar55),-23,23))),
++                                    (-fpar46*w/fpar47*(Igh(da,T,(fpar57+(fpar58+fpar59*T)*T)*fpar37*T,g2-fpar53+fpar54*(T-fpar39)+fpar48*tanh(fpar50*abs(d)) ** fpar51,fpar43)+limit(exp(d-fpar56),-23,23))) ) }
+.FUNC  Igh(Uds,T,p,Uee,x)  {fpar85*(fpar39/T)**fpar64*I0h(Uee,p,min(2*p,p+x*Uds),min(Uds,Uee/(2*x)),x)}
+.FUNC  I0h(Uee,p,pp,z1,x)  {if(Uee>pp,(Uee-x*z1)*z1,p*(pp-p)/x*exp((Uee-pp)/p))}
+.FUNC  KF(d,j) {if(d>0, 1+fpar66*(fpar47/w*j)**fpar65, 1+fpar68*(fpar47/w*j)**fpar67)}
+.FUNC Imgs(V,V1,T)   {w/fpar47*fpar73*(exp(min((V-fpar72+fpar71*V1)/(fpar70*fpar37*T**0.55),23))-exp(min(-(fpar72+fpar71*V1)/(fpar70*fpar37*T**0.55),7)))}
+.FUNC IRdio(V,T)     {V/{fpar47/w*(fpar82 + (fpar81 + fpar80 * T/fpar39) * T/fpar39)}}
+.FUNC Iesd(V,T)      {fpar76*(exp(min((V-(17.8-4.0*T/fpar39))/(fpar74*fpar37*T**fpar75),37))-exp(min(-(17.8-4.0*T/fpar39)/(fpar74*fpar37*T**fpar75),7)))}
+.FUNC IResd(V,T)     {V/(fpar77 * (T/fpar39) ** 2 + fpar78 * (T/fpar39) + fpar79)}
+.FUNC Dideal(V)      {if(V>0, fpar117 * V**2, 0)}
+Vs_Rd  dd     d1  0
+X_Rd   d1      d  Tj  Res_2DEG_v2  PARAMS: length={12.4u}  fpar44={w}  contacts={1}
+Rd01     d1      d  1k
+G_chan    d       sx1  VALUE={ Jh(limit(V(d,sx1),-1k,1k),V(gg,sx1),V(gg,d),fpar38+limit(V(Tj),-200,300),max(0,(SQRT(1+4*fpar52*abs(V(d,sx1)))-1)/2/fpar52)) /
++ KF(V(d1,d),I(Vs_chan)) }
+Rd02      d       sx1  50G
+Vs_chan    sx1     sx  0
+X_Rs      sx      s1   Tj   Res_2DEG_v2  PARAMS: length={1.3u}  fpar44={w}  contacts={1}
+Rd03      sx      s1  1k
+Vs_Rs     s1      s   0
+Rg_int    g       gg   {fpar86}
+G_dio     gg     gm  VALUE {Imgs(V(gg,gm),V(d,gg),fpar38+limit(V(Tj),-200,300))}
+Vs_Dio    gm     gm1   0
+G_Rdio    gm1     gs  VALUE {IRdio(V(gm1,gs),fpar38+limit(V(Tj),-200,300))}
+G_gss     gs     sx  VALUE {Dideal(V(gs,sx))}
+R_gss     gs     sx  50G
+G_gsd     gs     d   VALUE {Dideal(V(gs,d))}
+R_gsd     gs     d   50G
+R1        gg      s1  10G
+Rsk       s    sk  1n
+G_TH    0 Tj VALUE {V(d,sx)*I(Vs_chan)+V(d1,d)*I(Vs_Rd)+V(sx,s)*I(Vs_Rs)+V(g,gs)*I(Vs_Dio)}
+.ENDS
+
+**********************************************************************
+**********************************************************************
+
+.SUBCKT IGO60R042D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=1.47E-09 Ld=1.35E-09 Lg=4.57E-09
+.PARAM Rs=2.66E-03      Rgext=2.96E-02       Rd=2.32E-03
+.PARAM Lss=3.18E-09    Rss=4.39E-02
+.PARAM fpar44=419m
+.PARAM fpar40=7.95
+.PARAM fpar86=0.56
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGO60R042D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=1.47E-09 Ld=1.35E-09 Lg=4.57E-09
+.PARAM Rs=2.66E-03      Rgext=2.96E-02       Rd=2.32E-03      Rm=102u
+.PARAM Lss=3.18E-09    Rss=4.39E-02
+.PARAM fpar44=419m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.56
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF_42m PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGO60R042D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=1.47E-09 Ld=1.35E-09 Lg=4.57E-09 Zthtype=0
+.PARAM Rs=2.66E-03      Rgext=2.96E-02       Rd=2.32E-03      Rm=102u
+.PARAM Lss=3.18E-09    Rss=4.39E-02
+.PARAM fpar44=419m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.56
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF_42m PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_CZth1      Tj     0      {2.202230e-04/(1+lzth*0.3)}
+C_CZth2      0      1      {4.922250e-04/(1+lzth*0.3)}
+C_CZth3      0      2      {0.912590e-03/(1+lzth*0.3)}
+C_CZth4      0      3      {4.642440e-03/(1+lzth*0.3)}
+C_CZth5      0      4      {1.616560e-02/(1+lzth*0.3)}
+R_Rth1       Tj     1      {1.201410e-02*(1+lzth*0.3)}
+R_Rth2       1      2      {3.153020e-02*(1+lzth*0.3)}
+R_Rth3       2      3      {7.114790e-02*(1+lzth*0.3)}
+R_Rth4       3      4      {8.627550e-02*(1+lzth*0.3)}
+R_Rth5       4      Tcase  {1.806000e-01*(1+lzth*0.3)}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGOT60R042D1_L0 drain gate source source_sense PARAMS: dgfs=0 Ls=1.47E-09 Ld=1.35E-09 Lg=4.57E-09
+.PARAM Rs=2.66E-03      Rgext=2.96E-02       Rd=2.32E-03
+.PARAM Lss=3.18E-09    Rss=4.39E-02
+.PARAM fpar44=419m
+.PARAM fpar40=7.95
+.PARAM fpar86=0.56
+X1  d1a g s1a CoolGaN_tech0 PARAMS: fpar40={fpar40}   fpar44={fpar44}  fpar86={fpar86}
+Ld     drain     d_1    Ld
+Rd     d_1       d1a    Rd
+Lg     gate      g_1    Lg
+Rg     g_1       g      Rgext
+Ls     source    s_1    Ls
+Rs     s_1       s1a    Rs
+Lssk   source_sense  ss_1   Lss
+Rssk   ss_1      s1a   Rss
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGOT60R042D1_L1 drain gate source source_sense PARAMS: dgfs=0 Ls=1.47E-09 Ld=1.35E-09 Lg=4.57E-09
+.PARAM Rs=2.66E-03      Rgext=2.96E-02       Rd=2.32E-03      Rm=102u
+.PARAM Lss=3.18E-09    Rss=4.39E-02
+.PARAM fpar44=419m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM fpar86=0.56
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF_42m PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+E1    Tj     0    VALUE={TEMP}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IGOT60R042D1_L3 drain gate source source_sense Tj Tcase PARAMS: dgfs=0 Ls=1.47E-09 Ld=1.35E-09 Lg=4.57E-09 Zthtype=0
+.PARAM Rs=2.66E-03      Rgext=2.96E-02       Rd=2.32E-03      Rm=102u
+.PARAM Lss=3.18E-09    Rss=4.39E-02
+.PARAM fpar44=419m
+.PARAM fpar40={0.02*fpar44*1000}
+.PARAM lzth={limit(Zthtype,0,1)}
+.PARAM fpar86=0.56
+X1  d1a g s1a s1ask Tj GaN_var_600V_NormOFF_42m PARAMS: a={fpar40}   w={fpar44}  fpar86={fpar86}
+Lg    gate   g1   {Lg*if(dgfs==99,0,1)}
+Rg    g1     g    {Rgext}
+Ls    source s1   {Ls*if(dgfs==99,0,1)}
+Gs    s1     s1a   VALUE={V(s1,s1a)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rm)}
+Rsa   s1     s1a   1Meg
+Ld    drain  d1   {Ld*if(dgfs==99,0,1)}
+Rda   d1     d1a  {Rd}
+Rssk  s1ask  s1askr    {Rss}
+Lssk  s1askr  source_sense {Lss}
+C_CZth1      Tj     0      {2.202230e-04/(1+lzth*0.3)}
+C_CZth2      0      1      {4.922250e-04/(1+lzth*0.3)}
+C_CZth3      0      2      {0.912590e-03/(1+lzth*0.3)}
+C_CZth4      0      3      {4.642440e-03/(1+lzth*0.3)}
+C_CZth5      0      4      {1.616560e-02/(1+lzth*0.3)}
+R_Rth1       Tj     1      {1.201410e-02*(1+lzth*0.3)}
+R_Rth2       1      2      {3.153020e-02*(1+lzth*0.3)}
+R_Rth3       2      3      {7.114790e-02*(1+lzth*0.3)}
+R_Rth4       3      4      {8.627550e-02*(1+lzth*0.3)}
+R_Rth5       4      Tcase  {1.806000e-01*(1+lzth*0.3)}
+.ENDS
+
+********************************************************************************
