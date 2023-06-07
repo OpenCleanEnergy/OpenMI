@@ -59,6 +59,8 @@ This gives the required capacitance of the capacitor $C$:
 
 $$ C = \frac{400W}{2 \cdot \pi \cdot 50Hz \cdot 380V \cdot 40V} = 83.77\mu F $$
 
+The calculation was verified with simulation [dc-bus-power-decoupling](simulation/dc-bus-power-decoupling).
+
 ### Microcontroller
 
 ESP32

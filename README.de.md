@@ -61,6 +61,8 @@ Damit ergibt sich für die benötigte Kapazität des Kondensators $C$:
 
 $$ C = \frac{400W}{2 \cdot \pi \cdot 50Hz \cdot 380V \cdot 40V} = 83.77\mu F $$
 
+Die Berechnung wurde mit der Simulation [dc-bus-power-decoupling](simulation/dc-bus-power-decoupling) verifiziert.
+
 ### Mikrocontroller
 
 ESP32
