@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "OpenCE")(type "KiCad")(uri "${KIPRJMOD}/../../../../kicad-library/footprints/OpenCE.pretty")(options "")(descr ""))
+)
