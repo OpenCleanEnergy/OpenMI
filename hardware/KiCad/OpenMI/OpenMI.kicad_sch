@@ -1114,18 +1114,23 @@
     (uuid fd8feca0-626d-4fcd-b2ad-0d7369a6ab18)
   )
 
-  (rectangle (start 115.57 26.67) (end 194.31 85.09)
+  (rectangle (start 115.57 26.67) (end 229.87 95.25)
     (stroke (width 0) (type dash))
     (fill (type none))
     (uuid 4e71c524-628f-4678-b914-d2dd225bc166)
   )
 
-  (text "Possible power inductors:" (at 161.29 64.77 0)
+  (text "Option 1:\nL1: 1130-471K-RC\nL2: 1130-471K-RC\n+ Small footprint\n+ Less (different) parts\n- Higher cost"
+    (at 157.48 93.98 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 1c7fd049-c24b-4708-afd9-ade8fdf28242)
+  )
+  (text "Possible power inductors:" (at 157.48 64.77 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 383c55fd-fdd3-4b81-a32b-5e88a3fbfb1d)
   )
-  (text "2321-V-RC \nL_{1kHz}=560uH\nL_{3.6A}=314uH\nT_{3.6A}=+30°C\nPrice_{100}=2.62€"
-    (at 161.29 82.55 0)
+  (text "1130-471K-RC \nL_{1kHz}=470uH ±10%\nL_{4A}=446uH ±10%\nT_{4A}=+50°C\nPrice_{100}=6.17€"
+    (at 157.48 78.74 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 416aaad0-8768-45f6-9a92-ec3e264ce841)
   )
@@ -1133,23 +1138,42 @@
     (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf"))
     (uuid 474858b0-8e3e-4eec-893a-4d884459250d)
   )
-  (text "HCTI-680-3.6\nL_{1kHz}=680uH\nL_{3.4A}=370uH\nT_{3.4A}=+30°C\nPrice_{100}=1.96€"
-    (at 177.8 82.55 0)
+  (text "1140-471K-RC\nL_{1kHz}= 470uH ±10% \nL_{4.9A/9.5A}=446uH\nT_{4.9A/9.5A}=+50°C\nPrice_{70}=8.39€"
+    (at 177.8 78.74 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 735227f2-7111-4cad-a766-00c24dfbcf0b)
   )
-  (text "HCTI Series" (at 161.29 69.85 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://eu.mouser.com/datasheet/2/643/ds-st-high-current-torodial-inductors-series-1661536.pdf"))
+  (text "2300 Series" (at 199.39 68.58 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://www.bourns.com/docs/product-datasheets/2300_series.pdf"))
+    (uuid 7e0f1d83-961f-42db-8542-f7663959d638)
+  )
+  (text "1140 Series" (at 177.8 67.31 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://www.bourns.com/docs/product-datasheets/1140_series.pdf"))
     (uuid 9269fa64-eb7b-4b49-93d3-79bfbc77871f)
   )
-  (text "2300 Series" (at 161.29 67.31 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://eu.mouser.com/datasheet/2/54/2300_series-776044.pdf"))
+  (text "1130 Series" (at 157.48 67.31 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://www.bourns.com/docs/product-datasheets/1130_series.pdf"))
     (uuid 9a1c28ae-c01a-48da-b01d-8f319e5d8afe)
   )
-  (text "Parameter:\nP_{active} = 400W => I_{RMS} = 1.74A\nP_{reactive} < 0.05*P_{active}\nV_{bus} = 380V\nV_{grid} = 230V => V_{grid_{pk}} = 325V\nΔi = 20% * I_{RMS} = 0.348A\nf_{SW} = 149kHz\nD = 0.86 (see simulation/dc-ac-inverter)\n\nFilter:\nL_{f} = 1/3 * (V_{bus}-V_{grid_{pk}})/Δi * D/f_{SW} = 304uH\nI_{L_{f_{pk}}} = I_{RMS}*√2 + (V_{bus}-V_{grid_{pk}})/L_{f} * D/f_{SW} = 3.5A\nI_{L_{f_{pk}}} = I_{RMS}*√2 + 3Δi = 3.5A\n\nX_{C_{f}} ≥ V_{grid}^{2}/(0.05*P_{active}) = 4232Ω\nC_{f} ≤ 1/(ωX_{C_{f}}) = 750nF"
+  (text "2322-V/H-RC\nL_{1kHz}= 680uH ±15% \nL_{3.4A}=370uH ±15% \nT_{3.4}=+30°C\nPrice_{100}=2.6€"
+    (at 199.39 78.74 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid a5d3fdd4-974e-4ab7-9287-012da30978fb)
+  )
+  (text "Option 2:\nL1: 1130-471K-RC\nL2: 2322-V/H-RC\n+ Bigger footprint\n+ More different parts\n+ Lower cost"
+    (at 182.88 93.98 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid a91a564b-e894-4aee-b6f7-56513761566b)
+  )
+  (text "Parameter:\nP_{active} = 400W => I_{RMS} = 1.74A\nP_{reactive} < 0.05*P_{active}\nV_{bus} = 380V\nV_{grid} = 230V => V_{grid_{pk}} = 325V\nΔi = 20% * I_{RMS} = 0.348A\nf_{SW} = 124kHz\nD = 0.86 (see simulation/dc-ac-inverter)\n\nFilter:\nL_{f} = 1/3 * (V_{bus}-V_{grid_{pk}})/Δi * D/f_{SW} = 366uH\nI_{L_{f_{pk}}} = I_{RMS}*√2 + (V_{bus}-V_{grid_{pk}})/L_{f} * D/f_{SW} = 3.5A\nI_{L_{f_{pk}}} = I_{RMS}*√2 + 3Δi = 3.5A\n\nX_{C_{f}} ≥ V_{grid}^{2}/(0.05*P_{active}) = 4232Ω\nC_{f} ≤ 1/(ωX_{C_{f}}) = 750nF"
     (at 118.11 64.77 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid bb6e2bf0-836b-46d1-adb3-efdeaed2a6a1)
+  )
+  (text "Option 3:\nL1: 2x 2319-V/H-RC\nL2: 2x 2319-V/H-RC\n+ Biggest footprint\n+ More same parts\n+ Lowest cost"
+    (at 207.01 93.98 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid e087f0fc-e6d8-4c3c-9d44-ddc2caa2c393)
   )
 
   (label "INV_{1F}" (at 151.13 72.39 180) (fields_autoplaced)
