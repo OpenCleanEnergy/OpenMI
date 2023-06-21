@@ -9,6 +9,19 @@ Wir wollen einen Open Source Mikro-Wechselrichter bauen.
 
 ## Welche Spezifikationen soll der Mikro-Wechselrichter haben?
 
+Vergleich von Mikro-Wechselrichtern mit einer Nennausgangsleistung zwischen 350VA und 400VA:
+
+| Modell                       | HM-350[^HM] | HM-400[^HM] | IQ7A[^IQ7A] |
+|:-----------------------------|:-----------:|:-----------:|:-----------:|
+| Hersteller                   | Hoymiles    | Hoymiles    | Enphase     |
+| $V_{MPPT,min}$ (V)           | 33          | 34          | 38 (18)     |
+| $V_{MPPT,max}$ (V)           | 48          | 48          | 43 (58)     |
+| Anlaufspannung (V)           | 22          | 22          | 22          |
+| Betriebsspannungsbereich (V) | 16-60       | 16-60       | 16-58       |
+| Maximum input current (A)    | 11.5        | 12          | 12          |
+| Maximaler Eingangsstrom (A)  | 15          | 15          | 20          |
+| Nennausgangsleistung (VA)    | 350         | 400         | 349         |
+
 Vorbehaltlich weiterer Änderungen soll der Mikro-Wechselrichter folgende technischen Daten haben:
 - Wirkungsgrad > 90%
 - Betriebsbereich: 16V - 58V
@@ -73,6 +86,10 @@ Das Schaltungsdesign des Mikro-Wechselrichters wurde in [LTspice](https://www.an
 Da das gesamte Schaltungsdesign schnell komplex und aufwändig zu simulieren ist, wurden die einzelnen Bausteine der Schaltung zunächst einzeln aufgebaut und simuliert.
 
 ## Fußnoten
+
+[^HM]: [HM Microinverter Datasheet](https://www.hoymiles.com/wp-content/uploads/downloadupload/Datasheet_HM-300-350-400_AP_EN_V202206.pdf)
+
+[^IQ7A]: [IQ7A Microinverter Datasheet](https://enphase.com/download/iq7a-microinverter-data-sheet)
 
 [^AN4070]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
 
