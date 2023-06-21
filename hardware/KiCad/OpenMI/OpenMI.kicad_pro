@@ -312,6 +312,14 @@
       "version": 1
     },
     "net_format_name": "",
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 0,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_current_sheet_as_root": false,
@@ -326,6 +334,14 @@
     [
       "2d959e19-1572-42a0-a8fd-da8463ad4e66",
       ""
+    ],
+    [
+      "efbfb180-c2bb-45aa-ab04-e5a4cb37fddc",
+      "DC-DC"
+    ],
+    [
+      "19323a41-9b99-4de4-bfae-f2f828815be3",
+      "DC-AC"
     ]
   ],
   "text_variables": {}
