@@ -22,6 +22,8 @@ Comparison of micro-inverters with rated output power between 350VA and 400VA:
 | Maximum input current (A)              | 11.5        | 12          | 12          | 12            | 11.5            |
 | Maximum input short circuit current (A)| 15          | 15          | 20          | 15            | 15              |
 | Rated output power (VA)                | 350         | 400         | 349         | 300           | 600             |
+| Peak efficiency (%)                    | 96.7        | 96.7        | 97.7        | 95.4          | 96.7            |
+| CEC weighted efficiency (%)            | 96.5        | 96.5        | 97.0        | 95.0          | 96.5            |
 
 Subject to further modifications, the micro-inverter should have the following specifications:
 - Efficiency > 90%

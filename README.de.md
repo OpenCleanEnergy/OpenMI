@@ -23,6 +23,8 @@ Vergleich von Mikro-Wechselrichtern mit einer Nennausgangsleistung zwischen 350V
 | Maximum input current (A)    | 11.5        | 12          | 12          | 12            | 11.5            |
 | Maximaler Eingangsstrom (A)  | 15          | 15          | 20          | 15            | 15              |
 | Nennausgangsleistung (VA)    | 350         | 400         | 349         | 300           | 600             |
+| Maximale Effizienz (%)       | 96.7        | 96.7        | 97.7        | 95.4          | 96.7            |
+| CEC gewichtete Effizienz (%) | 96.5        | 96.5        | 97.0        | 95.0          | 96.5            |
 
 Vorbehaltlich weiterer Änderungen soll der Mikro-Wechselrichter folgende technischen Daten haben:
 - Wirkungsgrad > 90%
