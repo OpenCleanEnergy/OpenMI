@@ -11,16 +11,18 @@ Wir wollen einen Open Source Mikro-Wechselrichter bauen.
 
 Vergleich von Mikro-Wechselrichtern mit einer Nennausgangsleistung zwischen 350VA und 400VA:
 
-| Modell                       | HM-350[^HM] | HM-400[^HM] | IQ7A[^IQ7A] |
-|:-----------------------------|:-----------:|:-----------:|:-----------:|
-| Hersteller                   | Hoymiles    | Hoymiles    | Enphase     |
-| $V_{MPPT,min}$ (V)           | 33          | 34          | 38 (18)     |
-| $V_{MPPT,max}$ (V)           | 48          | 48          | 43 (58)     |
-| Anlaufspannung (V)           | 22          | 22          | 22          |
-| Betriebsspannungsbereich (V) | 16-60       | 16-60       | 16-58       |
-| Maximum input current (A)    | 11.5        | 12          | 12          |
-| Maximaler Eingangsstrom (A)  | 15          | 15          | 20          |
-| Nennausgangsleistung (VA)    | 350         | 400         | 349         |
+| Modell                       | HM-350[^HM] | HM-400[^HM] | IQ7A[^IQ7A] |EVT300[^EVT300]|TSOL-M800[^TSOL] |
+|:-----------------------------|:-----------:|:-----------:|:-----------:|:-------------:|:---------------:|
+| Hersteller                   | Hoymiles    | Hoymiles    | Enphase     | Envertech     |    TSUN         |
+| Anzahl Module                | 1           | 1           | 1           | 1             | 2               |
+| Empf. Eingangsleistung (W)   | 280-470+    | 320-540+    | 295-460     | 180-420+      |2 $\cdot$ 280-440|
+| $V_{MPPT,min}$ (V)           | 33          | 34          | 38 (18)     | 24            | 33              |
+| $V_{MPPT,max}$ (V)           | 48          | 48          | 43 (58)     | 45            | 48              |
+| Anlaufspannung (V)           | 22          | 22          | 22          | -             | -               |
+| Betriebsspannungsbereich (V) | 16-60       | 16-60       | 16-58       | 18-54         | 16 -60          |
+| Maximum input current (A)    | 11.5        | 12          | 12          | 12            | 11.5            |
+| Maximaler Eingangsstrom (A)  | 15          | 15          | 20          | 15            | 15              |
+| Nennausgangsleistung (VA)    | 350         | 400         | 349         | 300           | 600             |
 
 Vorbehaltlich weiterer Änderungen soll der Mikro-Wechselrichter folgende technischen Daten haben:
 - Wirkungsgrad > 90%
@@ -90,6 +92,10 @@ Da das gesamte Schaltungsdesign schnell komplex und aufwändig zu simulieren ist
 [^HM]: [HM Microinverter Datasheet](https://www.hoymiles.com/wp-content/uploads/downloadupload/Datasheet_HM-300-350-400_AP_EN_V202206.pdf)
 
 [^IQ7A]: [IQ7A Microinverter Datasheet](https://enphase.com/download/iq7a-microinverter-data-sheet)
+
+[^EVT300]: [EVT300 Microinverter Datasheet](https://envertec.com/wp-content/uploads/2022/11/EVT300_Datasheet.pdf)
+
+[^TSOL]: [TSOL-M800 Microinverter Datasheet](https://www.ecoheroes.shop/media/pdf/c9/f6/5b/Datenblatt_Mikrowechselrichter_TSUN_M800_EN.pdf)
 
 [^AN4070]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
 
