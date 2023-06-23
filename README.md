@@ -92,6 +92,10 @@ Since the entire circuit design is quickly complex and time-consuming to simulat
 
 [^IQ7A]: [IQ7A Microinverter Datasheet](https://enphase.com/download/iq7a-microinverter-data-sheet)
 
+[^EVT300]: [EVT300 Microinverter Datasheet](https://envertec.com/wp-content/uploads/2022/11/EVT300_Datasheet.pdf)
+
+[^TSOL]: [TSOL-M800 Microinverter Datasheet](https://www.ecoheroes.shop/media/pdf/c9/f6/5b/Datenblatt_Mikrowechselrichter_TSUN_M800_EN.pdf)
+
 [^AN4070]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
 
 [^2]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
