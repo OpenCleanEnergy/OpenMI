@@ -19,7 +19,7 @@ Vergleich von Mikro-Wechselrichtern mit einer Nennausgangsleistung zwischen 350V
 | $V_{MPPT,min}$ (V)           | 33          | 34          | 38 (18)     | 24            | 33              |
 | $V_{MPPT,max}$ (V)           | 48          | 48          | 43 (58)     | 45            | 48              |
 | Anlaufspannung (V)           | 22          | 22          | 22          | -             | -               |
-| Betriebsspannungsbereich (V) | 16-60       | 16-60       | 16-58       | 18-54         | 16 -60          |
+| Betriebsspannungsbereich (V) | 16-60       | 16-60       | 16-58       | 18-54         | 16-60           |
 | Maximum input current (A)    | 11.5        | 12          | 12          | 12            | 11.5            |
 | Maximaler Eingangsstrom (A)  | 15          | 15          | 20          | 15            | 15              |
 | Nennausgangsleistung (VA)    | 350         | 400         | 349         | 300           | 600             |
