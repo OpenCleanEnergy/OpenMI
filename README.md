@@ -59,7 +59,7 @@ For these reasons, we decided to adopt and extend the design.
 
 The following table shows a comparison of different solar modules and their technical data, which were adopted as a guide for designing the microinverter.
 
-| Model                        | WS350M[^WS350M]| Meyer Burger White[^MB]| JAM72S-30-550-MR[^HM] |
+| Model                        | WS350M[^WS350M]| Meyer Burger White[^MB]| JAM72S-30-550-MR[^JA] |
 |:-----------------------------|:--------------:|:----------------------:|:---------------------:|
 | Manufacturer                 | Wattstunde     | Meyer Burger White     | JA Solar              |
 | Power (Wp)                   | 350            | 400                    | 550                   |
@@ -112,6 +112,12 @@ Since the entire circuit design is quickly complex and time-consuming to simulat
 [^TSOL]: [TSOL-M800 Microinverter Datasheet](https://www.ecoheroes.shop/media/pdf/c9/f6/5b/Datenblatt_Mikrowechselrichter_TSUN_M800_EN.pdf)
 
 [^AN4070]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
+
+[^WS350M]: [Wattstunde solar panel 350Wp](https://solarkontor.de/mediafiles/PDF/Solarmodule/Wattstunde/M-Reihe/Datenblatt%20M%20%20v0123.pdf)
+
+[^MB]: [Meyer Burger White solar panel 400Wp](https://www.meyerburger.com/fileadmin/user_upload/PDFs/Produktdatenblaetter/DE/DS_Meyer_Burger_White_de.pdf)
+
+[^JA]: [JA Solar solar panel 550Wp](https://www.jasolar.com/uploadfile/2022/1122/20221122050252648.pdf)
 
 [^2]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
 

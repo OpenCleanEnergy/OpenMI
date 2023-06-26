@@ -61,7 +61,7 @@ Aus diesen Gründen haben wir uns entschieden, das Design zu übernehmen und zu 
 
 Die folgende Tabelle zeigt einen Vergleich verschiedener Solarmodule und deren technischen Daten, die als Orientierung zur Auslegung des Mikrowechselrichters angenommen wurden.
 
-| Modell                       | WS350M[^WS350M]| Meyer Burger White[^MB]| JAM72S-30-550-MR[^HM] |
+| Modell                       | WS350M[^WS350M]| Meyer Burger White[^MB]| JAM72S-30-550-MR[^JA] |
 |:-----------------------------|:--------------:|:----------------------:|:---------------------:|
 | Hersteller                   | Wattstunde     | Meyer Burger White     | JA Solar              |
 | Leistung (Wp)                | 350            | 400                    | 550                   |
