@@ -57,6 +57,20 @@ Die Application Note liefert eine detaillierte Beschreibung der Funktionsweise u
 Das vorgestellte System ist relativ einfach, benötigt relativ wenig Komponenten. Es hat einen Wirkungsgrad $ > 90 \% $ und vermeidet Probleme mit Flux-Walk, weil der DC-DC-Aufwärtswandler stromgespeist ist[^2]. Die benötigten Kondensatoren haben eine so geringe Kapazität, dass sie als Folienkondensatoren realisiert werden können, was die etwaigen Probleme mit der Lebensdauer von Elektrolytkondensatoren vermeidet.
 Aus diesen Gründen haben wir uns entschieden, das Design zu übernehmen und zu erweitern.
 
+#### Solarmodul Spezifikationen
+
+Die folgende Tabelle zeigt einen Vergleich verschiedener Solarmodule und deren technischen Daten, die als Orientierung zur Auslegung des Mikrowechselrichters angenommen wurden.
+
+| Modell                       | WS350M[^WS350M]| Meyer Burger White[^MB]| JAM72S-30-550-MR[^HM] |
+|:-----------------------------|:--------------:|:----------------------:|:---------------------:|
+| Hersteller                   | Wattstunde     | Meyer Burger White     | JA Solar              |
+| Leistung (Wp)                | 350            | 400                    | 550                   |
+| Kurzschlussstrom (A)         | 9.68           | 10.9                   | 14.00                 |
+| Leerlaufspannung (V)         | 46.7           | 44.6                   | 49.9                  |
+| $V_{MPPT}$ (V)               | 38.1           | 38.6                   | 41.96                 |
+| $I_{MPPT}$ (A)               | 9.19           | 10.4                   | 13.11                 |
+
+
 #### DC-Bus Leistungsentkopplung
 
 Die benötigte Kapazität des Kondensators $C$ kann mit der folgenden Formel [^3] berechnet werden:
@@ -100,6 +114,12 @@ Da das gesamte Schaltungsdesign schnell komplex und aufwändig zu simulieren ist
 [^TSOL]: [TSOL-M800 Microinverter Datasheet](https://www.ecoheroes.shop/media/pdf/c9/f6/5b/Datenblatt_Mikrowechselrichter_TSUN_M800_EN.pdf)
 
 [^AN4070]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
+
+[^WS350M]: [Wattstunde Solarmodul 350Wp](https://solarkontor.de/mediafiles/PDF/Solarmodule/Wattstunde/M-Reihe/Datenblatt%20M%20%20v0123.pdf)
+
+[^MB]: [Meyer Burger White Solarmodul 400Wp](https://www.meyerburger.com/fileadmin/user_upload/PDFs/Produktdatenblaetter/DE/DS_Meyer_Burger_White_de.pdf)
+
+[^JA]: [JA Solar Solarmodul 550Wp](https://www.jasolar.com/uploadfile/2022/1122/20221122050252648.pdf)
 
 [^2]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
 

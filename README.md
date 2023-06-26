@@ -55,6 +55,19 @@ The application note provides a detailed description of the operation and compon
 The system presented is relatively simple and requires relatively few components. It has an efficiency $ > 90 \% $ and avoids flux-walk problems due to the DC-DC boost converter being current-fed [^2]. The capacitors required are of such low capacitance that they can be implemented as film capacitors, which avoids the eventual lifetime issues with electrolytic capacitors.
 For these reasons, we decided to adopt and extend the design.
 
+#### PV panel specifications
+
+The following table shows a comparison of different solar modules and their technical data, which were adopted as a guide for designing the microinverter.
+
+| Model                        | WS350M[^WS350M]| Meyer Burger White[^MB]| JAM72S-30-550-MR[^HM] |
+|:-----------------------------|:--------------:|:----------------------:|:---------------------:|
+| Manufacturer                 | Wattstunde     | Meyer Burger White     | JA Solar              |
+| Power (Wp)                   | 350            | 400                    | 550                   |
+| Short Circuit Current (A)    | 9.68           | 10.9                   | 14.00                 |
+| Open Circuit Voltage (V)     | 46.7           | 44.6                   | 49.9                  |
+| $V_{MPPT}$ (V)               | 38.1           | 38.6                   | 41.96                 |
+| $I_{MPPT}$ (A)               | 9.19           | 10.4                   | 13.11                 |
+
 #### DC bus power decoupling
 
 The required capacitance of the capacitor $C$ can be calculated with the following formula [^3]:
