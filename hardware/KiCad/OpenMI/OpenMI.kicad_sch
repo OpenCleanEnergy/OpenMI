@@ -13,14 +13,14 @@
     (uuid c79b262c-a0da-4f06-bfe0-967b964a00ca)
   )
 
-  (sheet (at 154.94 83.82) (size 12.7 19.05) (fields_autoplaced)
+  (sheet (at 154.94 83.82) (size 12.7 20.32) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid 19323a41-9b99-4de4-bfae-f2f828815be3)
     (property "Sheetname" "DC-AC" (at 154.94 83.1084 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "DC-AC.kicad_sch" (at 154.94 103.4546 0)
+    (property "Sheetfile" "DC-AC.kicad_sch" (at 154.94 104.7246 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (property "Field2" "" (at 154.94 83.82 0)
@@ -45,6 +45,10 @@
     (pin "LIN_{F}" input (at 154.94 93.98 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid d69a240a-5e79-48a9-ac12-4305362992ad)
+    )
+    (pin "OverTemp" output (at 154.94 101.6 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 96d4c82c-e1b4-4cba-98b1-f9263cc0523f)
     )
     (instances
       (project "OpenMI"
