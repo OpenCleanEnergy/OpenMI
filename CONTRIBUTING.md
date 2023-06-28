@@ -16,7 +16,7 @@ This section describes how to get the different parts of the project running at 
 5. Start KiCad and
    1. Click `Preferences` -> `Configure Paths...`
       1. Replace the `KICAD7_FOOTPRINT_DIR` by the absolute path of the `kicad-library/footprints`, so for example: *C:\Users\...\Documents\GitHub\kicad-library\footprints*
-      2. Replace the` KICAD7_SYMBOL_DIR` by the absolute path of the `kicad-library/symbols`, so for example: C:\Users\...\Documents\GitHub\kicad-library\symbols
+      2. Replace the` KICAD7_SYMBOL_DIR` by the absolute path of the `kicad-library/symbols`, so for example: *C:\Users\...\Documents\GitHub\kicad-library\symbols*
    2. Click `Preferences` -> `Manage Symbol Libraries...`
       1. Under Global Libraries click `Add existing library to table`, go into the `kicad-library/output` directory and select all files and press `open`.
 

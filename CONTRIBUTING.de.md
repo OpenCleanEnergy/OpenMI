@@ -15,7 +15,7 @@ Dieser Abschnitt beschreibt, wie du die verschiedenen Teile des Projekts auf eur
 4. Klone das [kicad-library](https://github.com/OpenCleanEnergy/kicad-library) Repository.
 5. Starte KiCad und
    1. Klicke `Einstellungen` -> `Pfade konfigurieren...`
-      1. Ersetze `KICAD7_FOOTPRINT_DIR` durch den absoluten Pfad des Verzeichnisses `kicad-library/footprints`, also zum Beispiel: C:\Users\...\Dokumente\GitHub\kicad-library\footprints
-      2. Ersetze `KICAD7_SYMBOL_DIR` durch den absoluten Pfad des Verzeichnisses `kicad-library/symbols`, also zum Beispiel: C:\Users\...\Documents\GitHub\kicad-library\symbols
+      1. Ersetze `KICAD7_FOOTPRINT_DIR` durch den absoluten Pfad des Verzeichnisses `kicad-library/footprints`, also zum Beispiel: *C:\Users\...\Dokumente\GitHub\kicad-library\footprints*
+      2. Ersetze `KICAD7_SYMBOL_DIR` durch den absoluten Pfad des Verzeichnisses `kicad-library/symbols`, also zum Beispiel: *C:\Users\...\Documents\GitHub\kicad-library\symbols*
    2. Klicke auf `Einstellungen` -> `Symbolbibliotheken verwalten...`
       1. Klicke unter Globale Bibliotheken auf `Vorhandene Bibliothek zur Tabelle hinzufügen`, gehe in das Verzeichnis `kicad-library/output`, wähle alle Dateien aus und klicke auf `Öffnen`.
