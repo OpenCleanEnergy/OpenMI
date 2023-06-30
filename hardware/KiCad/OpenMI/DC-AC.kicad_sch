@@ -2150,8 +2150,8 @@
     (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://intelligentpower.engr.uga.edu/wp-content/uploads/2019/10/deqiang2017Dc-bus.pdf"))
     (uuid b23b5b84-276d-4032-86a8-76b9ab25822a)
   )
-  (text "DC bus voltage sensing:\n\nV_{bus,max} = 400V\nV_{ref} = 3.3V\nV_{bus,sens} = 400V / (3*4.7MΩ + 100kΩ) * 100kΩ = 2.82V\nP_{loss} = V_{bus,max}^{2} / R = 11mW"
-    (at 17.78 78.74 0)
+  (text "DC bus voltage sensing:\n\nV_{bus,max} = 400V\nV_{ref} = 3.3V\nV_{bus,sens,max} = V_{bus,max} / (R_{1}+R_{2}) * R_{2} = 2.82V\nP_{loss} = V_{bus,max}^{2} / (R_{1}+R_{2}) = 11mW\nf_{c} = 1 / 2π*C*(R_{1}||R_{2}) = 1.6kHz\n"
+    (at 17.78 81.28 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid ba461fa7-3ba7-4205-8c5a-d447c258a9b1)
   )
