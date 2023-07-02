@@ -74,6 +74,14 @@
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid acf4b546-4132-4d8c-ac1b-5a0143c2c2ee)
     )
+    (pin "V_{PV+}" input (at 129.54 86.36 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 86caadb9-7cb9-429f-95f2-7ca7bd454d1f)
+    )
+    (pin "V_{PV-}" input (at 129.54 88.9 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 2d09b77f-edc5-4717-83c6-36db23ffdcb9)
+    )
     (instances
       (project "OpenMI"
         (path "/2d959e19-1572-42a0-a8fd-da8463ad4e66" (page "2"))
