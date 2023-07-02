@@ -2169,7 +2169,8 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid cdf7301e-2e9a-4bf7-9ddd-5d81dcdf4f98)
   )
-  (text "To do:\n- check dV/dt\n- enough capacity?" (at 69.85 24.13 0)
+  (text "To do:\n- enough capacity?\n- V_{bus} = 400V; ΔV = 50V?\n- V_{bus} = 390V; ΔV = 50V?"
+    (at 62.23 25.4 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid d4c17849-8f7f-4da6-975b-16efa3c1abec)
   )
