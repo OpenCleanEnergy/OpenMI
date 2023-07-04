@@ -26,10 +26,6 @@
     (property "Field2" "" (at 154.94 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "V_{DC}" input (at 154.94 86.36 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 91532e22-ae87-4318-a64d-1febb7c2d3b7)
-    )
     (pin "LIN_{S}" input (at 154.94 99.06 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid ffe4812f-b78c-4d4f-be5b-6029373b00d9)
@@ -49,6 +45,10 @@
     (pin "OverTemp" output (at 154.94 101.6 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 96d4c82c-e1b4-4cba-98b1-f9263cc0523f)
+    )
+    (pin "V_{BUS}" input (at 154.94 86.36 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 14dac748-0d9c-463b-8c2c-3bbc7a9df899)
     )
     (instances
       (project "OpenMI"
@@ -70,10 +70,6 @@
     (property "Field2" "" (at 129.54 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "V_{DC}" output (at 144.78 86.36 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid acf4b546-4132-4d8c-ac1b-5a0143c2c2ee)
-    )
     (pin "V_{PV+}" input (at 129.54 86.36 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 86caadb9-7cb9-429f-95f2-7ca7bd454d1f)
@@ -81,6 +77,10 @@
     (pin "V_{PV-}" input (at 129.54 88.9 180)
       (effects (font (size 1.27 1.27)) (justify left))
       (uuid 2d09b77f-edc5-4717-83c6-36db23ffdcb9)
+    )
+    (pin "V_{BUS}" output (at 144.78 86.36 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 9b60c9c8-78c3-4fc8-b6f2-1950b5c1ea0e)
     )
     (instances
       (project "OpenMI"

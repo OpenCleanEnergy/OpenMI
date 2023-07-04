@@ -665,7 +665,7 @@
     (uuid ac569b6d-8121-43ea-b132-2f9710f6c32a)
   )
 
-  (hierarchical_label "V_{DC}" (shape output) (at 267.97 57.15 0) (fields_autoplaced)
+  (hierarchical_label "V_{BUS}" (shape output) (at 267.97 57.15 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 05674ad5-c070-450c-8bd5-72903e08571a)
   )

@@ -2251,7 +2251,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 5fe4192e-1a35-49d0-8540-1a408e6729d0)
   )
-  (hierarchical_label "V_{DC}" (shape input) (at 25.4 36.83 180) (fields_autoplaced)
+  (hierarchical_label "V_{BUS}" (shape input) (at 25.4 36.83 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 67f4ffa3-56a3-4d45-bde2-b80b35d7e7e1)
   )
