@@ -2239,7 +2239,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 14b776a4-a23b-4c0d-b5f8-b265fce63cd4)
   )
-  (hierarchical_label "VBUS_{SENS}" (shape input) (at 40.64 106.68 180) (fields_autoplaced)
+  (hierarchical_label "VBUS_{SENS}" (shape output) (at 40.64 106.68 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 3228b239-443c-46d7-8c27-44bf9c236d39)
   )
