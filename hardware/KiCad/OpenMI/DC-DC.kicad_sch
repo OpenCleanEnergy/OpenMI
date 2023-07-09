@@ -867,8 +867,8 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid de8da0e0-e320-4ef5-94e1-ada94a3d8c92)
   )
-  (text "With a 250 kHz PWM signal and a 9 bit resolution the smallest possible pulse period becomes:\n  T_{min} = 1 / (250 kHz * 2^{9}) = 7.81 ns\n "
-    (at 115.316 32.258 0)
+  (text "With a 250 kHz PWM signal and a 9 bit resolution the smallest possible pulse period becomes:\n  T_{min} = 1 / (250 kHz * 2^{9}) = 7.81 ns\nAssuming we target the rise and fall times to be 1% of the period time, we get\n  t_{rise} = 7.81 ns * 1/100 = 78.1 ps\nThe GAN7R0-150LBEZ has total gate charge of \n  Q_{G(tot)} = 7.6 nC"
+    (at 115.316 38.608 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e6505510-ce34-41fa-97a0-789127b7e5ec)
   )
