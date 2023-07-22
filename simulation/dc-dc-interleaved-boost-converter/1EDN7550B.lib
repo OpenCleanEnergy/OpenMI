@@ -1,0 +1,378 @@
+******************************************************************************
+*  Simulation model of 1EDN7550B Level 3 for SIMetrix version 8.3g or higher
+*  Version: 01.01 (Revision: 911)
+*  (C) Copyright 2022 Infineon Technologies. All rights reserved. 
+*
+******************************************************************************
+*  Model performance : 
+*  - Static Electrical Characteristics and Dynamic Electrical Characteristics 
+*    are modeled with the typical values from the datasheet.
+*  - Temperature effects are modeled
+*
+*  The following features have been modeled :
+*  - Switching Characteristics such as propagation delay, peak currents, output resistance
+*  - Negative charge pump
+*  - Undervoltage lockout 
+*  - Current consumption
+******************************************************************************
+* PINS:
+*  --------------------------------------------------------------------------
+*  | NAME    | DESCRIPTION 
+*  --------------------------------------------------------------------------
+*  | IN+     | Positive input connected to controller PWM or ground via input resistor 
+*  --------------------------------------------------------------------------
+*  | IN-     | Negative input connected to controller PWM or ground via input resistor 
+*  --------------------------------------------------------------------------
+*  | GND     | Ground 
+*  --------------------------------------------------------------------------
+*  | VDD     | Gate drive supply 
+*  --------------------------------------------------------------------------
+*  | OUT_SNK | Driver output sink low-impedance switch to GND  
+*  --------------------------------------------------------------------------
+*  | OUT_SRC | Driver output source low-impedance switch to VDD 
+*  --------------------------------------------------------------------------
+*  | TAMB    | Ambient temperature 
+*  --------------------------------------------------------------------------
+*  | TJ      | Junction temperature 
+*  --------------------------------------------------------------------------
+*
+******************************************************************************
+* DISCLAIMER
+* 
+* INFINEON’S MODEL TERMS OF USE
+*
+* BY DOWNLOADING AND/OR USING THIS INFINEON MODEL (“MODEL”), THE USER
+* (INCLUDING YOU) AGREES TO BE BOUND BY THE TERMS OF USE HERE STATED. IF USER
+* DOES NOT AGREE TO ALL TERMS OF USE HERE STATED, USER SHALL NOT DOWNLOAD,
+* USE OR COPY THE MODEL BUT IMMEDIATELY DELETE IT (TO THE EXTENT THAT IT
+* WAS DOWNLOADED ALREADY).
+*
+* 1. SCOPE OF USE
+* 1.1 Any use of this Model provided by Infineon Technologies AG is subject
+*     to these Terms of Use.
+* 1.2 This Model, provided by Infineon, does not fully represent all of the
+*     specifications and operating characteristics of the product to which
+*     this Model relates.
+* 1.3 This Model only describes the characteristics of a typical product.
+*     In all cases, the current data sheet information for a given product
+*     is the final design guideline and the only actual performance
+*     specification. Although this Model can be a useful tool to evaluate
+*     the product performance, it cannot simulate the exact product performance
+*     under all conditions and it is also not intended to replace
+*     bread-boarding for final verification.
+*
+* 2. IMPORTANT NOTICE
+* 2.1 Infineon Technologies AG (“Infineon”) is not and cannot be aware of the
+*     specific application of the Infineon’s Model by User. However, Model may
+*     from time to time be used by User in potentially harmful and/or life-
+*     endangering applications such as traffic, logistic, medical, nuclear
+*     or military applications or in other applications where failure of the
+*     Model may predictably cause damage to persons’ life or health or to
+*     property (hereinafter "Critical Applications").
+* 2.2 User acknowledges that Infineon has not specifically designed or
+*     qualified the Model for Critical Applications that the Model may contain
+*     errors and bugs and that User is required to qualify the Model for
+*     Critical Applications pursuant to the applicable local quality, safety
+*     and legal requirements before permitting or giving access to any such use.
+*
+* 3. CONFIDENTIAL INFORMATION
+*     User shall treat ideas, concepts and information incorporated in the
+*     Model, the documentation and the content of this Terms of Use (together
+*     hereinafter "Confidential Information") confidential, not disclose it to
+*     any third party unless otherwise agreed in writing between User and
+*     Infineon, not use it for any other purposes than using the Model for
+*     simulation and testing purposes only.
+*
+* 4. WARRANTY
+* 4.1 User acknowledges that the Model is provided by Infineon under this Terms	       
+*     of Use is provided free of charge and "AS IS" without any warranty or 	      
+*     liability of any kind and Infineon hereby expressly disclaims any 		      
+*     warranties or representations, whether express, implied, statutory or 	      
+*     otherwise, including but not limited to warranties of workmanship, 		      
+*     merchantability, fitness for a particular purpose, defects in the 		      
+*     Model, or non-infringement of third parties intellectual property rights.	       
+* 4.2 Infineon reserves the right to make corrections, deletions, modifications, 	      
+*     enhancements, improvements and other changes to the Model at any time 	      
+*     or to move or discontinue any Model without notice. 			      
+* 										      
+* 5. LIABILITY 									      
+* 5.1 Nothing in this Terms of Use shall limit or exclude Infineon's liability 	      
+*     under mandatory liability laws, for injuries to life, body or health,  	      
+*     for fraudulent concealment of defects in the software, or in cases 		      
+*     of Infineon's intentional misconduct or gross negligence. 			      
+* 5.2 Without prejudice to Sections 5.1, in cases of Infineon's slight		       
+*     negligent breach of obligations that restrict essential rights or duties 	      
+*     arising from the nature of this Terms of Use in a way that there is a 	      
+*     risk of non-achievement of the purpose of this Terms of Use or of an 	      
+*     obligation whose observance User regularly may trust in and whereas		       
+*     compliance with only makes proper execution of this Terms of Use 		      
+*     possible, Infineon's liability shall be limited to the typically, 		      
+*     foreseeable damage. 							      
+* 5.3 Without prejudice to Sections 8.1 and 8.2, Infineon's liability under 	      
+*     this Agreement shall be excluded in all other cases. 			      
+* 										      
+* 6. EXPORT REGULATIONS 								      
+*     The User shall comply with all applicable national and international 	      
+*     laws and regulations, in particular the applicable export control 		      
+*     regulations and sanction programs. The User also agrees not to 		      
+*     export, re-export or transfer any software or technology developed		       
+*     with or using information, software or technology offered by Infineon, 	      
+*     in violation of any applicable laws or regulations of the competent 	      
+*     authorities. Further, the User shall neither use any products, 		      
+*     information, software and technology offered by Infineon in or in 		      
+*     connection with nuclear technology or weapons of mass destruction 		      
+*     (nuclear, biological or chemical) and carriers thereof nor supply 		      
+*     military consignees. 							      
+* 										      
+* 7. TERMINATION OF USE PERMIT 							      
+*     If the User violates these Terms of Use, such User’s permit to use 		      
+*     this Model terminates automatically. In addition, Infineon may 		      
+*     terminate the User’s permit to use this Model at its discretion and 	      
+*     at any time regardless of any violation of these Terms of Use. In 		      
+*     any of the foregoing events, the User is obliged to immediately destroy 	      
+*     any content that has been downloaded or printed from Infineon’s website. 	      
+* 										      
+* 8. MISCELLANEOUS 								      
+* 8.1 These Terms of Use are subject to the laws of the Federal Republic 		      
+*     of Germany with the exception of the United Nations on Purchase 		      
+*     Contracts on the International Sale of Goods dated April 11, 1980 (CISG). 	      
+*     The exclusive place of jurisdiction is Munich, Germany. 			      
+* 8.2 Should any provision in these Terms of Use be or become invalid, the 	      
+*     validity of all other provisions or agreements shall remain unaffected
+*     thereby.
+*
+******************************************************************************
+.SUBCKT 1EDN7550B IN+ IN- GND VDD OUT_SNK OUT_SRC TAMB TJ
+R_INP IN+ GND 1E12
+C_INP IN+ GND 1F
+R_IN- IN- GND 1E12
+C_IN- IN- GND 1F
+ROUT_SNK OUT_SNK GND 1E12
+ROUT_SRC OUT_SRC GND 1E12
+COUT_SNK OUT_SNK GND 1E-12
+COUT_SRC OUT_SRC GND 1E-12
+RTAMB TAMB GND 1E12
+RTJ TJ GND 1E12
+RTC TC GND 1E12
+RVDD VDD GND 1E12
+X2 GND VDD ONE_EDN7550B_ESD_DIO PARAMS: P_V_BV=0.3 P_I_BV=1M
+X12 IN+ IN- ONE_EDN7550B_CL_DIO PARAMS: P_V_BV=10 P_I_BV=10M
+X13 IN- IN+ ONE_EDN7550B_CL_DIO PARAMS: P_V_BV=10 P_I_BV=10M
+X_GD_TEMPLATE IN+ IN- GND VDD OUT_SNK OUT_SRC TAMB TJ TC ONE_EDN7550B_GD_TEMPLATE
+.ENDS 1EDN7550B
+.SUBCKT ONE_EDN7550B_GD_TEMPLATE IN+ IN- GND VDD OUT_SNK OUT_SRC TAMB TJ TC
+V_H OUT_SRC1 OUT_SRC 0.0
+V_L OUT_SNK1 OUT_SNK 0.0
+E_POW POW 0 VALUE={ABS(V(VDD,OUT_SRC)*I(V_H))+ABS(V(OUT_SNK,GND)*I(V_L)) }
+RTEMP TAMB 0 1K
+GTEMP 0 TAMB VALUE = {1M*TEMP}
+CTEMP TAMB 0 1N
+XTHERMAL_NETS TAMB TJ TC POW ONE_EDN7550B_THERMAL_NETS
+RX TJ GND 1E12
+RY TC GND 1E12
+XINPUT_STAGE IN+ IN- GND IN_DD TJ ONE_EDN7550B_INPUT_STAGE
+XOUTPUT_STAGE VDD OUT_SRC1 OUT_SNK1 GND GND IN_DD VDD_UV OUT_GATE_DIG TJ ONE_EDN7550B_OUTPUT_STAGE
+XVDD_UV_DETECT VDD_UV VDD GND TJ ONE_EDN7550B_VDD_UV_DETECT
+XCC_EMULATOR VDD GND TJ OUT_GATE_DIG ONE_EDN7550B_CC_EMULATOR
+.ENDS ONE_EDN7550B_GD_TEMPLATE
+.SUBCKT ONE_EDN7550B_INPUT_STAGE IN+ IN- VSS IN_DD TEMP
+R1 IN+ INP 2K
+R2 INP VSS 1K
+R3 IN- INN 2K
+R4 INN VSS 1K
+E1 TH_UP 0 VALUE={TABLE(V(TEMP),-40,1.675,25,1.7,125,1.8)*TABLE( ((V(IN+) + V(IN-))/2) * (36/3) ,-150,0.923,0,1,150,1.128)}
+E2 TH_DW 0 VALUE={TABLE(V(TEMP),-40,1.48,25, 1.5,125,1.6)*TABLE( ((V(IN+) + V(IN-))/2)* (36/3),-150,0.888,0,1,150,1.111)}
+E3 TH_UP_2 0 VALUE={V(TH_UP)*1/(1+2+33)}
+E4 TH_DW_2 0 VALUE={V(TH_DW)*1/(1+2+33)}
+X_HIN_TH INP IN_DIG INN TH_UP_2 TH_DW_2 ONE_EDN7550B_STP_IDEAL_2
+X1 IN_DIG IN_DIG_LPF ONE_EDN7550B_ADV_FILTER_TIME_2 PARAMS: TIME_SET=25N
+X2 IN_DIG_LPF IN_DD TEMP ONE_EDN7550B_RC_DELAY_TEMP_10 PARAMS: TEMP1=-40 TEMP2=25 TEMP3=125 P_TH_TPD_TEMP1=0.55 P_TH_TPD_TEMP2=0.5 
++ P_TH_TPD_TEMP3=0.508 P_R_TPD_TEMP1=2.502857142857143 P_R_TPD_TEMP2=3 P_R_TPD_TEMP3=3.642857142857143
+.ENDS ONE_EDN7550B_INPUT_STAGE
+.SUBCKT ONE_EDN7550B_OUTPUT_STAGE VDD OUT_SRC OUT_SNK VOFF VSS IN_DD VDD_UV OUT_GATE_DIG TEMP
+E1 OUT_GATE_DIG1 0 VALUE= {IF( V(IN_DD) > 0.5 & V(VDD_UV) > 0.5 ,1,0)}
+RA OUT_GATE_DIG1 OUT_GATE_DIG 1
+CA OUT_GATE_DIG 0 1N
+E2 OUT_GATE_VGSP 0 VALUE={TABLE(V(TEMP),-40, 3.3, 25,3.3, 125, 3.3 )}
+E_GATEN_VOLTAGE GATEN_VOLTAGE 0 VALUE={TABLE(V(VDD,VOFF), 0,3.3, 4.1,3.2, 12,3.18, 18,3.07)}
+E3 OUT_GATE_VGSN 0 VALUE={TABLE(V(TEMP),-40, V(GATEN_VOLTAGE), 25, V(GATEN_VOLTAGE), 125, V(GATEN_VOLTAGE)) }
+G_UNPOWERED OUT_SNK VSS VALUE={TABLE(V(OUT_SNK,VSS),0,0,1,100U,1.2,3M)* IF(V(VDD_UV_100N) < 0.5,1,0)}
+X0NBF VDD_UV VDD_UV_100N ONE_EDN7550B_ADV_FILTER_TIME_2 PARAMS: TIME_SET=100N
+RVOFF OUT_SNK VOFF 100E6
+RVOFF2 OUT_SRC VDD 100E6
+COUT OUT_SNK VOFF 25P
+COUT2 OUT_SRC VDD 25P
+E4 VDD OUT_GATE_P VALUE {V(OUT_GATE_VGSP)* IF( V(OUT_GATE_DIG) > 0.5 ,1,0)}
+E5 OUT_GATE_N VOFF VALUE {V(OUT_GATE_VGSN)* IF(V(OUT_GATE_DIG) < 0.5 ,1,0)}
+R5G OUT_GATE_N VOFF 1E12
+M_OUT_PMOS OUT_SRC OUT_GATE_P VDD VDD ONE_EDN7550B_LO_PMOS
+M_OUT_NMOS OUT_SNK OUT_GATE_N VOFF VOFF ONE_EDN7550B_LO_NMOS
+.MODEL ONE_EDN7550B_LO_PMOS PMOS (LEVEL=1 VTO=-1 CGSO=100P W=10M L=1U RB=1 RG=10 RS=1M RD=10M LAMBDA=0.151 KP=55U )
+.MODEL ONE_EDN7550B_LO_NMOS NMOS (LEVEL=1 VTO=1 CGSO=100P W=10M L=1U RB=1 RG=10 RS=1M RD=10M LAMBDA=0.151 KP=120U)
+.MODEL ONE_EDN7550B_MILLER_NMOS NMOS (LEVEL=1 VTO=1 CGSO=100P W=10M L=1U RB=1 RG=10 RS=1M RD=10M LAMBDA=0.011 KP=299U)
+.ENDS ONE_EDN7550B_OUTPUT_STAGE
+.SUBCKT ONE_EDN7550B_OPAMP1 SUPPLY_P SUPPLY_N GND VP VN VREF OUT PARAMS: GBW=8MEG AOL=5K FPOLE=1600; POLE FREQUENCY= GBW/AOL RCM=1E6 
++ KGCM=1E-11 LCM=15.9 RPSRR=1E6 KGPSRR=1E-11 LPSRR=1.59 VOFFSET={200U}
+RA VREF VGAIN 1E12
+GGAIN VREF VGAIN VALUE={V(VP,VN)*{AOL}/1K}; OPEN-LOOP GAIN 100K => KGGAIN= 100=100K/1K
+RP1 VGAIN VREF 1K ; VALUE IS CHOSEN 1K -> OTHER PARAMS ARE CALCULATED BASED ON THIS VALUE
+CP1 VGAIN VREF {1/(2*3.14*1K*{FPOLE})}; POLE AT FREQ POLE= 1/2PIRC
+EBUFFER INT2 VREF VALUE={V(VGAIN,VREF)}
+GOUT INT2 OUT VALUE={MIN(V(INT2,OUT)/1,200M)} ; OUTPUT RESISTANCE WHICH GIVES THE OUTPUT CURRENT LIMIT AT SHORTCIRCUIT
+G_LIMIT_UP VGAIN UP VALUE={V(VGAIN,UP)/1M*TABLE(V(VGAIN,UP),0,0,10M,0,50M,1)}
+G_LIMIT_DW DW VGAIN VALUE={V(DW,VGAIN)/1M* TABLE(V(DW,VGAIN),0,0,10M,0,50M,1)}
+E_UP UP 0 VALUE={V(SUPPLY_P,GND)- TABLE(V(SUPPLY_P,GND),0,0,2,0,3,0.3)}
+E_DW DW 0 VALUE={V(SUPPLY_N,GND)+ TABLE(V(SUPPLY_P,GND),0,0,2,0,3,0.3)}
+.MODEL ONE_EDN7550B_IDEAL_DIODE D (IS=1E-7 RS=100M)
+.ENDS ONE_EDN7550B_OPAMP1
+.SUBCKT ONE_EDN7550B_VDD_UV_DETECT VDD_UV VDD VSS TEMP
+E1 VDD_UVH 0 VALUE={TABLE(V(TEMP), -40, 4.17, 25, 4.2, 125, 4.21)}
+E2 VDD_UVL 0 VALUE={TABLE(V(TEMP), -40, 3.88, 25, 3.9, 125, 3.91)}
+X1 VDD VDD_UV_DIG VSS VDD_UVH VDD_UVL ONE_EDN7550B_STP_IDEAL_2
+X2 VDD_UV_DIG VDD_UV ONE_EDN7550B_ADV_FILTER_TIME_2 PARAMS: TIME_SET=1N
+.ENDS ONE_EDN7550B_VDD_UV_DETECT
+.SUBCKT ONE_EDN7550B_CC_EMULATOR VDD VSS TEMP OUT_GATE_DIG
+G1_VDD VDD VSS VALUE={TABLE(V(TEMP),-40,0.88M,25,0.9M,125,0.91M) * TABLE(V(VDD,VSS),4.2,0,4.5,0.866,12,1,18,1.111) *(1-V(
++ OUT_GATE_DIG)) }
+G2_VDD VDD VSS VALUE={TABLE(V(TEMP),-40,1.09M,25,1.1M,125,1.12M) * TABLE(V(VDD,VSS),4.2,0,4.5,0.818,12,1,18,1.181) * V(OUT_GATE_DIG)
++  }
+R_VDD VDD VSS 1E12
+.ENDS ONE_EDN7550B_CC_EMULATOR
+.SUBCKT ONE_EDN7550B_RS_LATCH S R Q QN
+R_Q Q 0 1E12
+R_QN QN 0 1E12
+E_Q Q 0 VALUE={ IF( V(S) > 0.5 & V(R) < 0.5,1, IF( (V(R) > 0.5 ) | TIME < 1NS, 0, IF(V(QN)>0.5,0,1)))}
+E_QN QN 0 VALUE={ IF( V(R) > 0.5 ,1, IF( (V(R) < 0.5 & V(S) > 0.5), 0, IF(V(Q)>0.5,0,1))) }
+.ENDS ONE_EDN7550B_RS_LATCH
+.SUBCKT ONE_EDN7550B_DFF_2 PREB CLRB CLK D Q QN PARAMS: P_C_DELAY=2E-9
+R_Q Q 0 1E12
+R_QN QN 0 1E12
+R1 D 0 1E9
+R2 CLK 0 1E9
+R3 CLRB 0 1E9
+R4 PREB 0 1E9
+X1 CLK CLK_DEL ONE_EDN7550B_ADV_FILTER PARAMS: P_C_DELAY={P_C_DELAY}
+E_Q Q 0 VALUE={ IF( V(PREB) <0.5 & V(CLRB) > 0.5 , 1,IF( V(PREB) > 0.5 & V(CLRB) > 0.5 & V(CLK,CLK_DEL)>0.1 & V(D) > 0.5 ,1, IF(V(
++ QN) > 0.5 ,0,1))) }
+E_QN QN 0 VALUE={IF( (V(PREB) > 0.5 & V(CLRB) < 0.5 ) | TIME <1NS,1 , IF(V(PREB) > 0.5 & V(CLRB) > 0.5 & V(CLK,CLK_DEL) > 0.1 & V(D)
++  < 0.5 , 1, IF( V(Q) > 0.5 , 0, 1))) }
+.ENDS ONE_EDN7550B_DFF_2
+.SUBCKT ONE_EDN7550B_CL_DIO C A PARAMS: P_V_BV=5 P_I_BV=1
+G_CL_DIO C A VALUE {TABLE(V(C,A) , 0,0 , {P_V_BV}*1.01,0 , {P_V_BV}*1.02,{P_I_BV} , 10*{P_V_BV}, 100*{P_I_BV} )}
+C_CL_DIO C A 10F
+R_CL_DIO C A 1E12
+.ENDS ONE_EDN7550B_CL_DIO
+.SUBCKT ONE_EDN7550B_ESD_DIO A C PARAMS: P_V_BV=5 P_I_BV=1
+G_ESD_DIO A C VALUE {TABLE(V(A,C) , 0,0 , {P_V_BV}*1.01,0 , {P_V_BV}*1.02,{P_I_BV} , 10*{P_V_BV}, 100*{P_I_BV} )}
+C_ESD_DIO A C 10F
+R_ESD_DIO A C 1E12
+.ENDS ONE_EDN7550B_ESD_DIO
+.SUBCKT ONE_EDN7550B_RC_DELAY_TEMP_10 IN OUT TEMP PARAMS: TEMP1=-40 TEMP2=25 TEMP3=150 P_TH_TPD_TEMP1=0.5 P_TH_TPD_TEMP2=0.5 
++ P_TH_TPD_TEMP3=0.5 P_R_TPD_TEMP1=1 P_R_TPD_TEMP2=1 P_R_TPD_TEMP3=1
+X_D1 IN D1 TEMP ONE_EDN7550B_RC_DELAY_TEMP_5 PARAMS: TEMP1={TEMP1} TEMP2={TEMP2} TEMP3={TEMP3} P_TH_TPD_TEMP1={P_TH_TPD_TEMP1} 
++ P_TH_TPD_TEMP2={P_TH_TPD_TEMP2} P_TH_TPD_TEMP3={P_TH_TPD_TEMP3} P_R_TPD_TEMP1={P_R_TPD_TEMP1} P_R_TPD_TEMP2={P_R_TPD_TEMP2} 
++ P_R_TPD_TEMP3={P_R_TPD_TEMP3}
+X_D2 D1 OUT TEMP ONE_EDN7550B_RC_DELAY_TEMP_5 PARAMS: TEMP1={TEMP1} TEMP2={TEMP2} TEMP3={TEMP3} P_TH_TPD_TEMP1={P_TH_TPD_TEMP1} 
++ P_TH_TPD_TEMP2={P_TH_TPD_TEMP2} P_TH_TPD_TEMP3={P_TH_TPD_TEMP3} P_R_TPD_TEMP1={P_R_TPD_TEMP1} P_R_TPD_TEMP2={P_R_TPD_TEMP2} 
++ P_R_TPD_TEMP3={P_R_TPD_TEMP3}
+.ENDS ONE_EDN7550B_RC_DELAY_TEMP_10
+.SUBCKT ONE_EDN7550B_RC_DELAY_TEMP_5 IN OUT TEMP PARAMS: TEMP1=-40 TEMP2=25 TEMP3=150 P_TH_TPD_TEMP1=0.5 P_TH_TPD_TEMP2=0.5 
++ P_TH_TPD_TEMP3=0.5 P_R_TPD_TEMP1=1 P_R_TPD_TEMP2=1 P_R_TPD_TEMP3=1
+X_D1 IN D1 TEMP ONE_EDN7550B_RC_DELAY_BASE_TEMP PARAMS: TEMP1={TEMP1} TEMP2={TEMP2} TEMP3={TEMP3} P_TH_TPD_TEMP1={P_TH_TPD_TEMP1} 
++ P_TH_TPD_TEMP2={P_TH_TPD_TEMP2} P_TH_TPD_TEMP3={P_TH_TPD_TEMP3} P_R_TPD_TEMP1={P_R_TPD_TEMP1} P_R_TPD_TEMP2={P_R_TPD_TEMP2} 
++ P_R_TPD_TEMP3={P_R_TPD_TEMP3}
+X_D2 D1 D2 TEMP ONE_EDN7550B_RC_DELAY_BASE_TEMP PARAMS: TEMP1={TEMP1} TEMP2={TEMP2} TEMP3={TEMP3} P_TH_TPD_TEMP1={P_TH_TPD_TEMP1} 
++ P_TH_TPD_TEMP2={P_TH_TPD_TEMP2} P_TH_TPD_TEMP3={P_TH_TPD_TEMP3} P_R_TPD_TEMP1={P_R_TPD_TEMP1} P_R_TPD_TEMP2={P_R_TPD_TEMP2} 
++ P_R_TPD_TEMP3={P_R_TPD_TEMP3}
+X_D3 D2 D3 TEMP ONE_EDN7550B_RC_DELAY_BASE_TEMP PARAMS: TEMP1={TEMP1} TEMP2={TEMP2} TEMP3={TEMP3} P_TH_TPD_TEMP1={P_TH_TPD_TEMP1} 
++ P_TH_TPD_TEMP2={P_TH_TPD_TEMP2} P_TH_TPD_TEMP3={P_TH_TPD_TEMP3} P_R_TPD_TEMP1={P_R_TPD_TEMP1} P_R_TPD_TEMP2={P_R_TPD_TEMP2} 
++ P_R_TPD_TEMP3={P_R_TPD_TEMP3}
+X_D4 D3 D4 TEMP ONE_EDN7550B_RC_DELAY_BASE_TEMP PARAMS: TEMP1={TEMP1} TEMP2={TEMP2} TEMP3={TEMP3} P_TH_TPD_TEMP1={P_TH_TPD_TEMP1} 
++ P_TH_TPD_TEMP2={P_TH_TPD_TEMP2} P_TH_TPD_TEMP3={P_TH_TPD_TEMP3} P_R_TPD_TEMP1={P_R_TPD_TEMP1} P_R_TPD_TEMP2={P_R_TPD_TEMP2} 
++ P_R_TPD_TEMP3={P_R_TPD_TEMP3}
+X_D5 D4 OUT TEMP ONE_EDN7550B_RC_DELAY_BASE_TEMP PARAMS: TEMP1={TEMP1} TEMP2={TEMP2} TEMP3={TEMP3} P_TH_TPD_TEMP1={P_TH_TPD_TEMP1} 
++ P_TH_TPD_TEMP2={P_TH_TPD_TEMP2} P_TH_TPD_TEMP3={P_TH_TPD_TEMP3} P_R_TPD_TEMP1={P_R_TPD_TEMP1} P_R_TPD_TEMP2={P_R_TPD_TEMP2} 
++ P_R_TPD_TEMP3={P_R_TPD_TEMP3}
+.ENDS ONE_EDN7550B_RC_DELAY_TEMP_5
+.SUBCKT ONE_EDN7550B_RC_DELAY_BASE_TEMP IN OUT TEMP PARAMS: TEMP1=-40 TEMP2=25 TEMP3=150 P_TH_TPD_TEMP1=0.5 P_TH_TPD_TEMP2=0.5 
++ P_TH_TPD_TEMP3=0.5 P_R_TPD_TEMP1=1 P_R_TPD_TEMP2=1 P_R_TPD_TEMP3=1
+E_TH_TPD TH_TPD 0 VALUE={TABLE(V(TEMP),{TEMP1},{P_TH_TPD_TEMP1}, {TEMP2}, {P_TH_TPD_TEMP2}, {TEMP3}, {P_TH_TPD_TEMP3}) }
+E_R_TPD R_TPD 0 VALUE={TABLE(V(TEMP),{TEMP1},{P_R_TPD_TEMP1}, {TEMP2}, {P_R_TPD_TEMP2}, {TEMP3}, {P_R_TPD_TEMP3})}
+G_R_DELAY IN IN_DEL VALUE={V(IN,IN_DEL)/V(R_TPD)}
+R_X IN IN_DEL 1E12
+C_DELAY IN_DEL 0 1N
+E_DELAY OUT 0 VALUE={IF( V(IN_DEL) > V(TH_TPD) , 1.0,0.0 )}
+.ENDS ONE_EDN7550B_RC_DELAY_BASE_TEMP
+.SUBCKT ONE_EDN7550B_ADV_FILTER IN OUT PARAMS: P_C_DELAY = 60E-9 P_TH_TPD = 0.5
+R_RISE IN IN_DEL 1
+C_RISE IN_DEL 0 {P_C_DELAY}
+X_CMP IN_DEL OUT 0 ONE_EDN7550B_STP_IDEAL PARAMS: P_TH_UP=0.999 P_TH_DW=0.001
+.ENDS ONE_EDN7550B_ADV_FILTER
+.SUBCKT ONE_EDN7550B_ADV_FILTER_2 IN OUT PARAMS: P_C_DELAY = 60E-9 P_TH_TPD = 0.5
+R_RISE IN IN_DEL 1
+C_RISE IN_DEL 0 {P_C_DELAY}
+X_CMP IN_DEL OUT 0 ONE_EDN7550B_STP_IDEAL PARAMS: P_TH_UP=0.999 P_TH_DW=0.14616780031
+.ENDS ONE_EDN7550B_ADV_FILTER_2
+.SUBCKT ONE_EDN7550B_STP_IDEAL IN OUT GND PARAMS: P_TH_UP=0.9 P_TH_DW=0.1
+E_OUTP OUTP 0 VALUE={IF( V(IN,GND)>={P_TH_UP} | V(OUTN)<0.5 , 1,0 )}
+E_OUTN OUTN 0 VALUE={IF( V(IN,GND)<={P_TH_DW} | V(OUTP)<0.5 , 1,0 )}
+E_OUT OUT 0 VALUE={V(OUTP)}
+.ENDS ONE_EDN7550B_STP_IDEAL
+.SUBCKT ONE_EDN7550B_STP_IDEAL_2 IN OUT GND UP DW
+E_OUTP OUTP 0 VALUE={IF( V(IN,GND)>=V(UP) | V(OUTN)<0.5 , 1,0 )}
+E_OUTN OUTN 0 VALUE={IF( V(IN,GND)<=V(DW) | V(OUTP)<0.5 , 1,0 )}
+E_OUT OUT 0 VALUE={V(OUTP)}
+.ENDS ONE_EDN7550B_STP_IDEAL_2
+.SUBCKT ONE_EDN7550B_STN_IDEAL IN OUT GND PARAMS: P_TH_UP=0.9 P_TH_DW=0.1
+E_OUTP OUTP 0 VALUE={IF( V(IN,GND)>={P_TH_UP} | V(OUTN)<0.5 , 1,0 )}
+E_OUTN OUTN 0 VALUE={IF( V(IN,GND)<={P_TH_DW} | V(OUTP)<0.5 , 1,0 )}
+E_OUT OUT 0 VALUE={V(OUTN)}
+.ENDS ONE_EDN7550B_STN_IDEAL
+.SUBCKT ONE_EDN7550B_TIMING_FILTER_ON IN OUT TIME
+R1 IN 0 1E9
+R2 OUT 0 1E9
+G_RISE IN IN_DEL VALUE={V(IN,IN_DEL)/ MAX((V(TIME)/ABS(LOG(0.001))/1E-9),0.1)}
+C_RISE IN_DEL 0 1N
+R_3 IN_DEL 0 1E12
+GA IN_DEL 0 VALUE={V(IN_DEL,0)/1M* IF( V(IN) < 0.5,1,0)}
+X_CMP IN_DEL OUT 0 ONE_EDN7550B_STP_IDEAL PARAMS: P_TH_UP=0.999 P_TH_DW=0.001
+.ENDS ONE_EDN7550B_TIMING_FILTER_ON
+.SUBCKT ONE_EDN7550B_TIMING_FILTER_OFF IN OUT TIME
+R1 IN 0 1E9
+R2 OUT 0 1E9
+G_RISE IN IN_DEL VALUE={V(IN,IN_DEL)/ MAX((V(TIME)/ABS(LOG(0.001))/1E-9),0.1)}
+C_RISE IN_DEL 0 1N
+R_3 IN_DEL 0 1E12
+E_SUP SUP 0 VALUE={1}
+GA SUP IN_DEL VALUE={V(SUP, IN_DEL)/1M* IF( V(IN) > 0.5,1,0)}
+X_CMP IN_DEL OUT 0 ONE_EDN7550B_STP_IDEAL PARAMS: P_TH_UP=0.999 P_TH_DW=0.001
+.ENDS ONE_EDN7550B_TIMING_FILTER_OFF
+.SUBCKT ONE_EDN7550B_ADV_FILTER_TIME IN OUT TIME
+R1 IN 0 1E9
+R2 OUT 0 1E9
+G_RISE IN IN_DEL VALUE={V(IN,IN_DEL)/ MAX((V(TIME)/ABS(LOG(0.001))/1E-9),0.1)}
+C_RISE IN_DEL 0 1N
+R_3 IN_DEL 0 1E12
+X_CMP IN_DEL OUT 0 ONE_EDN7550B_STP_IDEAL PARAMS: P_TH_UP=0.999 P_TH_DW=0.001
+.ENDS ONE_EDN7550B_ADV_FILTER_TIME
+.SUBCKT ONE_EDN7550B_ADV_FILTER_TIME_2 IN OUT PARAMS: TIME_SET=1N
+R1 IN 0 1E9
+R2 OUT 0 1E9
+G_RISE IN IN_DEL VALUE={V(IN,IN_DEL)/ MAX(({TIME_SET}/ABS(LOG(0.001))/1E-9),0.1)}
+C_RISE IN_DEL 0 1N
+R_3 IN_DEL 0 1E12
+X_CMP IN_DEL OUT 0 ONE_EDN7550B_STP_IDEAL PARAMS: P_TH_UP=0.999 P_TH_DW=0.001
+.ENDS ONE_EDN7550B_ADV_FILTER_TIME_2
+.SUBCKT ONE_EDN7550B_THERMAL_NETS TAMB TJ TC POW PARAMS: THERMAL_MODEL=0
+G_THERM_POW1 0 TJ VALUE={IF ( TIME>50NS ,V(POW),0.0)}
+R_TH1 TJ 0 1G
+X_TH_1 TJ TC TAMB ONE_EDN7550B_PG_DSO_8_60
+.ENDS ONE_EDN7550B_THERMAL_NETS
+.SUBCKT ONE_EDN7550B_PG_DSO_8_60 J C A
+RJC J C 79.9
+RCA C A 85.2
+CJC J C 10P
+CCA C A 10P
+CTCTOP C A 377U
+CTJ J A 190.70U
+.ENDS ONE_EDN7550B_PG_DSO_8_60
