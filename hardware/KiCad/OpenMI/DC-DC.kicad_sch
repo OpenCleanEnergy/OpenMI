@@ -1142,7 +1142,7 @@
   )
   (text "TODO:\nDiscuss about these gate resistor values\nand create part for it in KiCadDbLib"
     (at 312.42 62.23 0)
-    (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
+    (effects (font (size 1.27 1.27) (thickness 0.254) bold (color 255 0 0 1)) (justify left bottom))
     (uuid 1aab383b-33f8-4ff8-ae36-5d6d1e0ffcd9)
   )
   (text "Gate resistor recommendations in AN5583:\nTurn on resistor: 2.2 Ω - 4.7 Ω\nTurn of resistor: < 1 Ω\nCompare with LTSPice results of\ndc-dc-interleaved-boost-converter"
@@ -1233,7 +1233,7 @@
   )
   (text "TODO:\nDiscuss about these gate resistor values\nand create part for it in KiCadDbLib"
     (at 312.42 106.68 0)
-    (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
+    (effects (font (size 1.27 1.27) (thickness 0.254) bold (color 255 0 0 1)) (justify left bottom))
     (uuid 9e35e04b-be37-4e10-8575-2c37ba39725d)
   )
   (text "To compensate for other effects (like temperature, aging ...)\nand including a little bit of safety margin, we choose:"
@@ -1266,7 +1266,7 @@
     (effects (font (size 1.27 1.27) italic) (justify left bottom) (href "https://www.mouser.de/datasheet/2/196/Infineon_2EDR8258X_DataSheet_v01_03_EN-3179900.pdf"))
     (uuid dfddc2a7-7425-4042-bd99-0626adbd9e96)
   )
-  (text "With a 250 kHz PWM signal one period is\n  T_{PWM} = 1 / 250 kHz = 4 us\nWith a 9 bit resolution the smallest possible pulse period becomes:\n  T_{min} = 1 / (250 kHz * 2^{9}) = 7.81 ns\nBecause the duty cycle will only vary between 0.5 < D < 0.75, the period T_{on} will vary between\n  0.5 * T_{PWM} < T_{on} < 0.75 * T_{PWM}\n  2 us < T_{on} < 3 us\nAssuming we want the rise and fall times to be 1% of the period time, we get\n  t_{rise} = 2 us * 1/100 = 2 ns\nThe GAN7R0-150LBEZ has total gate-source charge of \n  Q_{GS} = 1.7 nC\nTo compute the time we need to charge Q_{GS} we can compute\n  t_{charge_QGS} = t_{rise_driver} + Q_{GS} / I_{source_driver}\nTo compute the time we need to remove charge from the gate:\n  t_{discharge_QGS} = t_{rise_driver} + Q_{GS} / I_{sink_driver}\n"
+  (text "With a 250 kHz PWM signal one period is\n  T_{PWM} = 1 / 250 kHz = 4 us\nWith a 9 bit resolution the smallest possible pulse period becomes:\n  T_{min} = 1 / (250 kHz * 2^{9}) = 7.81 ns\nBecause the duty cycle will only vary between 0.5 < D < 0.75, the period T_{on} will vary between\n  0.5 * T_{PWM} < T_{on} < 0.75 * T_{PWM}\n  2 us < T_{on} < 3 us\n\nThe GAN7R0-150LBEZ has total gate-source charge of \n  Q_{GS} = 1.7 nC\nTo compute the time we need to charge Q_{GS} we can compute\n  t_{charge_QGS} = t_{rise_driver} + Q_{GS} / I_{source_driver}\nTo compute the time we need to remove charge from the gate:\n  t_{discharge_QGS} = t_{rise_driver} + Q_{GS} / I_{sink_driver}\n"
     (at 142.24 57.15 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e6505510-ce34-41fa-97a0-789127b7e5ec)
