@@ -1109,6 +1109,11 @@
     (fill (type none))
     (uuid a0037ee6-a1ae-4c09-9c71-0028fefafff8)
   )
+  (rectangle (start 138.43 163.83) (end 299.72 242.57)
+    (stroke (width 0) (type default))
+    (fill (type none))
+    (uuid e5f05352-4bfa-49d4-8aa0-aef51a2c077b)
+  )
   (rectangle (start 138.43 15.875) (end 358.14 161.29)
     (stroke (width 0) (type default))
     (fill (type none))
@@ -1183,6 +1188,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 64d7af3d-6d5e-4c47-91f6-22f4beea17e9)
   )
+  (text "TODO:\nClamping Diodes to make sure\nGaN FET limit (currently 150V) is met"
+    (at 320.04 151.13 0)
+    (effects (font (size 1.27 1.27) bold (color 255 0 0 1)) (justify left bottom))
+    (uuid 65eb622c-e133-4203-bc9a-23b4429c4dab)
+  )
   (text "The GAN7R0-150LBEZ has a input capacitance of \n C_{iss} = 865 pF\nThe gate driver 1EDN7550B has rise times of\n t_{rise_1.8nF} = 6.5 ns\n t_{rise_200pF} = 1 ns\nSo using the GAN7R0-150LBEZ with the 1EDN7550B we can roughly asume:\n t_{rise_865pf} = (6.5 ns - 1 ns) / (1800 pF - 200 pF) * 865 pF  \n            = 2.97 ns\nThis results in\n  t_{charge_QGS} = 2.97 ns + 1.7 nC / 4 A  = 3.395 ns,\nwhich is\n  t_{charge_QGS} / T_{on_minimal} = 3.395 ns / 2000 ns ≈ 0.0017,\nso the rise time is at maximum 0.17% of the period time.\nThe results for the fall time should be roughly similar.\n\nSimulating this in LTSpice with\n  R_{Gate_SNK} = 2.2 Ω\n  R_{Gate_SRC} = 0.5 Ω\nresults in the following times (measuring V_{GS} from 10% to 90%)\n  t_{charge_QGS} = 8.44 ns     → 0.42% of period time\n  t_{discharge_QGS} = 2.59 ns   → 0.13% of period time"
     (at 142.24 133.35 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -1248,6 +1258,10 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid ac8b5dc0-857c-460d-8c45-fe449c97bc0a)
   )
+  (text "Transformer" (at 140.97 168.91 0)
+    (effects (font (size 2 2) bold) (justify left bottom))
+    (uuid c92c1d56-1ead-4b75-83bd-50d7b9ae25ee)
+  )
   (text "C_{in, nominal} ≥ 2 * C_{boost}\n            ≥ 1.4 uF\n"
     (at 22.86 40.005 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -1267,6 +1281,16 @@
     (at 18.415 35.56 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e6fa63fe-9ce3-4762-b339-077b6a5e18cd)
+  )
+  (text "The inductors (= boost converter) create a rise of voltage of\n  V_{out} = V_{in} * 1 / (1 - D),\nwhere 0.5 < D ≤ 0.7.\nTherefore, if we consider V_{in,min} = 30 V.\n  V_{out,V_{in,min}} = 30 V / (1 - 0.5) = 60 V  \n  V_{out,V_{in,min}} = 30 V / (1 - 0.7) = 100 V\n\nFor the ΔV = 40V (might be changed to 50V) => V_{bus,min} = 360V; V_{bus,max} = 400V\n\nIf we take the same transformer specifications as in AN4070:\n  N_{2} / N_{1} = V_{2} / V_{1} = 2.6\n  V_{2} = V_{bus}\n\n  -> V_{1,max} = V_{bus,max} / 2.6 = 400 V / 2.6 = 153.85 V\n  -> V_{1,min} = V_{bus,min} / 2.6 = 360 V / 2.6 = 138.46 V "
+    (at 143.51 201.93 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid fb692709-9aaf-48bf-a687-e908b11776a0)
+  )
+  (text "TODO:\nDo we use voltage doubler circuit consisting of 2 capacitors? If not, we probably have turn ratio of about ≈ 5\nDouble check equation 7 from AN4070: Why 0.2 instead of 0.7? \n"
+    (at 143.51 218.44 0)
+    (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
+    (uuid fdc1115c-7202-48d6-8102-f6e2e6170179)
   )
 
   (label "PWM_{GAN_2}-" (at 266.7 95.25 0) (fields_autoplaced)
