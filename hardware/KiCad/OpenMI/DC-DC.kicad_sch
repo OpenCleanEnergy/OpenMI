@@ -1497,7 +1497,7 @@
     (effects (font (size 1.27 1.27) italic) (justify left bottom) (href "https://www.infineon.com/dgdl/Infineon-DS_1EDN71X6U_2.0-DataSheet-v01_00-EN.pdf?fileId=8ac78c8c82af846e0182c6ff82134ec0"))
     (uuid 196bb455-752e-49e7-8559-624a901b1507)
   )
-  (text "Gate resistor recommendations in AN5583:\nTurn on resistor: 2.2 Ω - 4.7 Ω\nTurn of resistor: < 1 Ω\nCompare with LTSPice results of\ndc-dc-interleaved-boost-converter"
+  (text "Turn on resistor: 2.2 Ω - 4.7 Ω\nTurn of resistor: < 1 Ω\nCompare with LTSPice results of\ndc-dc-interleaved-boost-converter"
     (at 321.31 30.48 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1c600f07-2715-4be0-b74b-371460510ee5)
@@ -1516,7 +1516,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 38319e57-0f77-4994-b7a7-fd63726eb338)
   )
-  (text "GaN FET Driver" (at 255.27 22.86 0)
+  (text "GaN FET Driver" (at 255.27 21.59 0)
     (effects (font (size 1.27 1.27) bold) (justify left bottom))
     (uuid 3854f6f5-5634-4ecc-abaf-d17c5bf69056)
   )
@@ -1616,6 +1616,10 @@
   (text "Transformer" (at 140.97 168.91 0)
     (effects (font (size 2 2) bold) (justify left bottom))
     (uuid c92c1d56-1ead-4b75-83bd-50d7b9ae25ee)
+  )
+  (text "Gate resistor recommendations in AN5583:" (at 321.31 21.59 0)
+    (effects (font (size 1.27 1.27) (thickness 0.254) bold italic) (justify left bottom) (href "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjewsbPm4eAAxWbQ6QEHfCnC8wQFnoECBAQAQ&url=https%3A%2F%2Fwww.st.com%2Fresource%2Fen%2Fapplication_note%2Fan5583-emode-gan-technology-tips-for-best-driving-stmicroelectronics.pdf&usg=AOvVaw1633zDZBu1lhtb6NTYWrBm&opi=89978449"))
+    (uuid ccd7569a-9a9e-4b76-95c6-b2fe95c45e2a)
   )
   (text "C_{in, nominal} ≥ 2 * C_{boost}\n            ≥ 1.4 uF\n"
     (at 22.86 40.005 0)
