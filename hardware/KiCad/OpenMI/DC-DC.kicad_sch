@@ -1648,7 +1648,7 @@
     (effects (font (size 1.27 1.27) bold) (justify left bottom))
     (uuid 3854f6f5-5634-4ecc-abaf-d17c5bf69056)
   )
-  (text "P_{gate} = C_{iss} * V_{G}^{2} * f_{sw}\n        = 865 pF * 5V * 250 kHz\n        = 5.41 mW"
+  (text "P_{gate} = C_{iss} * V_{G}^{2} * f_{sw}\n        = 865 pF * (5V)^{2} * 250 kHz\n        = 5.41 mW"
     (at 321.31 39.37 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 3fca7243-a77d-419d-804e-39a745c1fe7a)
