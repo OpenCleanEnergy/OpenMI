@@ -1621,6 +1621,11 @@
     (effects (font (size 2 2) bold) (justify left bottom))
     (uuid 0defb69c-2b4b-420b-89d7-16ebf6f8ed2f)
   )
+  (text "TODO: https://www.we-online.com/en/components/products/WE-HCF"
+    (at 66.04 102.87 0)
+    (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
+    (uuid 10b264da-417a-4222-8d8e-71377e1c3ac0)
+  )
   (text "1EDN7116U, 2A, 3ns, 200V" (at 142.24 146.05 0)
     (effects (font (size 1.27 1.27) italic) (justify left bottom) (href "https://www.infineon.com/dgdl/Infineon-DS_1EDN71X6U_2.0-DataSheet-v01_00-EN.pdf?fileId=8ac78c8c82af846e0182c6ff82134ec0"))
     (uuid 196bb455-752e-49e7-8559-624a901b1507)
