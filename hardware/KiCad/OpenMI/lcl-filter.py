@@ -21,13 +21,12 @@ f_g = 50
 f_sw = 124_000
 P_r = 400
 V_bus = 400
-TDD = 3
 
 # target grid ripple current (typ. 2%)
 deltaI_grid = 0.02
 
 # inverter-side inductor ripple current (typ. 10%)
-deltaI_inv = 0.10
+deltaI_inv = 0.50
 
 # maximum current
 I_max = sqrt(2) * P_r / V_g
@@ -44,7 +43,6 @@ print(f"  Grid frequency:             {f_g} Hz")
 print(f"  Switching frequency:        {f_sw // 1000} kHz")
 print(f"  Rated power:                {P_r} W")
 print(f"  Bus voltage:                {V_bus} V")
-print(f"  Target TDD:                 {TDD} %")
 
 print("\nCalculation:")
 print(f"  grid ripple current (ΔIg):  {deltaI_grid*100}%")
@@ -65,6 +63,7 @@ C_b = 1 / (Z_b * w_g)
 C_f = x * C_b
 
 # inverter-side filter inductance
+# by [1], [2]
 L_i = V_bus / (6 * f_sw * I_max * deltaI_inv)
 
 # grid-side inductance
@@ -74,43 +73,15 @@ L_g = (1 + sqrt(1 / ka**2)) / (C_f * w_sw**2)
 L_max = 0.1 * Z_b / w_g
 L_g_max = L_max - L_i
 # by [3] with r = L_i / (L_i + L_g) = 0.75
-L_g_r = (1 - 0.75) / 0.75 * L_i
+L_g_r = L_i * (1 / 0.75 - 1)
 
 # resonant frequency
 f_res = 1 / (2 * pi) * sqrt((L_i + L_g_r) / (L_i * L_g_r * C_f))
 w_res = 2 * pi * f_res
 valid = (f_res > 10 * f_g) & (f_res < 0.5 * f_sw)
 
-# inductance ratio [3]
-r = L_i / (L_i + L_g)
-
 # damping resistor
 R_f = 1 / (3 * w_res * C_f)
-
-# From [3] with wolfram alpha
-r = 0.75
-arg = "solve"
-arg += f" T = {TDD} and"
-arg += f" w = 2 * pi * {f_sw} and"
-arg += f" C = {C_f:.4} and"
-arg += f" r = {r} and"
-arg += " sqrt(L/C) = R and"
-arg += " (1 / (r * (1-r) * L^2 * C)) / (w(w^2 - 1 / (r * (1-r) * L * C)))"
-arg += " = T / (50 * R)"
-arg += " for L"
-href = "https://www.wolframalpha.com/input/?i=" + urllib.parse.quote_plus(arg)
-
-print("\nWolfram Alpha:")
-print(href)
-print("\nPlease paste the results from the link above:")
-L_3 = float(input("  L = "))
-L_i_3 = L_3 * r
-L_g_3 = L_3 - L_i_3
-# resonant frequency
-f_res_3 = 1 / (2 * pi) * sqrt((L_i_3 + L_g_3) / (L_i_3 * L_g_3 * C_f))
-valid_3 = (f_res_3 > 10 * f_g) & (f_res_3 < 0.5 * f_sw)
-# damping resistor
-R_f_3 = 1 / (3 * 2 * pi * f_res * C_f)
 
 # print results
 print("\nResults [1], [2], [3]:")
@@ -124,12 +95,3 @@ print(
     f"  Resonant frequency:         {f_res/1000:.6} kHz ({'ok' if valid else 'out of range'})"
 )
 print(f"  Damping resistor:           {R_f:.6} Ohm")
-
-print("\nResults [3]:")
-print(f"  Filter capacitance:         {C_f*1e6:.6} uF")
-print(f"  Inverter-side inductance:   {L_i_3*1e6:.6} uH")
-print(f"  Grid-side inductance:       {L_g_3*1e6:.6} uH")
-print(
-    f"  Resonant frequency:         {f_res_3/1000:.6} kHz ({'ok' if valid_3 else 'out of range'})"
-)
-print(f"  Damping resistor:           {R_f_3:.6} Ohm")
