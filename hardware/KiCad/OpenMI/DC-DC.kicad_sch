@@ -1769,13 +1769,13 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e6fa63fe-9ce3-4762-b339-077b6a5e18cd)
   )
-  (text "The inductors (= boost converter) create a rise of voltage of\n  V_{out} = V_{in} * 1 / (1 - D),\nwhere 0.5 < D ≤ 0.7.\nTherefore, if we consider V_{in,min} = 30 V.\n  V_{out,V_{in,min}} = 30 V / (1 - 0.5) = 60 V  \n  V_{out,V_{in,min}} = 30 V / (1 - 0.7) = 100 V\n\nFor the ΔV = 40V (might be changed to 50V) => V_{bus,min} = 360V; V_{bus,max} = 400V\n\nIf we take the same transformer specifications as in AN4070:\n  N_{2} / N_{1} = V_{2} / V_{1} = 2.6\n  V_{2} = V_{bus}\n\n  -> V_{1,max} = V_{bus,max} / 2.6 = 400 V / 2.6 = 153.85 V\n  -> V_{1,min} = V_{bus,min} / 2.6 = 360 V / 2.6 = 138.46 V "
-    (at 143.51 201.93 0)
+  (text "The inductors (= boost converter) create a rise of voltage of\n  V_{out_boost} = V_{in} * 1 / (1 - D),\nwhere 0.5 < D ≤ 0.7.\nIf we take the equation for a transformer and put in the boost converter equation we get\n  N_{2} / N_{1} = V_{2} / V_{1} \n             = V_{Bus} / V_{out_boost} \n             = V_{Bus} * (1 - D) / V_{in}\nIf we assume V_{Bus} = 380 V, ΔV = 40 V (so V_{bus,min} = 360 V; V_{bus,max} = 400 V), V_{in} = 30 V we get\n  N_{2} / N_{1} = 380 V * (1 - D) / 30 V\nFor D = 0.5:\n   N_{2} / N_{1} = 6.33\nFor D = 0.7:\n   N_{2} / N_{1} = 3.80"
+    (at 142.24 196.85 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid fb692709-9aaf-48bf-a687-e908b11776a0)
   )
-  (text "TODO:\nDo we use voltage doubler circuit consisting of 2 capacitors? If not, we probably have turn ratio of about ≈ 5\nDouble check equation 7 from AN4070: Why 0.2 instead of 0.7? \n"
-    (at 143.51 218.44 0)
+  (text "TODO:\nWhat turning ratio would you choose from this?\n"
+    (at 142.24 203.2 0)
     (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
     (uuid fdc1115c-7202-48d6-8102-f6e2e6170179)
   )
