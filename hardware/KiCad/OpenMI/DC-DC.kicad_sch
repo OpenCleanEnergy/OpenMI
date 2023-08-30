@@ -1800,6 +1800,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid fb692709-9aaf-48bf-a687-e908b11776a0)
   )
+  (text "Onsemi, FFSD0665B, 0.909€@2500pcs, Vf=1.38V, Ir=40uA, If=6A, Vrrm=650V, package=DPAK-3"
+    (at 261.62 228.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://www.mouser.de/ProductDetail/onsemi/FFSD0665B?qs=d0WKAl%252BL4KaoIw7wINi9oQ%3D%3D"))
+    (uuid fcc4a44f-b741-4437-86f7-07477c1e6ea5)
+  )
   (text "TODO:\nWhat turning ratio would you choose from this?\n"
     (at 142.24 203.2 0)
     (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
