@@ -1800,8 +1800,8 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e6fa63fe-9ce3-4762-b339-077b6a5e18cd)
   )
-  (text "The inductors (= boost converter) create a rise of voltage of\n  V_{out_boost} = V_{in} * 1 / (1 - D),\nwhere 0.5 < D ≤ 0.7.\nIf we take the equation for a transformer and put in the boost converter equation we get\n  N_{2} / N_{1} = V_{2} / V_{1} \n             = V_{Bus} / V_{out_boost} \n             = V_{Bus} * (1 - D) / V_{in}\nIf we assume V_{Bus} = 380 V, ΔV = 40 V (so V_{bus,min} = 360 V; V_{bus,max} = 400 V), V_{in} = 30 V we get\n  N_{2} / N_{1} = 380 V * (1 - D) / 30 V\nFor D = 0.5:\n   N_{2} / N_{1} = 6.33\nFor D = 0.7:\n   N_{2} / N_{1} = 3.80"
-    (at 142.24 196.85 0)
+  (text "The inductors (= boost converter) create a rise of voltage of\n  V_{out_boost} = V_{in} * 1 / (1 - D),\nwhere 0.5 < D ≤ 0.7.\nIf we take the equation for a transformer and put in the boost converter equation we get\n  N_{2} / N_{1} = V_{2} / V_{1} \n             = V_{Bus} / V_{out_boost} \n             = V_{Bus} * (1 - D) / V_{in}\nIf we assume V_{Bus} = 380 V, ΔV = 40 V (so V_{bus,min} = 360 V; V_{bus,max} = 400 V), V_{in} = 30 V we get\n  N_{2} / N_{1} = 380 V * (1 - D) / 30 V\nFor D = 0.5:\n   N_{2} / N_{1} = 6.33\nFor D = 0.7:\n   N_{2} / N_{1} = 3.80\n\nFor V_{Bus} = 425 V, ΔV = 50 V (so V_{bus,min} = 400 V; V_{bus,max} = 450 V):\nFor D = 0.5:\n   N_{2} / N_{1} = 425 V * (1 - 0.5) / 30 V = 7.08\nFor D = 0.7:\n   N_{2} / N_{1} = 425 V * (1 - 0.7) / 30 V = 4.25"
+    (at 142.24 209.55 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid fb692709-9aaf-48bf-a687-e908b11776a0)
   )
@@ -1810,10 +1810,10 @@
     (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://www.mouser.de/ProductDetail/onsemi/FFSD0665B?qs=d0WKAl%252BL4KaoIw7wINi9oQ%3D%3D"))
     (uuid fcc4a44f-b741-4437-86f7-07477c1e6ea5)
   )
-  (text "TODO:\nWhat turning ratio would you choose from this?\n"
-    (at 142.24 203.2 0)
+  (text "TODO:\nIf we consider V_{bus,max} = 450 V and V_{in_max} = 60 V:\nFor D = 0.5:\n   N_{2} / N_{1} = 450 V * (1 - 0.5) / 60 V = 3.75\nIf we allow V_{in} = 60 V and we can't go lower then D = 0.5,\nhow do we make sure V_{bus,max} stays below 450 V?\nWe couldn't go higher then 3.75 with the turns ratio?"
+    (at 142.24 226.06 0)
     (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
-    (uuid fdc1115c-7202-48d6-8102-f6e2e6170179)
+    (uuid ffd7c7fd-f7b0-434c-ab48-492e7c5420b8)
   )
 
   (label "PWM_{GAN_2}-" (at 266.7 95.25 0) (fields_autoplaced)
