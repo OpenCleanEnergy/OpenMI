@@ -1649,6 +1649,11 @@
     (effects (font (size 1.27 1.27) italic) (justify left bottom) (href "https://www.infineon.com/dgdl/Infineon-EiceDRIVER_1EDN_TDI_1EDNx550-ApplicationNotes-v02_00-EN.pdf?fileId=5546d462636cc8fb016387e66c73160f"))
     (uuid 28981080-ca63-4652-8060-a5b75fcdcf9a)
   )
+  (text "TODO:\nThe chosen inductors current capability is\nrated for 100 kHz. As we are targeting for\na frequency of 250 kHz the current limit\nwill be lower due to the skin effect which\nshould be consideredin the next iteration."
+    (at 92.71 138.43 0)
+    (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
+    (uuid 2fdc39c3-66ec-4e4f-bab8-2e2a24a36490)
+  )
   (text "Infineon, IDD03SG60CXTMA2, 0,815€@2500pcs, Vf=2.1V, Ir=230nA, If=3A, Vrrm=600V, package=TO-252-3"
     (at 261.62 226.06 0)
     (effects (font (size 1.27 1.27)) (justify left bottom) (href "https://www.mouser.de/ProductDetail/Infineon-Technologies/IDD03SG60CXTMA2?qs=HXFqYaX1Q2z3Lp%2F2gKkXfw%3D%3D"))
