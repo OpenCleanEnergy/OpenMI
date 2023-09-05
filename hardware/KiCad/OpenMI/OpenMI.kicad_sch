@@ -74,9 +74,13 @@
     (property "Field2" "" (at 185.42 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "VGRID_{SENS}" output (at 204.47 99.06 0)
+    (pin "VGRID_{SENS2}" output (at 204.47 99.06 0)
       (effects (font (size 1.27 1.27)) (justify right))
-      (uuid d7740f4d-66be-42c4-9943-701fd80144c6)
+      (uuid d3dc3323-c981-48bf-bc69-a285369c3a20)
+    )
+    (pin "VGRID_{SENS1}" output (at 204.47 96.52 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid 72c6e8f3-cc12-42b0-a47f-9e310c441129)
     )
     (instances
       (project "OpenMI"
