@@ -76,8 +76,8 @@ L_g_max = L_max - L_i
 L_g_r = L_i * (1 / 0.75 - 1)
 
 # resonant frequency
-f_res = 1 / (2 * pi) * sqrt((L_i + L_g_r) / (L_i * L_g_r * C_f))
-w_res = 2 * pi * f_res
+w_res = sqrt((L_i + L_g_r) / (L_i * L_g_r * C_f))
+f_res = w_res / (2 * pi)
 valid = (f_res > 10 * f_g) & (f_res < 0.5 * f_sw)
 
 # damping resistor
@@ -91,6 +91,27 @@ print(f"  Grid-side inductance:")
 print(f"    [1] ka = {ka:.3}:             {L_g*1e6:.6} uH")
 print(f"    [2] max:                  {L_g_max*1e3:.6} mH")
 print(f"    [3] r = 0.75:             {L_g_r*1e6:.6} uH")
+print(
+    f"  Resonant frequency:         {f_res/1000:.6} kHz ({'ok' if valid else 'out of range'})"
+)
+print(f"  Damping resistor:           {R_f:.6} Ohm")
+
+# actual values
+L_i = 600e-6
+L_g_r = 120e-6
+C_f = 1e-6
+# resonant frequency
+w_res = sqrt((L_i + L_g_r) / (L_i * L_g_r * C_f))
+f_res = w_res / (2 * pi)
+valid = (f_res > 10 * f_g) & (f_res < 0.5 * f_sw)
+
+# damping resistor
+R_f = 1 / (3 * w_res * C_f)
+# print results
+print("\nActual values:")
+print(f"  Filter capacitance:         {C_f*1e6:.6} uF")
+print(f"  Inverter-side inductance:   {L_i*1e6:.6} uH")
+print(f"  Grid-side inductance:       {L_g_r*1e6:.6} uH")
 print(
     f"  Resonant frequency:         {f_res/1000:.6} kHz ({'ok' if valid else 'out of range'})"
 )
