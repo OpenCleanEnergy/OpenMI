@@ -2600,7 +2600,7 @@
     (effects (font (size 2 2) (thickness 0.4) bold) (justify left bottom))
     (uuid 9a2ea303-e33d-4345-8ae2-f73d9ed18c5b)
   )
-  (text "P_{0} = 400W\nf = 50Hz\nV_{bus} = 380V\nΔV = 40V => V_{bus,min} = 360V; V_{bus,max} = 400V\nC = P_{0} / (2πf * V_{bus}* ΔV) = 83.77uF"
+  (text "P_{0} = 400W\nf = 50Hz\nV_{bus} = 425V\nΔV = 50V => V_{bus,min} = 400V; V_{bus,max} = 450V\nC_{min} = P_{0} / (2πf * V_{bus}* ΔV) = 59.92uF"
     (at 17.78 31.75 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a14c3800-5c6f-47cb-b78f-8aae57b76a79)
@@ -2622,11 +2622,6 @@
   (text "LCL-Filter" (at 165.1 88.9 0)
     (effects (font (size 2 2) bold) (justify left bottom))
     (uuid c0ff0cdd-2192-4264-a272-79533079107e)
-  )
-  (text "To do:\n- enough capacity?\n- V_{bus} = 400V; ΔV = 50V?\n- V_{bus} = 390V; ΔV = 50V?"
-    (at 62.23 25.4 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid d4c17849-8f7f-4da6-975b-16efa3c1abec)
   )
   (text "Reference: \ncalculations/lcl-filter.py" (at 165.1 124.46 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
