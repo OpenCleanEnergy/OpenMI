@@ -5,7 +5,7 @@ WINDOW 0 0 -72 Bottom 2
 WINDOW 3 0 72 Top 2
 SYMATTR Prefix X
 SYMATTR Value 1EDN7550B
-SYMATTR ModelFile C:\Users\jarib\Documents\GitHub\OpenMI\simulation\dc-dc-interleaved-boost-converter\1EDN7550B.lib
+SYMATTR ModelFile 1EDN7550B.lib
 PIN -96 -48 LEFT 8
 PINATTR PinName IN+
 PINATTR SpiceOrder 1
