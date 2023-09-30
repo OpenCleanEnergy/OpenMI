@@ -7,6 +7,26 @@
 
 Wir wollen einen Open Source Mikro-Wechselrichter bauen.
 
+## Warum Open Source?
+
+1. **Transparenz und Vertrauen:** Open Sourcing fördert die Transparenz und bietet Nutzern und Entwicklern einen vollständigen Einblick in die Funktionsweise des Mikrowechselrichters. Dies schafft Vertrauen innerhalb der Gemeinschaft und stellt sicher, dass die Technologie wie angekündigt funktioniert.
+
+2. **Kollaborative Entwicklung:** Das Open-Source-Modell fördert die Zusammenarbeit einer vielfältigen Gruppe von Entwicklern, Ingenieuren und Enthusiasten. Diese kollektive Anstrengung führt oft zu innovativen Lösungen, erweiterten Funktionen und verbesserter Leistung.
+
+3. **Schnelle Iteration und Verbesserung:** Durch die Beteiligung einer breiteren Gemeinschaft können Verbesserungen und Fehlerbehebungen schneller erfolgen. Die Entwickler können Probleme schnell erkennen und beheben, was zu einem robusteren und zuverlässigeren Mikro-Wechselrichter führt.
+
+4. **Anpassung und Anpassungsfähigkeit:** Open Sourcing ermöglicht es den Nutzern, den Mikro-Wechselrichter an ihre spezifischen Bedürfnisse anzupassen. Ob es sich nun um die Anpassung der Hardware für verschiedene Solarpanel-Konfigurationen oder um die Modifizierung der Software für ein spezifisches Energiemanagement handelt, die Benutzer haben die Freiheit, ihn anzupassen.
+
+5. **Kosteneffizienz und Erschwinglichkeit:** Indem die Entwürfe und die Software als Open Source zur Verfügung gestellt werden, können die Gesamtkosten der Entwicklung gesenkt werden. Einzelpersonen und Organisationen können ohne teure Lizenzgebühren auf das Projekt zugreifen, wodurch erneuerbare Energielösungen für ein breiteres Publikum zugänglich werden.
+
+6. **Wissensaustausch und Lernmöglichkeiten:** Open-Source-Projekte dienen als wertvolle Lernressourcen für Studenten, Forscher und Fachleute, die die Technologie, ihre Konstruktionsprinzipien und bewährte Verfahren im Bereich der erneuerbaren Energien verstehen wollen.
+
+7. **Globale Auswirkung und Verbreitung:** Open-Sourcing ermöglicht eine weitreichende Verbreitung, insbesondere in Regionen, in denen Kosten und Zugänglichkeit wichtige Faktoren sind. Es erleichtert die Verbreitung der Technologie für erneuerbare Energien in Gebieten, die sie am dringendsten benötigen.
+
+8. **Übereinstimmung mit ethischen und ökologischen Werten:** Open-Source-Projekte stehen im Einklang mit Werten wie Offenheit, Zusammenarbeit und Nachhaltigkeit. Durch die Förderung von Transparenz und Wissensaustausch tragen sie zu einem nachhaltigen und ethischen Ansatz bei der Entwicklung und Nutzung von Technologien bei.
+
+9. **Langfristige Nachhaltigkeit und Wartung:** Mit einer vielfältigen Gemeinschaft, die zu dem Projekt beiträgt, ist es wahrscheinlich, dass der Mikro-Wechselrichter langfristig relevant bleibt und aktiv gewartet wird, was seine Nachhaltigkeit und kontinuierliche Entwicklung gewährleistet.
+
 ## Welche Spezifikationen soll der Mikro-Wechselrichter haben?
 
 Vergleich von Mikro-Wechselrichtern mit einer Nennausgangsleistung zwischen 350VA und 400VA:

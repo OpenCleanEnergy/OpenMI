@@ -6,6 +6,26 @@
 
 We want to build an open source micro-inverter.
 
+## Why making this open source?
+
+1. **Transparency and Trust:** Open sourcing fosters transparency, providing users and developers with complete visibility into how the microinverter works. This builds trust within the community and ensures that the technology operates as advertised.
+
+2. **Collaborative Development:** The open-source model encourages collaboration from a diverse group of developers, engineers, and enthusiasts. This collective effort often leads to innovative solutions, enhanced functionality, and improved performance.
+
+3. **Rapid Iteration and Improvement:** With a broader community involved, improvements and bug fixes can happen at a faster pace. Developers can quickly identify and rectify issues, leading to a more robust and reliable microinverter.
+
+4. **Customization and Adaptability:** Open sourcing allows users to modify the microinverter to suit their specific needs. Whether it's adapting the hardware for different solar panel configurations or modifying the software for specific energy management, users have the freedom to customize.
+
+5. **Cost-Effectiveness and Affordability:** By making the designs and software open source, the overall cost of development can be reduced. Individuals and organizations can access the project without expensive licensing fees, making renewable energy solutions more accessible to a wider audience.
+
+6. **Knowledge Sharing and Learning Opportunities:** Open-source projects serve as valuable learning resources for students, researchers, and professionals looking to understand the technology, its design principles, and best practices in renewable energy.
+
+7. **Global Impact and Adoption:** Open sourcing allows for widespread adoption and deployment, especially in regions where cost and accessibility are significant factors. It facilitates the dissemination of renewable energy technology to areas that need it most.
+
+8. **Alignment with Ethical and Environmental Values:** Open-source projects align with values of openness, collaboration, and sustainability. By promoting transparency and knowledge sharing, it contributes to a sustainable and ethical approach to technology development and use.
+
+9. **Long-Term Sustainability and Maintenance:** With a diverse community contributing to the project, the microinverter is likely to remain relevant and actively maintained over the long term, ensuring its sustainability and continued development.
+
 ## What specifications should the micro-inverter have?
 
 Comparison of micro-inverters with rated output power between 350VA and 400VA:
