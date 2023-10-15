@@ -98,7 +98,7 @@ print(f"  Damping resistor:           {R_f:.6} Ohm")
 
 # actual values
 L_i = 600e-6
-L_g_r = 120e-6
+L_g_r = 110e-6
 C_f = 1e-6
 # resonant frequency
 w_res = sqrt((L_i + L_g_r) / (L_i * L_g_r * C_f))
