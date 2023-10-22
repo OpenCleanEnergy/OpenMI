@@ -7,7 +7,18 @@
   (lib_symbols
   )
 
+  (junction (at 149.86 86.36) (diameter 0) (color 0 0 0 0)
+    (uuid ed49c48e-92f9-49c6-8ea6-5181b6fec94b)
+  )
 
+  (wire (pts (xy 149.86 86.36) (xy 154.94 86.36))
+    (stroke (width 0) (type default))
+    (uuid 0a501828-bfd1-41a8-a9fa-a833e574adf1)
+  )
+  (wire (pts (xy 149.86 86.36) (xy 149.86 120.65))
+    (stroke (width 0) (type default))
+    (uuid 13116e0e-0872-41f4-944c-c25d9ae1c2b4)
+  )
   (wire (pts (xy 176.53 96.52) (xy 179.07 96.52))
     (stroke (width 0) (type default))
     (uuid 1cf625d5-5284-4826-8e41-9d58feff0571)
@@ -20,7 +31,7 @@
     (stroke (width 0) (type default))
     (uuid 2d3d8401-4740-4930-ab6e-cd7071ed8a9f)
   )
-  (wire (pts (xy 144.78 86.36) (xy 154.94 86.36))
+  (wire (pts (xy 144.78 86.36) (xy 149.86 86.36))
     (stroke (width 0) (type default))
     (uuid 4335a204-5eb0-4c29-849f-4d8de17314f2)
   )
@@ -35,6 +46,10 @@
   (wire (pts (xy 177.8 118.11) (xy 185.42 118.11))
     (stroke (width 0) (type default))
     (uuid ac4e6833-9107-40d4-babb-381a096abb08)
+  )
+  (wire (pts (xy 149.86 120.65) (xy 185.42 120.65))
+    (stroke (width 0) (type default))
+    (uuid e8741095-198c-40c4-b18f-ed71c2902ec6)
   )
 
   (sheet (at 154.94 83.82) (size 21.59 17.78) (fields_autoplaced)
@@ -150,6 +165,14 @@
     (pin "I_{INV,SENS}" output (at 207.01 115.57 0)
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid e352c1d8-6c43-4f14-8889-4d3dca03dc4f)
+    )
+    (pin "V_{BUS}" input (at 185.42 120.65 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid f8af69a0-0d66-4a34-aa7c-0b744a444a90)
+    )
+    (pin "V_{BUS,SENS}" output (at 207.01 123.19 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+      (uuid cbc9b331-c337-4b9c-aba0-e50f07c36564)
     )
     (instances
       (project "OpenMI"
