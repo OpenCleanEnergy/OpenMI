@@ -354,6 +354,10 @@
     [
       "dc38c4a3-dc2d-42f6-9ebe-14c03c2dd567",
       "Input Capacity"
+    ],
+    [
+      "3c07917d-0dac-4b60-ba30-69189b5da8a3",
+      "Buck Converter"
     ]
   ],
   "text_variables": {}
