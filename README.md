@@ -70,7 +70,7 @@ During basic research, we came across the application note [^AN4070]. The applic
 ![Block Scheme](docs/block-scheme.drawio.svg)  
 
 The application note provides a detailed description of the operation and component selection.  
-The system presented is relatively simple and requires relatively few components. It has an efficiency $ > 90 \% $ and avoids flux-walk problems due to the DC-DC boost converter being current-fed [^2]. The capacitors required are of such low capacitance that they can be implemented as film capacitors, which avoids the eventual lifetime issues with electrolytic capacitors.
+The system presented is relatively simple and requires relatively few components. It has an efficiency $ > 90 \% $ and avoids flux-walk problems due to the DC-DC boost converter being current-fed [^MAGNA]. The capacitors required are of such low capacitance that they can be implemented as film capacitors, which avoids the eventual lifetime issues with electrolytic capacitors.
 For these reasons, we decided to adopt and extend the design.
 
 #### PV panel specifications
@@ -85,33 +85,6 @@ The following table shows a comparison of different solar modules and their tech
 | Open Circuit Voltage (V)     | 46.7           | 44.6                   | 49.9                  |
 | $V_{MPPT}$ (V)               | 38.1           | 38.6                   | 41.96                 |
 | $I_{MPPT}$ (A)               | 9.19           | 10.4                   | 13.11                 |
-
-#### DC bus power decoupling
-
-The required capacitance of the capacitor $C$ can be calculated with the following formula [^3]:
-
-$$ C = \frac{P_0}{2 \cdot \pi \cdot f \cdot V_{DC} \cdot \Delta V } $$
-
-Where 
-- $P_0$ is the output power, 
-- $f$ the line frequency, 
-- $V_{DC}$ the voltage of the DC bus and 
-- $\Delta V$ is the allowed peak-to-peak voltage variation.
-
-This gives the required capacitance of the capacitor $C$:
-
-- $P_0 = 400W$
-- $f = 50Hz$
-- $V_{DC} = 380V$
-- $\Delta V = 40V \Rightarrow V_{DC_{min}} = 360V; V_{DC_{max}} = 400V$
-
-$$ C = \frac{400W}{2 \cdot \pi \cdot 50Hz \cdot 380V \cdot 40V} = 83.77\mu F $$
-
-The calculation was verified with simulation [dc-bus-power-decoupling](simulation/dc-bus-power-decoupling).
-
-### Microcontroller
-
-ESP32
 
 ## How can the micro inverter be simulated?
 
@@ -137,10 +110,4 @@ Since the entire circuit design is quickly complex and time-consuming to simulat
 
 [^JA]: [JA Solar solar panel 550Wp](https://www.jasolar.com/uploadfile/2022/1122/20221122050252648.pdf)
 
-[^2]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
-
-[^3]: [DC-Bus Design with Hybrid Capacitor Bank in Single-Phase PV Inverters](https://intelligentpower.engr.uga.edu/wp-content/uploads/2019/10/deqiang2017Dc-bus.pdf) | https://doi.org/10.1109/IECON.2017.8216408
-
-[^4]: [Evaluation of Electrolytic Capacitor Application in Enphase Microinverters](https://www4.enphase.com/sites/default/files/Electrolytic_Capacitor_Expert_Report.pdf)
-
-[^5]: [Reliability Study of Electrolytic Capacitors in a Microinverter](https://www4.enphase.com/sites/default/files/EnphaseElectrolyticCapacitorLife.pdf)
+[^MAGNA]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
