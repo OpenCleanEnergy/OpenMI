@@ -1,5 +1,7 @@
 # OpenMI
 
+View Schematics and PCB Layout on [![kicanvas.org](https://img.shields.io/badge/kicanvas.org-8864CB)](https://kicanvas.org/?github=https://github.com/OpenCleanEnergy/OpenMI/tree/main/hardware/KiCad/OpenMI)
+
 ## What is our goal?
 
 We want to build an open source micro-inverter.
