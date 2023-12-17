@@ -1,8 +1,15 @@
 # Contributing Guidelines
 
 Thank you for your interest in contributing to our project! At this time, the
-project is in its early development stage, and we appreciate your enthusiasm.
-However, we are not currently accepting external contributions.
+project is in its early development stage and we are currently not accepting
+external contributions.
+
+## TL;DR
+
+👋 **Thanks for your interest!** We're focused on building a stable prototype.
+
+🚀 **Stay tuned for updates.** Once we're stable, we will provide detailed
+guidelines on how you can contribute effectively.
 
 ## Why aren't we accepting contributions right now?
 
