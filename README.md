@@ -1,6 +1,4 @@
-# openMI
-[![lang-en](https://img.shields.io/badge/lang-en-informational?style=for-the-badge)](README.md)
-[![lang-de](https://img.shields.io/badge/lang-de-inactive?style=for-the-badge)](README.de.md)
+# OpenMI
 
 ## What is our goal?
 

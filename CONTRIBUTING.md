@@ -1,8 +1,5 @@
 # Contributing to OpenMI
 
-[![lang-en](https://img.shields.io/badge/lang-en-inactive?style=for-the-badge)](CONTRIBUTING.md)
-[![lang-de](https://img.shields.io/badge/lang-de-informational?style=for-the-badge)](CONTRIBUTING.de.md)
-
 ## How to get started
 
 This section describes how to get the different parts of the project running at your system.
@@ -19,4 +16,3 @@ This section describes how to get the different parts of the project running at 
       2. Replace the` KICAD7_SYMBOL_DIR` by the absolute path of the `kicad-library/symbols`, so for example: *C:\Users\...\Documents\GitHub\kicad-library\symbols*
    2. Click `Preferences` -> `Manage Symbol Libraries...`
       1. Under Global Libraries click `Add existing library to table`, go into the `kicad-library/output` directory and select all files and press `open`.
-
