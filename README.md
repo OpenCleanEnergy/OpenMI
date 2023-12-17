@@ -93,6 +93,9 @@ The following table shows a comparison of different solar modules and their tech
 The circuit design of the micro inverter was simulated in [LTspice](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html). All LTspice simulations are stored in the [simulation](simulation) folder.
 Since the entire circuit design is quickly complex and time-consuming to simulate, the individual building blocks of the circuit were first built and simulated individually.
 
+## Contributing
+
+See [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Footnotes
 
