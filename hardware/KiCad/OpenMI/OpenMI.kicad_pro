@@ -358,6 +358,10 @@
     [
       "3c07917d-0dac-4b60-ba30-69189b5da8a3",
       "Buck Converter"
+    ],
+    [
+      "a47e4c49-5b9d-48c7-be94-747a65ca7916",
+      "PV-Sensing"
     ]
   ],
   "text_variables": {}
