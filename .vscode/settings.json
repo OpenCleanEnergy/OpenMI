@@ -1,8 +1,11 @@
 {
-  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
   "[markdown]": {
     "editor.rulers": [80],
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
-  }
+  },
+  "svg.preview.background": "white"
 }

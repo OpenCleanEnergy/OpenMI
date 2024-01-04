@@ -1,0 +1,7 @@
+FROM ghcr.io/inti-cmnb/kicad7_auto_full:latest
+
+WORKDIR /bin
+COPY export ./
+RUN chmod +x export
+
+WORKDIR /workspace
