@@ -19,6 +19,7 @@ mkdir -p ${EXPORT_SVG_DIR}
 eeschema_do export \
     --all_pages \
     --file_format svg \
+    --background_color \
     ${KICAD_SCH} ${EXPORT_SVG_DIR}
 
 echo "✅ Done"

@@ -33,9 +33,6 @@ jobs:
           ${IMAGE_TAG}
           export OpenMI.kicad_sch
 
-      - name: 🐞 Debug
-        run: git status
-
       - name: 💬 Commit & Push
         uses: EndBug/add-and-commit@v9
         with:
