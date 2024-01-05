@@ -3,6 +3,7 @@ name: 🤖 KiCad Export
 on:
   push:
     branches: ["**"]
+    paths: ["**/*.kicad_*"]
 
 permissions:
   contents: write
