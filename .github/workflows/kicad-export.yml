@@ -4,6 +4,9 @@ on:
   push:
     branches: ["**"]
 
+permissions:
+  contents: write
+
 env:
   IMAGE_TAG: pipeline
 
