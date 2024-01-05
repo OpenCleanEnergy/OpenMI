@@ -1,0 +1,35 @@
+name: 📄 KiCad Export
+
+on:
+  push:
+    branches: ["**"]
+
+env:
+  IMAGE_TAG: pipeline
+
+defaults:
+  run:
+    working-directory: hardware/KiCad
+
+jobs:
+  export-schematics:
+    name: 📄 Export schematics
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐋 Build docker image
+        run: docker build --tag ${IMAGE_TAG} .pipeline
+
+      - name: 1️⃣ OpenMI
+        run: >
+          docker run --rm
+          -v "${PWD}/OpenMI:/workspace"
+          ${IMAGE_TAG}
+          export OpenMI.kicad_sch
+
+      - name: 🐞 Debug
+        run: |
+          ls OpenMI/export
+          ls OpenMI/export/svg
