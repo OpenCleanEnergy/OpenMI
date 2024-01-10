@@ -3,7 +3,9 @@
 EXPORT_ROOT_DIR="export"
 EXPORT_SVG_DIR="${EXPORT_ROOT_DIR}/svg"
 
-KICAD_SCH=${1}
+PROJECT_NAME=${1}
+KICAD_SCH="${PROJECT_NAME}.kicad_sch"
+
 echo "📄 Exporting ${KICAD_SCH}"
 echo "⚠️ Old files will be removed first!"
 

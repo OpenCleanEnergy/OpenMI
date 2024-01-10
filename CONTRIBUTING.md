@@ -54,9 +54,22 @@ Open Clean Energy Team
 
 ## Discover the project right away.
 
-If you are eager to discover the project follow the instructions below.  
+If you are eager to discover the project follow the instructions below.
 The instructions describe how to get the different parts of the project running
 at your system.
+
+### Required tools
+
+**Required:**
+
+- [KiCad 7](https://www.kicad.org/download/)
+
+**Optional:**
+
+- [just](https://github.com/casey/just#installation)
+  - on Windows [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows)
+    is required
+  - [Docker](https://docs.docker.com/engine/install/)
 
 ### KiCad
 

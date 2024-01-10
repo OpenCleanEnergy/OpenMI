@@ -23,18 +23,14 @@ jobs:
       - name: 🛒 Checkout
         uses: actions/checkout@v4
 
-      - name: 🐋 Build docker image
-        run: docker build --tag ${IMAGE_TAG} .pipeline
+      - name: 🏃 Install just
+        uses: extractions/setup-just@v1
 
       - name: 1️⃣ OpenMI
-        run: >
-          docker run --rm
-          -v "${PWD}/OpenMI:/workspace"
-          ${IMAGE_TAG}
-          export OpenMI.kicad_sch
+        run: just export OpenMI
 
       - name: 💬 Commit & Push
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
-          message: "docs: 🤖 KiCad export"
+          message: "chore: 🤖 KiCad export"

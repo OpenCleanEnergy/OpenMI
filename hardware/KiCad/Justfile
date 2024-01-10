@@ -1,0 +1,18 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+set ignore-comments := true
+
+default:
+  @just --list
+
+export_docker_image := "kicad_export:latest"
+
+# Export the given project. E.g. `just export OpenMI`
+export project: _prepare-export
+  docker run --rm \
+  -v "{{justfile_directory() / project}}:/workspace" {{export_docker_image}} \
+  export {{project}}
+
+_prepare-export:
+  docker build \
+  --tag {{export_docker_image}} \
+  {{justfile_directory() / '.docker'}}

@@ -2,6 +2,7 @@
   "recommendations": [
     "houkanshan.vscode-markdown-footnote",
     "hediet.vscode-drawio",
-    "stkb.rewrap"
+    "stkb.rewrap",
+    "skellock.just"
   ]
 }
