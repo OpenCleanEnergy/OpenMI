@@ -1,0 +1,17 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+set ignore-comments := true
+
+default:
+  @just --list
+
+requirements_file := "requirements.txt"
+
+# Generate pip requirements.txt file based on present jupyter notebooks
+generate-requirements:
+  pip install pipreqsnb
+  pipreqsnb --force --savepath {{justfile_directory() / requirements_file}} {{justfile_directory()}}
+  echo "ipykernel" >> {{justfile_directory() / requirements_file}}
+
+# Installs requirements from requirements.txt
+install-requirements:
+  pip install -r {{justfile_directory() / requirements_file}}

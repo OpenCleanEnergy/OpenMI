@@ -1,3 +1,4 @@
+# LTSpice
 # From: https://github.com/toptal/gitignore/blob/master/templates/LTspice.gitignore
 
 # Logfile
@@ -9,3 +10,9 @@
 
 # Netlist
 *.net
+
+####
+
+# Python virtual environment
+# from https://github.com/github/gitignore/blob/main/Global/VirtualEnv.gitignore
+.venv
