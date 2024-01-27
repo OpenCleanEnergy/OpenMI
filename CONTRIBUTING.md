@@ -69,7 +69,7 @@ at your system.
 - [just](https://github.com/casey/just#installation)
   - on Windows [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows)
     is required
-  - [Docker](https://docs.docker.com/engine/install/)
+  - [Podman](https://podman.io/docs/installation)
 
 ### KiCad
 
