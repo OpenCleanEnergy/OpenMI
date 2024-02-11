@@ -87,7 +87,7 @@ During basic research, we came across the application note [^AN2012-09]. The app
 The circuit design of the micro inverter was simulated in [LTspice](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html). All LTspice simulations are stored in the [simulation](simulation) folder.
 Since the entire circuit design is quickly complex and time-consuming to simulate, the individual building blocks of the circuit were first built and simulated individually. Please mind, that in the current state of the project there are a bunch of LTspice simulations since we discussed a lot of topologies.
 
-The design process of the LLC resonant converter is documented in a interactive jupyter notebook in the [simulation/llc-transformer](simulation/llc-transformer) directory.
+The design process of the LLC resonant converter is documented in a [interactive jupyter notebook](simulation/llc-transformer/llc_transformer_design.ipynb).
 
 
 ## Contributing
