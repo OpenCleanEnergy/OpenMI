@@ -61,20 +61,6 @@ Subject to further modifications, the micro-inverter should have the following s
 Optional features:
 - Adjustable Power Factor
 
-## How will the micro-inverter be technically implemented?
-
-The technical implementation of the micro-inverter will be continuously revised and iteratively improved during the course of the project. Comments and suggestions for improvement are welcome here!
-
-### Topology
-
-During basic research, we came across the application note [^AN4070]. The application note describes the implementation of a 250W grid-connected micro-inverter. The design is based on 2 power stages, namely an interleaved isolated DC-DC boost converter and a DC-AC converter.
-
-![Block Scheme](docs/block-scheme.drawio.svg)  
-
-The application note provides a detailed description of the operation and component selection.  
-The system presented is relatively simple and requires relatively few components. It has an efficiency $ > 90 \% $ and avoids flux-walk problems due to the DC-DC boost converter being current-fed [^MAGNA]. The capacitors required are of such low capacitance that they can be implemented as film capacitors, which avoids the eventual lifetime issues with electrolytic capacitors.
-For these reasons, we decided to adopt and extend the design.
-
 #### PV panel specifications
 
 The following table shows a comparison of different solar modules and their technical data, which were adopted as a guide for designing the microinverter.
@@ -88,10 +74,21 @@ The following table shows a comparison of different solar modules and their tech
 | $V_{MPPT}$ (V)               | 38.1           | 38.6                   | 41.96                 |
 | $I_{MPPT}$ (A)               | 9.19           | 10.4                   | 13.11                 |
 
+## How will the micro-inverter be technically implemented?
+
+The technical implementation of the micro-inverter will be continuously revised and iteratively improved during the course of the project. Comments and suggestions for improvement are welcome here!
+
+### Topology
+
+During basic research, we came across the application note [^AN2012-09]. The application note describes the implementation of a 250W grid-connected LLC converter micro-inverter. The design consinsts of a *switchwing bridge*, a *LLC tank*, a *transformer*, a *rectifier*, a *DC bus* and a *DC-AC converter*.
+
 ## How can the micro inverter be simulated?
 
 The circuit design of the micro inverter was simulated in [LTspice](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html). All LTspice simulations are stored in the [simulation](simulation) folder.
-Since the entire circuit design is quickly complex and time-consuming to simulate, the individual building blocks of the circuit were first built and simulated individually.
+Since the entire circuit design is quickly complex and time-consuming to simulate, the individual building blocks of the circuit were first built and simulated individually. Please mind, that in the current state of the project there are a bunch of LTspice simulations since we discussed a lot of topologies.
+
+The design process of the LLC resonant converter is documented in a interactive jupyter notebook in the [simulation/llc-transformer](simulation/llc-transformer) directory.
+
 
 ## Contributing
 
@@ -107,12 +104,10 @@ See [CONTRIBUTING](CONTRIBUTING.md).
 
 [^TSOL]: [TSOL-M800 Microinverter Datasheet](https://www.ecoheroes.shop/media/pdf/c9/f6/5b/Datenblatt_Mikrowechselrichter_TSUN_M800_EN.pdf)
 
-[^AN4070]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
+[^AN2012-09]: [Resonant LLC Converter: Operation and Design](https://www.infineon.com/dgdl/Application_Note_Resonant+LLC+Converter+Operation+and+Design_Infineon.pdf?fileId=db3a30433a047ba0013a4a60e3be64a1)
 
 [^WS350M]: [Wattstunde solar panel 350Wp](https://solarkontor.de/mediafiles/PDF/Solarmodule/Wattstunde/M-Reihe/Datenblatt%20M%20%20v0123.pdf)
 
 [^MB]: [Meyer Burger White solar panel 400Wp](https://www.meyerburger.com/fileadmin/user_upload/PDFs/Produktdatenblaetter/DE/DS_Meyer_Burger_White_de.pdf)
 
 [^JA]: [JA Solar solar panel 550Wp](https://www.jasolar.com/uploadfile/2022/1122/20221122050252648.pdf)
-
-[^MAGNA]: [An Overview of Current-Fed Power Processing](https://magna-power.com/learn/white-paper/current-fed-power-processing)
