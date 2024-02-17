@@ -80,7 +80,9 @@ The technical implementation of the micro-inverter will be continuously revised 
 
 ### Topology
 
-During basic research, we came across the application note [^AN2012-09]. The application note describes the implementation of a 250W grid-connected LLC converter micro-inverter. The design consinsts of a *switchwing bridge*, a *LLC tank*, a *transformer*, a *rectifier*, a *DC bus* and a *DC-AC converter*.
+During basic research, we first came across the application note [^AN4070]. The design is based on 2 power stages, namely an interleaved isolated DC-DC boost converter and a DC-AC converter. The application note provides a detailed description of the operation and component selection. We apoted and extended several things from the design, especially the DC-AC converter. It is worth mentioning that the capacity of the DC bus is of such low capacitance that it can be implemented as film capacitors, which avoids the eventual lifetime issues with electrolytic capacitors.
+
+For the DC-DC converter we used the application note [^AN2012-09] as guide to integrate a LLC resonant converter into our design. The application note describes the implementation of a 250W grid-connected LLC converter micro-inverter. The design of the resonant corverter consinsts of a *switchwing bridge*, a *LLC tank*, a *transformer* and a *rectifier*.
 
 ## How can the micro inverter be simulated?
 
@@ -103,6 +105,8 @@ See [CONTRIBUTING](CONTRIBUTING.md).
 [^EVT300]: [EVT300 Microinverter Datasheet](https://envertec.com/wp-content/uploads/2022/11/EVT300_Datasheet.pdf)
 
 [^TSOL]: [TSOL-M800 Microinverter Datasheet](https://www.ecoheroes.shop/media/pdf/c9/f6/5b/Datenblatt_Mikrowechselrichter_TSUN_M800_EN.pdf)
+
+[^AN4070]: [AN4070 250 W grid connected microinverter](https://www.st.com/resource/en/application_note/dm00050692-250-w-grid-connected-microinverter-stmicroelectronics.pdf)
 
 [^AN2012-09]: [Resonant LLC Converter: Operation and Design](https://www.infineon.com/dgdl/Application_Note_Resonant+LLC+Converter+Operation+and+Design_Infineon.pdf?fileId=db3a30433a047ba0013a4a60e3be64a1)
 
