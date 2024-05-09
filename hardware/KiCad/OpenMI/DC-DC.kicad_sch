@@ -3617,7 +3617,7 @@
 				(italic yes)
 			)
 			(justify left bottom)
-			(href "https://github.com/OpenCleanEnergy/OpenMI/blob/dev/LLC-transformer/simulation/llc-transformer/llc_transformer_design.ipynb")
+			(href "https://github.com/OpenCleanEnergy/OpenMI/blob/main/simulation/llc-transformer/llc_transformer_design.ipynb")
 		)
 		(uuid "4a997057-1e33-43f3-a3d3-ca7a96c77d50")
 	)
