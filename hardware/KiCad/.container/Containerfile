@@ -1,4 +1,4 @@
-FROM ghcr.io/inti-cmnb/kicad7_auto_full:latest
+FROM ghcr.io/inti-cmnb/kicad8_auto_full:latest
 
 WORKDIR /bin
 COPY export.sh export
