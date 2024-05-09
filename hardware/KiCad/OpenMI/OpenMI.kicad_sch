@@ -1,428 +1,1026 @@
-(kicad_sch (version 20230121) (generator eeschema)
-
-  (uuid 2d959e19-1572-42a0-a8fd-da8463ad4e66)
-
-  (paper "A4")
-
-  (lib_symbols
-  )
-
-  (junction (at 111.76 81.28) (diameter 0) (color 0 0 0 0)
-    (uuid ed49c48e-92f9-49c6-8ea6-5181b6fec94b)
-  )
-
-  (wire (pts (xy 138.43 86.36) (xy 147.32 86.36))
-    (stroke (width 0) (type default))
-    (uuid 0290ffa5-1d7d-438a-a765-fd61bc4d0658)
-  )
-  (wire (pts (xy 111.76 81.28) (xy 116.84 81.28))
-    (stroke (width 0) (type default))
-    (uuid 0a501828-bfd1-41a8-a9fa-a833e574adf1)
-  )
-  (wire (pts (xy 111.76 81.28) (xy 111.76 125.73))
-    (stroke (width 0) (type default))
-    (uuid 13116e0e-0872-41f4-944c-c25d9ae1c2b4)
-  )
-  (wire (pts (xy 138.43 91.44) (xy 140.97 91.44))
-    (stroke (width 0) (type default))
-    (uuid 1cf625d5-5284-4826-8e41-9d58feff0571)
-  )
-  (wire (pts (xy 138.43 93.98) (xy 139.7 93.98))
-    (stroke (width 0) (type default))
-    (uuid 29372cc1-f932-48ce-ae7c-3ca9f9155f94)
-  )
-  (wire (pts (xy 140.97 91.44) (xy 140.97 120.65))
-    (stroke (width 0) (type default))
-    (uuid 2d3d8401-4740-4930-ab6e-cd7071ed8a9f)
-  )
-  (wire (pts (xy 106.68 81.28) (xy 111.76 81.28))
-    (stroke (width 0) (type default))
-    (uuid 4335a204-5eb0-4c29-849f-4d8de17314f2)
-  )
-  (wire (pts (xy 139.7 93.98) (xy 139.7 123.19))
-    (stroke (width 0) (type default))
-    (uuid 5687d4cb-b45f-4f24-9329-b8c970e1acc0)
-  )
-  (wire (pts (xy 140.97 120.65) (xy 179.07 120.65))
-    (stroke (width 0) (type default))
-    (uuid 6462a401-f37c-40b2-b673-43ee826a6762)
-  )
-  (wire (pts (xy 170.18 113.03) (xy 179.07 113.03))
-    (stroke (width 0) (type default))
-    (uuid 706b06d8-c6e9-4c73-b751-27f0854b6aa6)
-  )
-  (wire (pts (xy 138.43 83.82) (xy 147.32 83.82))
-    (stroke (width 0) (type default))
-    (uuid 7e634020-1b3a-4f9c-9e52-0cf8c7cceadd)
-  )
-  (wire (pts (xy 166.37 83.82) (xy 170.18 83.82))
-    (stroke (width 0) (type default))
-    (uuid ab07baff-aabf-4515-81f0-2d31ae5888fa)
-  )
-  (wire (pts (xy 170.18 83.82) (xy 170.18 113.03))
-    (stroke (width 0) (type default))
-    (uuid ab41ef8c-1a84-41f6-9e2c-5d51bc78d21a)
-  )
-  (wire (pts (xy 167.64 88.9) (xy 167.64 118.11))
-    (stroke (width 0) (type default))
-    (uuid ab8a19fd-b5bb-4f44-9534-91390223d1aa)
-  )
-  (wire (pts (xy 139.7 123.19) (xy 179.07 123.19))
-    (stroke (width 0) (type default))
-    (uuid ac4e6833-9107-40d4-babb-381a096abb08)
-  )
-  (wire (pts (xy 166.37 86.36) (xy 168.91 86.36))
-    (stroke (width 0) (type default))
-    (uuid c8b0d046-95d1-4db7-baff-52325bd1431e)
-  )
-  (wire (pts (xy 167.64 88.9) (xy 166.37 88.9))
-    (stroke (width 0) (type default))
-    (uuid d0ae3a85-d04e-40f6-abde-6c4af0d2ad04)
-  )
-  (wire (pts (xy 179.07 118.11) (xy 167.64 118.11))
-    (stroke (width 0) (type default))
-    (uuid d7f81c2a-c2d2-4c44-abd9-01b9158613d9)
-  )
-  (wire (pts (xy 171.45 110.49) (xy 171.45 81.28))
-    (stroke (width 0) (type default))
-    (uuid db8fcf79-4935-48bd-bc89-c3fd4ed71d0b)
-  )
-  (wire (pts (xy 168.91 115.57) (xy 179.07 115.57))
-    (stroke (width 0) (type default))
-    (uuid de0d2062-b930-411c-8ff7-aa40e76e2cae)
-  )
-  (wire (pts (xy 111.76 125.73) (xy 179.07 125.73))
-    (stroke (width 0) (type default))
-    (uuid e8741095-198c-40c4-b18f-ed71c2902ec6)
-  )
-  (wire (pts (xy 168.91 86.36) (xy 168.91 115.57))
-    (stroke (width 0) (type default))
-    (uuid e99695d9-4739-472e-bc12-fac4f21a4912)
-  )
-  (wire (pts (xy 179.07 110.49) (xy 171.45 110.49))
-    (stroke (width 0) (type default))
-    (uuid ebe1d171-5b6d-4f20-ba56-e6f78263fc77)
-  )
-  (wire (pts (xy 171.45 81.28) (xy 166.37 81.28))
-    (stroke (width 0) (type default))
-    (uuid ef4997da-ec0a-49c6-a30a-6a1e0b367079)
-  )
-
-  (sheet (at 116.84 78.74) (size 21.59 22.86) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 19323a41-9b99-4de4-bfae-f2f828815be3)
-    (property "Sheetname" "DC-AC" (at 116.84 78.0284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "DC-AC.kicad_sch" (at 116.84 102.1846 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (property "Field2" "" (at 116.84 78.74 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "LIN_{S}" input (at 116.84 99.06 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid ffe4812f-b78c-4d4f-be5b-6029373b00d9)
-    )
-    (pin "HIN_{S}" input (at 116.84 96.52 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 8af12add-d568-4b5d-85d1-6863d011c582)
-    )
-    (pin "HIN_{F}" input (at 116.84 91.44 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 6e14d0f3-f7a5-4cfd-abcd-8389b2b9ff9b)
-    )
-    (pin "LIN_{F}" input (at 116.84 93.98 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid d69a240a-5e79-48a9-ac12-4305362992ad)
-    )
-    (pin "OverTemp" output (at 138.43 88.9 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 96d4c82c-e1b4-4cba-98b1-f9263cc0523f)
-    )
-    (pin "V_{BUS}" input (at 116.84 81.28 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 14dac748-0d9c-463b-8c2c-3bbc7a9df899)
-    )
-    (pin "I_{SENS,M}" output (at 138.43 93.98 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 278130eb-44e4-47bf-99f2-a6955b5d480b)
-    )
-    (pin "I_{SENS,P}" output (at 138.43 91.44 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid a1a052e8-5cfe-4684-a6ba-2af870df6c12)
-    )
-    (pin "OUT_{F,FILT}" output (at 138.43 83.82 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 4ae32d4b-b603-4ffc-a4b6-172e3936d68c)
-    )
-    (pin "OUT_{S}" output (at 138.43 86.36 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid b037efcb-f3ca-4172-b6f6-26cd62958d63)
-    )
-    (pin "+3V3" input (at 116.84 86.36 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 342c4e63-3d84-49d0-b6ac-3d28dc40207c)
-    )
-    (pin "EN" input (at 116.84 88.9 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid c1a116c4-3ffe-4e30-ba96-ec32da1502c7)
-    )
-    (instances
-      (project "OpenMI"
-        (path "/2d959e19-1572-42a0-a8fd-da8463ad4e66" (page "3"))
-      )
-    )
-  )
-
-  (sheet (at 54.61 78.74) (size 19.05 24.13) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid a47e4c49-5b9d-48c7-be94-747a65ca7916)
-    (property "Sheetname" "PV-Sensing" (at 54.61 78.0284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "PV-Sensing.kicad_sch" (at 54.61 103.4546 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "V_{M,IN}" input (at 54.61 83.82 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid b12c2b6c-608e-4e98-959e-2aac6dca4944)
-    )
-    (pin "V_{P,OUT}" output (at 73.66 81.28 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid b6eea231-867e-473b-aa98-6543752ed7b5)
-    )
-    (pin "V_{M,OUT}" output (at 73.66 83.82 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid df64f34d-fca0-4eb2-867b-16bb2af36620)
-    )
-    (pin "V_{P,IN}" input (at 54.61 81.28 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 66f71f9e-4a9e-4d1d-a177-8f27eef10ed5)
-    )
-    (pin "GND" input (at 54.61 99.06 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 975cf625-38e0-4f82-b11c-668119cf94e4)
-    )
-    (pin "MISO" output (at 73.66 99.06 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 1d970d94-f8e4-4539-ae62-9bc944c14500)
-    )
-    (pin "VDD" input (at 54.61 96.52 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid e49d0c3d-af4e-442a-ba4c-6d44db62234c)
-    )
-    (pin "~{DREADY}" output (at 73.66 88.9 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 5bdaace5-5e7e-4b9a-aa06-27b6b7333cde)
-    )
-    (pin "~{CS}" input (at 73.66 91.44 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid d80b818b-be3d-4cff-95de-93766dff8740)
-    )
-    (pin "MOSI" input (at 73.66 96.52 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 54989252-8ef3-4b30-a8ea-69532381fa98)
-    )
-    (pin "EN" input (at 54.61 93.98 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 8787cdf0-c98b-46ed-b477-3530ba2e9c68)
-    )
-    (pin "SCLK" input (at 73.66 93.98 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid da07aae9-f1f8-4e77-a3f4-6b50934127cb)
-    )
-    (instances
-      (project "OpenMI"
-        (path "/2d959e19-1572-42a0-a8fd-da8463ad4e66" (page "8"))
-      )
-    )
-  )
-
-  (sheet (at 147.32 78.74) (size 19.05 17.78) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid b081b53b-45d6-4ad1-b456-23b9d1031ab9)
-    (property "Sheetname" "Grid" (at 147.32 78.0284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "Grid.kicad_sch" (at 147.32 97.1046 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (property "Field2" "" (at 147.32 78.74 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "L_{GRID}" output (at 166.37 86.36 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 4a787bf8-49da-4df5-b83b-17e16f047860)
-    )
-    (pin "N_{GRID}" output (at 166.37 88.9 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid dde1a74f-5c9e-44a9-8fa7-a20b97334384)
-    )
-    (pin "+12V" input (at 147.32 81.28 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 4c448477-66f3-420e-8fe6-731464047023)
-    )
-    (pin "G_{RELAY}" input (at 147.32 88.9 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 502c9247-679d-40b6-8506-e562fc7bdb07)
-    )
-    (pin "L'_{FILT}" input (at 147.32 83.82 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 5b6ebc24-ebe4-441b-bf6a-bca04d689d75)
-    )
-    (pin "I_{SENS,P}" output (at 166.37 81.28 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid c993907b-713a-4c53-ad7e-14641614fa93)
-    )
-    (pin "I_{SENS,M}" output (at 166.37 83.82 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid cbcac973-200d-40d4-9931-6b59174606be)
-    )
-    (pin "N'_{FILT}" input (at 147.32 86.36 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 7087511d-2b61-4195-8e34-a27dbd83f02d)
-    )
-    (instances
-      (project "OpenMI"
-        (path "/2d959e19-1572-42a0-a8fd-da8463ad4e66" (page "4"))
-      )
-    )
-  )
-
-  (sheet (at 179.07 107.95) (size 21.59 22.86) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid bb3056b4-4e5d-4f2d-baa2-a568d9d3e754)
-    (property "Sheetname" "Sensing" (at 179.07 107.2384 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "Sensing.kicad_sch" (at 179.07 131.3946 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "I_{INV,M}" input (at 179.07 123.19 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 2f4bda4d-37e1-4240-9bda-fa9ba7763d4b)
-    )
-    (pin "I_{INV,P}" input (at 179.07 120.65 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid f38a6e6a-d569-4b37-9293-9e6cd2e3e828)
-    )
-    (pin "I_{INV,~{ALERT}}" output (at 200.66 125.73 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 4e5d0516-e972-49ca-9a2c-4c19d5390230)
-    )
-    (pin "I_{INV,~{ALERT},RST}" input (at 179.07 128.27 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 0f88c31e-7b51-448c-b254-47b6395b5942)
-    )
-    (pin "I_{INV,SENS}" output (at 200.66 123.19 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid e352c1d8-6c43-4f14-8889-4d3dca03dc4f)
-    )
-    (pin "V_{BUS}" input (at 179.07 125.73 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid f8af69a0-0d66-4a34-aa7c-0b744a444a90)
-    )
-    (pin "V_{BUS,SENS}" output (at 200.66 128.27 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid cbc9b331-c337-4b9c-aba0-e50f07c36564)
-    )
-    (pin "L_{GRID}" input (at 179.07 115.57 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 2bea3011-24d1-4eb9-a8ff-2c6e471055f0)
-    )
-    (pin "N_{GRID}" input (at 179.07 118.11 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 8e2e4848-d062-43f0-a2d1-cefb456e37f0)
-    )
-    (pin "V_{GRID,SENS1}" output (at 200.66 115.57 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 16120742-b097-4d4a-b1cc-ca83614e681f)
-    )
-    (pin "V_{GRID,SENS2}" output (at 200.66 118.11 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid eba325e3-2110-439e-b4d2-794b62a6d37d)
-    )
-    (pin "I_{GRID,SENS}" output (at 200.66 110.49 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 59f5fa9e-5672-4f9c-a9d8-ea027e8eb920)
-    )
-    (pin "I_{GRID,P}" input (at 179.07 110.49 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 9ac38661-e8b5-46b0-a89d-a90351999264)
-    )
-    (pin "I_{GRID,M}" input (at 179.07 113.03 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 75cffd35-4453-4dfe-a13d-0127b19202d8)
-    )
-    (pin "I_{GRID,~{ALERT}}" output (at 200.66 113.03 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 4ad98726-624a-49ab-a1e0-521f0482a328)
-    )
-    (pin "ZCD" output (at 200.66 120.65 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 43752e0f-fc88-419e-b30e-50ede773a240)
-    )
-    (instances
-      (project "OpenMI"
-        (path "/2d959e19-1572-42a0-a8fd-da8463ad4e66" (page "5"))
-      )
-    )
-  )
-
-  (sheet (at 85.09 78.74) (size 21.59 18.288) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid efbfb180-c2bb-45aa-ab04-e5a4cb37fddc)
-    (property "Sheetname" "DC-DC" (at 85.09 78.0284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "DC-DC.kicad_sch" (at 85.09 97.6126 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (property "Field2" "" (at 85.09 78.74 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "V_{PV+}" input (at 85.09 81.28 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 86caadb9-7cb9-429f-95f2-7ca7bd454d1f)
-    )
-    (pin "V_{PV-}" input (at 85.09 83.566 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 2d09b77f-edc5-4717-83c6-36db23ffdcb9)
-    )
-    (pin "V_{BUS}" output (at 106.68 81.28 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 9b60c9c8-78c3-4fc8-b6f2-1950b5c1ea0e)
-    )
-    (pin "PWM_{GaN_1}" input (at 85.09 86.614 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid cc3eae93-7dc7-4b30-b64d-7d6d5ca0499d)
-    )
-    (pin "SGND_{GaN_1}" input (at 85.09 88.9 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 9167b5eb-1f6e-4a56-8b58-01d4fdf6abfa)
-    )
-    (pin "PWM_{GaN_2}" input (at 85.09 91.948 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 87d3bf4a-edc4-4035-8989-97fa5b8c90c7)
-    )
-    (pin "SGND_{GaN_2}" input (at 85.09 94.234 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid d0365fb4-59fc-4ac0-9c38-52db48a44bd8)
-    )
-    (instances
-      (project "OpenMI"
-        (path "/2d959e19-1572-42a0-a8fd-da8463ad4e66" (page "2"))
-      )
-    )
-  )
-
-  (sheet_instances
-    (path "/" (page "1"))
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "2d959e19-1572-42a0-a8fd-da8463ad4e66")
+	(paper "A4")
+	(lib_symbols)
+	(junction
+		(at 111.76 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ed49c48e-92f9-49c6-8ea6-5181b6fec94b")
+	)
+	(wire
+		(pts
+			(xy 138.43 86.36) (xy 147.32 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0290ffa5-1d7d-438a-a765-fd61bc4d0658")
+	)
+	(wire
+		(pts
+			(xy 111.76 81.28) (xy 116.84 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a501828-bfd1-41a8-a9fa-a833e574adf1")
+	)
+	(wire
+		(pts
+			(xy 111.76 81.28) (xy 111.76 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13116e0e-0872-41f4-944c-c25d9ae1c2b4")
+	)
+	(wire
+		(pts
+			(xy 138.43 91.44) (xy 140.97 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cf625d5-5284-4826-8e41-9d58feff0571")
+	)
+	(wire
+		(pts
+			(xy 138.43 93.98) (xy 139.7 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29372cc1-f932-48ce-ae7c-3ca9f9155f94")
+	)
+	(wire
+		(pts
+			(xy 140.97 91.44) (xy 140.97 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d3d8401-4740-4930-ab6e-cd7071ed8a9f")
+	)
+	(wire
+		(pts
+			(xy 106.68 81.28) (xy 111.76 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4335a204-5eb0-4c29-849f-4d8de17314f2")
+	)
+	(wire
+		(pts
+			(xy 139.7 93.98) (xy 139.7 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5687d4cb-b45f-4f24-9329-b8c970e1acc0")
+	)
+	(wire
+		(pts
+			(xy 140.97 120.65) (xy 179.07 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6462a401-f37c-40b2-b673-43ee826a6762")
+	)
+	(wire
+		(pts
+			(xy 170.18 113.03) (xy 179.07 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "706b06d8-c6e9-4c73-b751-27f0854b6aa6")
+	)
+	(wire
+		(pts
+			(xy 138.43 83.82) (xy 147.32 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e634020-1b3a-4f9c-9e52-0cf8c7cceadd")
+	)
+	(wire
+		(pts
+			(xy 166.37 83.82) (xy 170.18 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab07baff-aabf-4515-81f0-2d31ae5888fa")
+	)
+	(wire
+		(pts
+			(xy 170.18 83.82) (xy 170.18 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab41ef8c-1a84-41f6-9e2c-5d51bc78d21a")
+	)
+	(wire
+		(pts
+			(xy 167.64 88.9) (xy 167.64 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab8a19fd-b5bb-4f44-9534-91390223d1aa")
+	)
+	(wire
+		(pts
+			(xy 139.7 123.19) (xy 179.07 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac4e6833-9107-40d4-babb-381a096abb08")
+	)
+	(wire
+		(pts
+			(xy 166.37 86.36) (xy 168.91 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8b0d046-95d1-4db7-baff-52325bd1431e")
+	)
+	(wire
+		(pts
+			(xy 167.64 88.9) (xy 166.37 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0ae3a85-d04e-40f6-abde-6c4af0d2ad04")
+	)
+	(wire
+		(pts
+			(xy 179.07 118.11) (xy 167.64 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7f81c2a-c2d2-4c44-abd9-01b9158613d9")
+	)
+	(wire
+		(pts
+			(xy 171.45 110.49) (xy 171.45 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db8fcf79-4935-48bd-bc89-c3fd4ed71d0b")
+	)
+	(wire
+		(pts
+			(xy 168.91 115.57) (xy 179.07 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de0d2062-b930-411c-8ff7-aa40e76e2cae")
+	)
+	(wire
+		(pts
+			(xy 111.76 125.73) (xy 179.07 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8741095-198c-40c4-b18f-ed71c2902ec6")
+	)
+	(wire
+		(pts
+			(xy 168.91 86.36) (xy 168.91 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e99695d9-4739-472e-bc12-fac4f21a4912")
+	)
+	(wire
+		(pts
+			(xy 179.07 110.49) (xy 171.45 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebe1d171-5b6d-4f20-ba56-e6f78263fc77")
+	)
+	(wire
+		(pts
+			(xy 171.45 81.28) (xy 166.37 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef4997da-ec0a-49c6-a30a-6a1e0b367079")
+	)
+	(sheet
+		(at 116.84 78.74)
+		(size 21.59 22.86)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "19323a41-9b99-4de4-bfae-f2f828815be3")
+		(property "Sheetname" "DC-AC"
+			(at 116.84 78.0284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "DC-AC.kicad_sch"
+			(at 116.84 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 116.84 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "LIN_{S}" input
+			(at 116.84 99.06 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "ffe4812f-b78c-4d4f-be5b-6029373b00d9")
+		)
+		(pin "HIN_{S}" input
+			(at 116.84 96.52 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8af12add-d568-4b5d-85d1-6863d011c582")
+		)
+		(pin "HIN_{F}" input
+			(at 116.84 91.44 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "6e14d0f3-f7a5-4cfd-abcd-8389b2b9ff9b")
+		)
+		(pin "LIN_{F}" input
+			(at 116.84 93.98 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d69a240a-5e79-48a9-ac12-4305362992ad")
+		)
+		(pin "OverTemp" output
+			(at 138.43 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "96d4c82c-e1b4-4cba-98b1-f9263cc0523f")
+		)
+		(pin "V_{BUS}" input
+			(at 116.84 81.28 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "14dac748-0d9c-463b-8c2c-3bbc7a9df899")
+		)
+		(pin "I_{SENS,M}" output
+			(at 138.43 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "278130eb-44e4-47bf-99f2-a6955b5d480b")
+		)
+		(pin "I_{SENS,P}" output
+			(at 138.43 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a1a052e8-5cfe-4684-a6ba-2af870df6c12")
+		)
+		(pin "OUT_{F,FILT}" output
+			(at 138.43 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4ae32d4b-b603-4ffc-a4b6-172e3936d68c")
+		)
+		(pin "OUT_{S}" output
+			(at 138.43 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b037efcb-f3ca-4172-b6f6-26cd62958d63")
+		)
+		(pin "+3V3" input
+			(at 116.84 86.36 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "342c4e63-3d84-49d0-b6ac-3d28dc40207c")
+		)
+		(pin "EN" input
+			(at 116.84 88.9 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c1a116c4-3ffe-4e30-ba96-ec32da1502c7")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 54.61 78.74)
+		(size 19.05 24.13)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a47e4c49-5b9d-48c7-be94-747a65ca7916")
+		(property "Sheetname" "PV-Sensing"
+			(at 54.61 78.0284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "PV-Sensing.kicad_sch"
+			(at 54.61 103.4546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "V_{M,IN}" input
+			(at 54.61 83.82 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b12c2b6c-608e-4e98-959e-2aac6dca4944")
+		)
+		(pin "V_{P,OUT}" output
+			(at 73.66 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b6eea231-867e-473b-aa98-6543752ed7b5")
+		)
+		(pin "V_{M,OUT}" output
+			(at 73.66 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "df64f34d-fca0-4eb2-867b-16bb2af36620")
+		)
+		(pin "V_{P,IN}" input
+			(at 54.61 81.28 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "66f71f9e-4a9e-4d1d-a177-8f27eef10ed5")
+		)
+		(pin "GND" input
+			(at 54.61 99.06 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "975cf625-38e0-4f82-b11c-668119cf94e4")
+		)
+		(pin "MISO" output
+			(at 73.66 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "1d970d94-f8e4-4539-ae62-9bc944c14500")
+		)
+		(pin "VDD" input
+			(at 54.61 96.52 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "e49d0c3d-af4e-442a-ba4c-6d44db62234c")
+		)
+		(pin "~{DREADY}" output
+			(at 73.66 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5bdaace5-5e7e-4b9a-aa06-27b6b7333cde")
+		)
+		(pin "~{CS}" input
+			(at 73.66 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d80b818b-be3d-4cff-95de-93766dff8740")
+		)
+		(pin "MOSI" input
+			(at 73.66 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "54989252-8ef3-4b30-a8ea-69532381fa98")
+		)
+		(pin "EN" input
+			(at 54.61 93.98 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8787cdf0-c98b-46ed-b477-3530ba2e9c68")
+		)
+		(pin "SCLK" input
+			(at 73.66 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "da07aae9-f1f8-4e77-a3f4-6b50934127cb")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 147.32 78.74)
+		(size 19.05 17.78)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "b081b53b-45d6-4ad1-b456-23b9d1031ab9")
+		(property "Sheetname" "Grid"
+			(at 147.32 78.0284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Grid.kicad_sch"
+			(at 147.32 97.1046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 147.32 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "L_{GRID}" output
+			(at 166.37 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4a787bf8-49da-4df5-b83b-17e16f047860")
+		)
+		(pin "N_{GRID}" output
+			(at 166.37 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "dde1a74f-5c9e-44a9-8fa7-a20b97334384")
+		)
+		(pin "+12V" input
+			(at 147.32 81.28 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "4c448477-66f3-420e-8fe6-731464047023")
+		)
+		(pin "G_{RELAY}" input
+			(at 147.32 88.9 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "502c9247-679d-40b6-8506-e562fc7bdb07")
+		)
+		(pin "L'_{FILT}" input
+			(at 147.32 83.82 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "5b6ebc24-ebe4-441b-bf6a-bca04d689d75")
+		)
+		(pin "I_{SENS,P}" output
+			(at 166.37 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c993907b-713a-4c53-ad7e-14641614fa93")
+		)
+		(pin "I_{SENS,M}" output
+			(at 166.37 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "cbcac973-200d-40d4-9931-6b59174606be")
+		)
+		(pin "N'_{FILT}" input
+			(at 147.32 86.36 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7087511d-2b61-4195-8e34-a27dbd83f02d")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 179.07 107.95)
+		(size 21.59 22.86)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "bb3056b4-4e5d-4f2d-baa2-a568d9d3e754")
+		(property "Sheetname" "Sensing"
+			(at 179.07 107.2384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Sensing.kicad_sch"
+			(at 179.07 131.3946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "I_{INV,M}" input
+			(at 179.07 123.19 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2f4bda4d-37e1-4240-9bda-fa9ba7763d4b")
+		)
+		(pin "I_{INV,P}" input
+			(at 179.07 120.65 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f38a6e6a-d569-4b37-9293-9e6cd2e3e828")
+		)
+		(pin "I_{INV,~{ALERT}}" output
+			(at 200.66 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4e5d0516-e972-49ca-9a2c-4c19d5390230")
+		)
+		(pin "I_{INV,~{ALERT},RST}" input
+			(at 179.07 128.27 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0f88c31e-7b51-448c-b254-47b6395b5942")
+		)
+		(pin "I_{INV,SENS}" output
+			(at 200.66 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "e352c1d8-6c43-4f14-8889-4d3dca03dc4f")
+		)
+		(pin "V_{BUS}" input
+			(at 179.07 125.73 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f8af69a0-0d66-4a34-aa7c-0b744a444a90")
+		)
+		(pin "V_{BUS,SENS}" output
+			(at 200.66 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "cbc9b331-c337-4b9c-aba0-e50f07c36564")
+		)
+		(pin "L_{GRID}" input
+			(at 179.07 115.57 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2bea3011-24d1-4eb9-a8ff-2c6e471055f0")
+		)
+		(pin "N_{GRID}" input
+			(at 179.07 118.11 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8e2e4848-d062-43f0-a2d1-cefb456e37f0")
+		)
+		(pin "V_{GRID,SENS1}" output
+			(at 200.66 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "16120742-b097-4d4a-b1cc-ca83614e681f")
+		)
+		(pin "V_{GRID,SENS2}" output
+			(at 200.66 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "eba325e3-2110-439e-b4d2-794b62a6d37d")
+		)
+		(pin "I_{GRID,SENS}" output
+			(at 200.66 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "59f5fa9e-5672-4f9c-a9d8-ea027e8eb920")
+		)
+		(pin "I_{GRID,P}" input
+			(at 179.07 110.49 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9ac38661-e8b5-46b0-a89d-a90351999264")
+		)
+		(pin "I_{GRID,M}" input
+			(at 179.07 113.03 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "75cffd35-4453-4dfe-a13d-0127b19202d8")
+		)
+		(pin "I_{GRID,~{ALERT}}" output
+			(at 200.66 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4ad98726-624a-49ab-a1e0-521f0482a328")
+		)
+		(pin "ZCD" output
+			(at 200.66 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "43752e0f-fc88-419e-b30e-50ede773a240")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 85.09 78.74)
+		(size 21.59 18.288)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "efbfb180-c2bb-45aa-ab04-e5a4cb37fddc")
+		(property "Sheetname" "DC-DC"
+			(at 85.09 78.0284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "DC-DC.kicad_sch"
+			(at 85.09 97.6126 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 85.09 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "V_{PV+}" input
+			(at 85.09 81.28 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "86caadb9-7cb9-429f-95f2-7ca7bd454d1f")
+		)
+		(pin "V_{PV-}" input
+			(at 85.09 83.566 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2d09b77f-edc5-4717-83c6-36db23ffdcb9")
+		)
+		(pin "V_{BUS}" output
+			(at 106.68 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9b60c9c8-78c3-4fc8-b6f2-1950b5c1ea0e")
+		)
+		(pin "PWM_{GaN_1}" input
+			(at 85.09 86.614 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "cc3eae93-7dc7-4b30-b64d-7d6d5ca0499d")
+		)
+		(pin "SGND_{GaN_1}" input
+			(at 85.09 88.9 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9167b5eb-1f6e-4a56-8b58-01d4fdf6abfa")
+		)
+		(pin "PWM_{GaN_2}" input
+			(at 85.09 91.948 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "87d3bf4a-edc4-4035-8989-97fa5b8c90c7")
+		)
+		(pin "SGND_{GaN_2}" input
+			(at 85.09 94.234 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d0365fb4-59fc-4ac0-9c38-52db48a44bd8")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
 )
