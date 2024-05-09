@@ -62,7 +62,7 @@ at your system.
 
 **Required:**
 
-- [KiCad 7](https://www.kicad.org/download/)
+- [KiCad 8](https://www.kicad.org/download/)
 
 **Optional:**
 
@@ -82,10 +82,10 @@ at your system.
    repository.
 5. Start KiCad and
    1. Click `Preferences` -> `Configure Paths...`
-      1. Replace the `KICAD7_FOOTPRINT_DIR` by the absolute path of the
+      1. Replace the `KICAD8_FOOTPRINT_DIR` by the absolute path of the
          `kicad-library/footprints`, so for example:
          *C:\Users\...\Documents\GitHub\kicad-library\footprints*
-      2. Replace the` KICAD7_SYMBOL_DIR` by the absolute path of the
+      2. Replace the` KICAD8_SYMBOL_DIR` by the absolute path of the
          `kicad-library/symbols`, so for example:
          *C:\Users\...\Documents\GitHub\kicad-library\symbols*
    2. Click `Preferences` -> `Manage Symbol Libraries...`
