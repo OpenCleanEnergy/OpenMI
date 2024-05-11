@@ -1200,6 +1200,415 @@
 				)
 			)
 		)
+		(symbol "_Driver_FET:2EDR7259X"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -0.762 13.716 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "2EDR7259X"
+				(at -6.096 -12.446 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "OpenCE:DSO14-300mi"
+				(at 29.21 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-2EDR8259H-DataSheet-v01_03-EN.pdf?fileId=8ac78c8c85c38e410185c577ad3e1b1b"
+				(at 29.21 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "2-channel isolated gate driver for Si and SiC MOSFETs and GaN HEMTs power switches"
+				(at 0 -0.508 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "2.65"
+				(at 29.21 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Infineon"
+				(at 29.21 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "MF" "Infineon"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "2EDR7259X"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_CONRAD" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_FARNELL" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_LCSC" "C3655822"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_MOUSER" "726-2EDR7259XXUMA1"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_REICHELT" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Gate Driver"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "2EDR7259X_1_1"
+				(rectangle
+					(start -11.43 11.43)
+					(end 11.43 -11.43)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -16.51 8.89 0)
+					(length 5.08)
+					(name "INA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 16.51 -6.35 180)
+					(length 5.08)
+					(name "OUTB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 16.51 -3.81 180)
+					(length 5.08)
+					(name "VDDB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 16.51 3.81 180)
+					(length 5.08)
+					(name "GNDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 16.51 6.35 180)
+					(length 5.08)
+					(name "OUTA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 16.51 8.89 180)
+					(length 5.08)
+					(name "VDDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -16.51 6.35 0)
+					(length 5.08)
+					(name "INB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -16.51 3.81 0)
+					(length 5.08)
+					(name "VDDI_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -16.51 1.27 0)
+					(length 5.08)
+					(name "GNDI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -16.51 -1.27 0)
+					(length 5.08)
+					(name "DIS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -16.51 -3.81 0)
+					(length 5.08)
+					(name "STP/DTC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -16.51 -6.35 0)
+					(length 5.08)
+					(name "N.C."
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -16.51 -8.89 0)
+					(length 5.08)
+					(name "VDDI_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 16.51 -8.89 180)
+					(length 5.08)
+					(name "GNDB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "_R_0603:1M"
 			(pin_numbers hide)
 			(pin_names
@@ -1891,6 +2300,1662 @@
 				)
 			)
 		)
+		(symbol "_Regulator_Controller:ICE2HS01G"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -1.016 16.002 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "ICE2HS01G"
+				(at -5.588 -14.732 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "OpenCE:PG_DSO_20_45"
+				(at -10.414 0.508 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-ICE2HS01G-DS-v02_01-en.pdf?fileId=db3a30432a40a650012a458289712b4c"
+				(at -53.34 0.762 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "High Performance Resonant Mode Controller for Half-bridge LLC Resonant Converter, 30kHz~1MHz switching frequency range"
+				(at -13.716 -0.508 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "2.65"
+				(at 11.43 -383.49 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Infineon"
+				(at 11.43 -483.49 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "ICE2HS01G"
+				(at 11.43 -583.49 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" ""
+				(at 11.43 -883.49 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" ""
+				(at 11.43 -983.49 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "MF" "Infineon"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "ICE2HS01G"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_CONRAD" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_FARNELL" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_LCSC" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_MOUSER" "726-ICE2HS01G"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_REICHELT" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LLC Controller"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ICE2HS01G_1_1"
+				(rectangle
+					(start -10.16 13.97)
+					(end 10.16 -13.97)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -15.24 11.43 0)
+					(length 5.08)
+					(name "TIMER"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 -11.43 0)
+					(length 5.08)
+					(name "VRES"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 -11.43 180)
+					(length 5.08)
+					(name "VINS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 -8.89 180)
+					(length 5.08)
+					(name "CS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 -6.35 180)
+					(length 5.08)
+					(name "CL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 -3.81 180)
+					(length 5.08)
+					(name "SRD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 -1.27 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 1.27 180)
+					(length 5.08)
+					(name "SLG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 3.81 180)
+					(length 5.08)
+					(name "SHG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 6.35 180)
+					(length 5.08)
+					(name "LG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 8.89 180)
+					(length 5.08)
+					(name "HG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 8.89 0)
+					(length 5.08)
+					(name "ENA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 11.43 180)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 6.35 0)
+					(length 5.08)
+					(name "SS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 3.81 0)
+					(length 5.08)
+					(name "LOAD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 1.27 0)
+					(length 5.08)
+					(name "FREQ"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 -1.27 0)
+					(length 5.08)
+					(name "DELAY"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 -3.81 0)
+					(length 5.08)
+					(name "TD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 -6.35 0)
+					(length 5.08)
+					(name "VMC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -15.24 -8.89 0)
+					(length 5.08)
+					(name "VREF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "_Regulator_Controller:UCC25660"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 5.334 17.018 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "UCC25660"
+				(at 2.794 -17.272 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_SO:SOIC-14-16_3.9x9.9mm_P1.27mm"
+				(at 1.27 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ucc25660.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "UCC25660 750kHz Wide VIN/VOUT Range LLC Controller Optimized for Light-Load Efficiency"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MF" "TI"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "UCC256601DDBR "
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_CONRAD" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_FARNELL" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_LCSC" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_MOUSER" "595-UCC256601DDBR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_REICHELT" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LLC Controller"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "UCC25660_0_1"
+				(rectangle
+					(start -7.62 15.24)
+					(end 7.62 -15.24)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "UCC25660_1_1"
+				(pin input line
+					(at -10.16 10.16 0)
+					(length 2.54)
+					(name "HV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -17.78 90)
+					(length 2.54)
+					(name "GNDP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 -12.7 180)
+					(length 2.54)
+					(name "LO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 17.78 270)
+					(length 2.54)
+					(name "VCCP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 10.16 180)
+					(length 2.54)
+					(name "HB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "HO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "HS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 7.62 0)
+					(length 2.54)
+					(name "BLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "OVP/OTP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "FB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "LL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 -8.89 0)
+					(length 2.54)
+					(name "TSET"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -2.54 17.78 270)
+					(length 2.54)
+					(name "V5P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -12.7 0)
+					(length 2.54)
+					(name "ISNS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "_Transformer:760895631"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "T"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "760895631"
+				(at 0.508 -8.382 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "OpenCE:WE-LLCR_ETD39"
+				(at 0.635 -8.255 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.we-online.com/components/products/datasheet/760895631.pdf"
+				(at 1.27 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "WE-LLCR Resonant Converter, 150-250 W, Input Voltage 360-400 V, Output Voltage 48V, switching frequency 70-120 kHz"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MF" "Wurth Elektronik"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "760895631"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_CONRAD" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_FARNELL" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_LCSC" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_MOUSER" "710-760895631 "
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "OC_REICHELT" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Transformer"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "760895631_0_1"
+				(arc
+					(start -1.27 -6.35)
+					(mid -0.6377 -5.715)
+					(end -1.27 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 -5.08)
+					(mid -0.6377 -4.445)
+					(end -1.27 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 1.27)
+					(mid -0.6377 1.905)
+					(end -1.27 2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 2.54)
+					(mid -0.6377 3.175)
+					(end -1.27 3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -0.254 6.35)
+					(end 0.254 -6.35)
+					(stroke
+						(width 0.0254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -6.35) (xy -1.27 -6.35)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 6.35) (xy -1.27 6.35)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -6.35) (xy 2.54 -6.35)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 2.54 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.35) (xy 2.54 6.35)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "760895631_1_1"
+				(arc
+					(start -1.27 -3.81)
+					(mid -0.6377 -3.175)
+					(end -1.27 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 -2.54)
+					(mid -0.6377 -1.905)
+					(end -1.27 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 3.81)
+					(mid -0.6377 4.445)
+					(end -1.27 5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.27 5.08)
+					(mid -0.6377 5.715)
+					(end -1.27 6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.143 -1.905)
+					(radius 0.127)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.143 5.715)
+					(radius 0.127)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.143 -1.905)
+					(radius 0.127)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.143 5.715)
+					(radius 0.127)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 -5.08)
+					(mid 0.6377 -5.715)
+					(end 1.27 -6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 -3.81)
+					(mid 0.6377 -4.445)
+					(end 1.27 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 -2.54)
+					(mid 0.6377 -3.175)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 -1.27)
+					(mid 0.6377 -1.905)
+					(end 1.27 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 2.54)
+					(mid 0.6377 1.905)
+					(end 1.27 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 3.81)
+					(mid 0.6377 3.175)
+					(end 1.27 2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 5.08)
+					(mid 0.6377 4.445)
+					(end 1.27 3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 6.35)
+					(mid 0.6377 5.715)
+					(end 1.27 5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin no_connect line
+					(at -1.27 1.27 90)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -1.27 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 1.27 1.27 90)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 1.27 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 1.27 -6.35 90)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -6.35 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -1.27 6.35 270)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 6.35 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -6.35 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 1.27 6.35 270)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 6.35 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 1.27 -1.27 270)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "_Transistor_FET:GAN7R0-150LBEZ"
 			(pin_numbers hide)
 			(pin_names
@@ -2484,18 +4549,6 @@
 		)
 	)
 	(junction
-		(at 238.125 153.67)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "010dd044-7c32-44d7-8505-a0133fe18d3f")
-	)
-	(junction
-		(at 229.235 144.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "04458e53-9bc4-4730-bd6b-befebc44e51c")
-	)
-	(junction
 		(at 43.815 114.935)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2550,16 +4603,16 @@
 		(uuid "5c94259c-2b4f-4e8a-8ac0-8afa6acabcab")
 	)
 	(junction
+		(at 238.76 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62d180ce-2c32-4d20-a192-78fe95de45b7")
+	)
+	(junction
 		(at 173.355 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6dce8bc4-1c5e-4327-b03c-5ac283f4c772")
-	)
-	(junction
-		(at 238.125 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "79e4d2b8-3278-46c5-a271-92330e351527")
 	)
 	(junction
 		(at 125.095 193.04)
@@ -2610,10 +4663,10 @@
 		(uuid "d12f2f73-f224-47b9-8097-60f077996728")
 	)
 	(junction
-		(at 238.125 151.13)
+		(at 229.235 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e63c0676-7ff1-41ec-a5b2-037a23a16393")
+		(uuid "f36a64cb-3819-49e3-be99-b590022524c7")
 	)
 	(wire
 		(pts
@@ -2647,16 +4700,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.252 151.257) (xy 237.998 151.257)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c9f9ec9-0af4-481f-b61f-60db2b461a3e")
-	)
-	(wire
-		(pts
 			(xy 153.67 144.78) (xy 153.67 154.94)
 		)
 		(stroke
@@ -2674,16 +4717,6 @@
 			(type default)
 		)
 		(uuid "227ab95b-967f-4e56-8bf0-a6165412ab7f")
-	)
-	(wire
-		(pts
-			(xy 238.252 118.872) (xy 238.252 151.257)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2371fe16-f7fd-4e10-a64f-6529113f75e3")
 	)
 	(wire
 		(pts
@@ -2777,6 +4810,16 @@
 	)
 	(wire
 		(pts
+			(xy 238.76 138.43) (xy 256.54 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46fda8fa-4d93-4e9a-b45a-9570dd9fc359")
+	)
+	(wire
+		(pts
 			(xy 182.245 116.205) (xy 182.245 138.43)
 		)
 		(stroke
@@ -2837,16 +4880,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.125 151.13) (xy 255.905 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "59df1a06-f266-4cf3-acc0-31e92320f04d")
-	)
-	(wire
-		(pts
 			(xy 323.215 107.315) (xy 323.215 118.11)
 		)
 		(stroke
@@ -2854,6 +4887,26 @@
 			(type default)
 		)
 		(uuid "5ca28cff-0921-48ec-8f0a-3b27bedc9752")
+	)
+	(wire
+		(pts
+			(xy 256.54 148.59) (xy 256.54 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f7c01d1-e340-4ded-9bc7-1b71d0720aed")
+	)
+	(wire
+		(pts
+			(xy 238.76 151.13) (xy 238.76 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "607de8a6-2738-4cfd-a428-d4db3cf928cb")
 	)
 	(wire
 		(pts
@@ -2917,13 +4970,23 @@
 	)
 	(wire
 		(pts
-			(xy 255.905 138.43) (xy 255.905 140.97)
+			(xy 256.54 138.43) (xy 256.54 140.97)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "76c12570-47aa-46db-b67b-dec43cb4fa28")
+	)
+	(wire
+		(pts
+			(xy 238.76 153.67) (xy 256.54 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77be903d-a9b0-4992-94a2-6c7339654294")
 	)
 	(wire
 		(pts
@@ -2974,16 +5037,6 @@
 			(type default)
 		)
 		(uuid "806c6f65-a2b5-4567-a6f8-1cad44386f42")
-	)
-	(wire
-		(pts
-			(xy 237.998 151.257) (xy 237.998 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81e1d5fa-f997-455a-a9d6-f1e4d26f8eba")
 	)
 	(wire
 		(pts
@@ -3147,16 +5200,6 @@
 	)
 	(wire
 		(pts
-			(xy 255.905 151.13) (xy 255.905 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af6b07ba-0196-4a0f-a7bd-ab976fe2ffac")
-	)
-	(wire
-		(pts
 			(xy 39.37 111.125) (xy 40.64 111.125)
 		)
 		(stroke
@@ -3197,6 +5240,16 @@
 	)
 	(wire
 		(pts
+			(xy 229.87 144.78) (xy 229.235 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1269f61-2d04-4b9b-9d1e-6046b56eab15")
+	)
+	(wire
+		(pts
 			(xy 140.335 193.04) (xy 140.335 163.195)
 		)
 		(stroke
@@ -3227,7 +5280,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.125 154.94) (xy 238.125 153.67)
+			(xy 238.76 154.94) (xy 238.76 153.67)
 		)
 		(stroke
 			(width 0)
@@ -3284,16 +5337,6 @@
 			(type default)
 		)
 		(uuid "cb01748e-dff6-4287-befb-f6e4298c22d0")
-	)
-	(wire
-		(pts
-			(xy 238.125 151.13) (xy 238.125 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1b36603-bcff-41c6-a14e-2a64345e739d")
 	)
 	(wire
 		(pts
@@ -3357,16 +5400,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.125 138.43) (xy 255.905 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e22579be-7242-400b-8659-f757bf9cc47d")
-	)
-	(wire
-		(pts
 			(xy 79.375 196.215) (xy 86.995 196.215)
 		)
 		(stroke
@@ -3377,7 +5410,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.235 153.67) (xy 238.125 153.67)
+			(xy 229.235 153.67) (xy 238.76 153.67)
 		)
 		(stroke
 			(width 0)
@@ -3417,16 +5450,6 @@
 	)
 	(wire
 		(pts
-			(xy 237.998 138.43) (xy 238.125 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7003b05-449e-4bde-91c1-59799cdab571")
-	)
-	(wire
-		(pts
 			(xy 358.775 114.935) (xy 358.775 127)
 		)
 		(stroke
@@ -3458,7 +5481,7 @@
 		(uuid bb6754a0-4e69-4866-a6e0-07afc58824fb)
 	)
 	(rectangle
-		(start 144.78 80.264)
+		(start 124.46 15.24)
 		(end 314.96 121.92)
 		(stroke
 			(width 0)
@@ -3493,6 +5516,19 @@
 		)
 		(uuid f9d42f29-da46-4ee7-9636-ab697a81d553)
 	)
+	(text "- ICE2HS01G from Infineon (from 2010),\n  High Performance Resonant Mode Controller for Half-bridge LLC Resonant Converter\n  30kHz~1MHz switching frequency range\n  Possible issues:\n  - \"Maximum switching frequency\" is 215kHz but \"Recommend Maximum switching frequency\" 1000kHz"
+		(exclude_from_sim no)
+		(at 128.27 61.214 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+			(href "https://www.infineon.com/dgdl/Infineon-ICE2HS01G-DS-v02_01-en.pdf?fileId=db3a30432a40a650012a458289712b4c")
+		)
+		(uuid "00c19760-6bd1-4746-a0a9-7571870095df")
+	)
 	(text "Turn on resistor: 2.2 Ω - 4.7 Ω\nTurn of resistor: < 1 Ω\nCompare with LTSPice results of\ndc-dc-interleaved-boost-converter"
 		(exclude_from_sim no)
 		(at 117.475 137.16 0)
@@ -3516,6 +5552,18 @@
 		)
 		(uuid "0defb69c-2b4b-420b-89d7-16ebf6f8ed2f")
 	)
+	(text "TODO:\nIn order to use this as a half bridge, we need to add a BOOT capacitor"
+		(exclude_from_sim no)
+		(at 87.63 172.212 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "13adaaf3-acaf-4402-864b-dce0c1f8a219")
+	)
 	(text "1EDN7116U, 2A, 3ns, 200V"
 		(exclude_from_sim no)
 		(at 52.705 212.725 0)
@@ -3528,6 +5576,19 @@
 			(href "https://www.infineon.com/dgdl/Infineon-DS_1EDN71X6U_2.0-DataSheet-v01_00-EN.pdf?fileId=8ac78c8c82af846e0182c6ff82134ec0")
 		)
 		(uuid "196bb455-752e-49e7-8559-624a901b1507")
+	)
+	(text "Considerations about a LLC controller:"
+		(exclude_from_sim no)
+		(at 127.508 39.116 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "1ce8a93f-bed2-4992-89ac-a82aa7ccb24e")
 	)
 	(text "TODO:\nRemove 5V global label and use local label?\nUse local label"
 		(exclude_from_sim no)
@@ -3608,7 +5669,7 @@
 	)
 	(text "Resonant LLC Transformer Design"
 		(exclude_from_sim no)
-		(at 147.828 95.758 0)
+		(at 127.762 31.75 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3710,6 +5771,18 @@
 		)
 		(uuid "87f4a9c4-9d83-4d0f-8805-a98b612e80ba")
 	)
+	(text "TODO:\nCheck this alternative?"
+		(exclude_from_sim no)
+		(at 74.93 252.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "8c6db88a-6266-4aa6-97ea-590909d23ea5")
+	)
 	(text "1EDN7550 Product Page"
 		(exclude_from_sim no)
 		(at 167.64 234.315 0)
@@ -3762,7 +5835,7 @@
 	)
 	(text "LLC Resonant Transformer"
 		(exclude_from_sim no)
-		(at 146.05 84.836 0)
+		(at 125.984 20.828 0)
 		(effects
 			(font
 				(size 2 2)
@@ -3771,6 +5844,19 @@
 			(justify left bottom)
 		)
 		(uuid "c92c1d56-1ead-4b75-83bd-50d7b9ae25ee")
+	)
+	(text "- UCC25660 from TI (from 2023),\n  750kHz Wide VIN/VOUT Range LLC Controller Optimized for Light-Load Efficiency\n  Possible issues:\n  - In datasheet its said that for VCCP \"Choose at least 100μF capacitor or combination of capacitors\"\n "
+		(exclude_from_sim no)
+		(at 128.524 49.784 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+			(href "https://www.ti.com/lit/ds/symlink/ucc25660.pdf")
+		)
+		(uuid "d3801866-7122-4d2d-99c4-7c3281300b62")
 	)
 	(text "2EDR7259X, dual channel, 5A, 9A, rise-time 7.5ns@1.8nF, 4.12€@1piece@mouser"
 		(exclude_from_sim no)
@@ -3785,9 +5871,20 @@
 		)
 		(uuid "dfddc2a7-7425-4042-bd99-0626adbd9e96")
 	)
+	(text "There are a bunch of LLC controller available on the market.\nTwo possible options are:"
+		(exclude_from_sim no)
+		(at 127.762 42.164 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e2866c4d-5570-4559-a94d-78412cc6f2c2")
+	)
 	(text "This WIP!\nA LLC resonant tank is to be integrated here.\nThe configuration of this can be found here:"
 		(exclude_from_sim no)
-		(at 148.082 93.218 0)
+		(at 128.016 29.21 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5258,7 +7355,7 @@
 	)
 	(symbol
 		(lib_id "power:GND1")
-		(at 238.125 154.94 0)
+		(at 238.76 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5266,7 +7363,7 @@
 		(dnp no)
 		(uuid "2c9c0bcd-1aa2-4eab-931c-dc8474ac71b8")
 		(property "Reference" "#PWR026"
-			(at 238.125 161.29 0)
+			(at 238.76 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5275,7 +7372,7 @@
 			)
 		)
 		(property "Value" "GND1"
-			(at 238.125 158.75 0)
+			(at 238.76 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5283,7 +7380,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.125 154.94 0)
+			(at 238.76 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5292,7 +7389,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.125 154.94 0)
+			(at 238.76 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5301,7 +7398,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 238.125 154.94 0)
+			(at 238.76 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5649,7 +7746,7 @@
 	)
 	(symbol
 		(lib_id "_Diode_TVS:SMBJ100A")
-		(at 255.905 144.78 270)
+		(at 256.54 144.78 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5658,7 +7755,7 @@
 		(fields_autoplaced yes)
 		(uuid "3ff9c19e-ba7d-4a50-b071-6cbaa454aa7c")
 		(property "Reference" "F2"
-			(at 258.445 144.145 90)
+			(at 259.08 144.145 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5667,7 +7764,7 @@
 			)
 		)
 		(property "Value" "SMBJ100A"
-			(at 258.445 146.685 90)
+			(at 259.08 146.685 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5676,7 +7773,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SMB"
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5685,7 +7782,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.de/datasheet/2/240/Littelfuse_TVS_Diode_SMBJ_Datasheet_pdf-1108540.pdf"
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5694,7 +7791,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5703,7 +7800,7 @@
 			)
 		)
 		(property "MF" "Littelfuse"
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5712,7 +7809,7 @@
 			)
 		)
 		(property "MPN" "SMBJ100A"
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5721,7 +7818,7 @@
 			)
 		)
 		(property "OC_CONRAD" ""
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5730,7 +7827,7 @@
 			)
 		)
 		(property "OC_FARNELL" ""
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5739,7 +7836,7 @@
 			)
 		)
 		(property "OC_LCSC" "C151249"
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5748,7 +7845,7 @@
 			)
 		)
 		(property "OC_MOUSER" "576-SMBJ100A"
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5757,7 +7854,7 @@
 			)
 		)
 		(property "OC_REICHELT" ""
-			(at 255.905 144.78 0)
+			(at 256.54 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5775,6 +7872,176 @@
 			(project "OpenMI"
 				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66/efbfb180-c2bb-45aa-ab04-e5a4cb37fddc"
 					(reference "F2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "_Regulator_Controller:UCC25660")
+		(at 246.38 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "433aa82b-b905-4908-bd5a-007921838281")
+		(property "Reference" "U15"
+			(at 248.5741 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "UCC25660"
+			(at 248.5741 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-14-16_3.9x9.9mm_P1.27mm"
+			(at 247.65 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ucc25660.pdf"
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "UCC25660 750kHz Wide VIN/VOUT Range LLC Controller Optimized for Light-Load Efficiency"
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "TI"
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "UCC256601DDBR "
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_CONRAD" ""
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_FARNELL" ""
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_LCSC" ""
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_MOUSER" "595-UCC256601DDBR"
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_REICHELT" ""
+			(at 246.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "14"
+			(uuid "2b788cbe-79bb-4ba9-99eb-d3f9e25350c3")
+		)
+		(pin "8"
+			(uuid "39ed1ebf-0310-4f2c-85f5-35fe999ad17c")
+		)
+		(pin "11"
+			(uuid "754db54f-5076-44c0-98e6-6c99a225b146")
+		)
+		(pin "4"
+			(uuid "e371dddd-ed70-4eb0-99dc-d4e2991e2dca")
+		)
+		(pin "6"
+			(uuid "3665bbe1-67ea-4edf-a5f6-1adc1bbb0622")
+		)
+		(pin "15"
+			(uuid "0903c4c9-1478-4999-8e48-847256028f40")
+		)
+		(pin "16"
+			(uuid "83c3838c-7399-4f02-9208-24b95f1702b9")
+		)
+		(pin "3"
+			(uuid "42967604-bf1f-4b7d-aa0b-1504eb66b2ec")
+		)
+		(pin "12"
+			(uuid "650efada-16b6-43a6-9973-6d8588ac9928")
+		)
+		(pin "9"
+			(uuid "221934ee-4ad9-46b9-923a-4144ccd1774a")
+		)
+		(pin "10"
+			(uuid "fe740046-c3e6-40b6-a102-363e09a8ccf6")
+		)
+		(pin "7"
+			(uuid "d77c87ee-8acf-49b1-aafc-6c455486d238")
+		)
+		(pin "5"
+			(uuid "97cee2bc-79fa-4637-8299-17c264b61951")
+		)
+		(pin "1"
+			(uuid "71838d52-5e2b-4cdb-85d6-c36e706bc00f")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66/efbfb180-c2bb-45aa-ab04-e5a4cb37fddc"
+					(reference "U15")
 					(unit 1)
 				)
 			)
@@ -6310,7 +8577,7 @@
 	)
 	(symbol
 		(lib_id "_Transistor_FET:GAN7R0-150LBEZ")
-		(at 235.585 144.78 0)
+		(at 236.22 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6319,7 +8586,7 @@
 		(fields_autoplaced yes)
 		(uuid "6ec534d4-d794-4ab7-b0dd-ec14fd5c6f8c")
 		(property "Reference" "Q5"
-			(at 241.935 144.145 0)
+			(at 242.57 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6328,7 +8595,7 @@
 			)
 		)
 		(property "Value" "GAN7R0-150LBEZ"
-			(at 241.935 146.05 0)
+			(at 242.57 146.05 0)
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6337,7 +8604,7 @@
 			)
 		)
 		(property "Footprint" "OpenCE:SOT8073-1"
-			(at 240.665 142.24 0)
+			(at 241.3 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6346,7 +8613,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/GAN7R0-150LBE.pdf"
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6355,7 +8622,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6364,7 +8631,7 @@
 			)
 		)
 		(property "MF" "Nexperia"
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6373,7 +8640,7 @@
 			)
 		)
 		(property "MPN" "GAN7R0-150LBEZ"
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6382,7 +8649,7 @@
 			)
 		)
 		(property "OC_CONRAD" ""
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6391,7 +8658,7 @@
 			)
 		)
 		(property "OC_FARNELL" ""
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6400,7 +8667,7 @@
 			)
 		)
 		(property "OC_LCSC" ""
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6409,7 +8676,7 @@
 			)
 		)
 		(property "OC_MOUSER" "771-GAN7R0-150LBEZ"
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6418,7 +8685,7 @@
 			)
 		)
 		(property "OC_REICHELT" ""
-			(at 235.585 144.78 0)
+			(at 236.22 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6964,6 +9231,243 @@
 			(project "OpenMI"
 				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66/efbfb180-c2bb-45aa-ab04-e5a4cb37fddc"
 					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "_Regulator_Controller:ICE2HS01G")
+		(at 248.92 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "995f25a3-6970-41d1-bef4-d8139d86449c")
+		(property "Reference" "U16"
+			(at 248.92 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ICE2HS01G"
+			(at 248.92 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OpenCE:PG_DSO_20_45"
+			(at 238.506 84.582 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-ICE2HS01G-DS-v02_01-en.pdf?fileId=db3a30432a40a650012a458289712b4c"
+			(at 195.58 84.328 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "High Performance Resonant Mode Controller for Half-bridge LLC Resonant Converter, 30kHz~1MHz switching frequency range"
+			(at 235.204 85.598 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "2.65"
+			(at 260.35 468.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Infineon"
+			(at 260.35 568.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "ICE2HS01G"
+			(at 260.35 668.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 260.35 968.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 260.35 1068.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "MF" "Infineon"
+			(at 248.92 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ICE2HS01G"
+			(at 248.92 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_CONRAD" ""
+			(at 248.92 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_FARNELL" ""
+			(at 248.92 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_LCSC" ""
+			(at 248.92 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_MOUSER" "726-ICE2HS01G"
+			(at 248.92 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_REICHELT" ""
+			(at 248.92 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "675b363b-1684-4e12-af8d-c26cd6adaf2e")
+		)
+		(pin "18"
+			(uuid "7e8ca8e0-fd2c-4b8c-b6ff-79507c0cc40e")
+		)
+		(pin "8"
+			(uuid "c97bbf84-944b-4c29-8b51-5b69a7b03186")
+		)
+		(pin "9"
+			(uuid "6ef0a2a0-4e4d-4f07-a255-93724fca6f14")
+		)
+		(pin "10"
+			(uuid "ae6ffad2-a4ed-48c5-91f6-646c47c6b0e5")
+		)
+		(pin "11"
+			(uuid "09af076e-ad82-4a0f-8e80-f84d1da74cfd")
+		)
+		(pin "14"
+			(uuid "3bb38224-e11a-4ac9-8e79-971564024f9f")
+		)
+		(pin "15"
+			(uuid "2383c552-d804-4210-ab62-4ff17edc9b16")
+		)
+		(pin "20"
+			(uuid "b6da3aa4-cca7-49e5-b80f-c63110ed5a70")
+		)
+		(pin "3"
+			(uuid "f06039c5-ceb3-4189-afd5-2a8582ae6c92")
+		)
+		(pin "4"
+			(uuid "a2bad355-c106-4528-93ba-310b8e92adb2")
+		)
+		(pin "1"
+			(uuid "b216eff8-ad39-44e7-a48a-103e93d88904")
+		)
+		(pin "5"
+			(uuid "ec24c80d-35ce-4eaf-9196-5384defebae7")
+		)
+		(pin "7"
+			(uuid "6b249dc9-464a-4e68-879c-87ca1ecfcf0c")
+		)
+		(pin "17"
+			(uuid "daa23282-8e31-48db-afd9-8813c45fced4")
+		)
+		(pin "16"
+			(uuid "a3e10079-ab83-4e57-8f65-29ee21a79bdf")
+		)
+		(pin "19"
+			(uuid "769ae4cb-8b2b-4c79-bca8-3c397245744b")
+		)
+		(pin "2"
+			(uuid "51595a5e-65b1-4d8e-84a1-f7bc86ac8edf")
+		)
+		(pin "12"
+			(uuid "43a0ab25-4681-403b-93bd-9cc2f53a9ff8")
+		)
+		(pin "13"
+			(uuid "d93cb2a6-d169-4899-94f8-4c8c111c9254")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66/efbfb180-c2bb-45aa-ab04-e5a4cb37fddc"
+					(reference "U16")
 					(unit 1)
 				)
 			)
@@ -7629,6 +10133,362 @@
 			(project "OpenMI"
 				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66/efbfb180-c2bb-45aa-ab04-e5a4cb37fddc"
 					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "_Transformer:760895631")
+		(at 210.82 105.41 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c767983a-7ad5-4c16-b841-666674a3b7ae")
+		(property "Reference" "T1"
+			(at 210.82 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "760895631"
+			(at 210.82 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OpenCE:WE-LLCR_ETD39"
+			(at 210.185 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/760895631.pdf"
+			(at 209.55 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "WE-LLCR Resonant Converter, 150-250 W, Input Voltage 360-400 V, Output Voltage 48V, switching frequency 70-120 kHz"
+			(at 210.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Wurth Elektronik"
+			(at 210.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "760895631"
+			(at 210.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_CONRAD" ""
+			(at 210.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_FARNELL" ""
+			(at 210.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_LCSC" ""
+			(at 210.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_MOUSER" "710-760895631 "
+			(at 210.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_REICHELT" ""
+			(at 210.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "14"
+			(uuid "f333316b-3971-41fa-9349-1722cffd406e")
+		)
+		(pin "6"
+			(uuid "178f0127-68d8-414c-8403-87bda122f214")
+		)
+		(pin "13"
+			(uuid "cfb614d0-5fb6-46f7-921c-59f78e477cc6")
+		)
+		(pin "11"
+			(uuid "c4c21b1c-9be8-43de-9015-ef1cf72f35a1")
+		)
+		(pin "5"
+			(uuid "08f38c1d-1cc4-4e15-9874-1fdc45fa055c")
+		)
+		(pin "9"
+			(uuid "f48a96e2-a1bc-40fd-bcd7-3c35205d8036")
+		)
+		(pin "2"
+			(uuid "465fbd60-acdd-4d83-b214-27533209492c")
+		)
+		(pin "10"
+			(uuid "203eedab-56e9-4e36-8d39-2ab3cff103fb")
+		)
+		(pin "3"
+			(uuid "c678058b-4f82-493a-956d-25701ac5af59")
+		)
+		(pin "7"
+			(uuid "066fb84d-158e-4b31-80b8-961cd292eafb")
+		)
+		(pin "12"
+			(uuid "332daa1d-f6cd-497c-8bd8-1ee589db9967")
+		)
+		(pin "8"
+			(uuid "d5edc77a-03ff-4e3e-90e7-d64797e75f29")
+		)
+		(pin "4"
+			(uuid "b41c98fb-b068-4376-84f6-d76357c5eec5")
+		)
+		(pin "1"
+			(uuid "11f47a2c-8402-47e1-b0f5-5e568f83e66c")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66/efbfb180-c2bb-45aa-ab04-e5a4cb37fddc"
+					(reference "T1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "_Driver_FET:2EDR7259X")
+		(at 87.63 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c7b11f1e-e833-4e13-8fc0-5afdbd17b08a")
+		(property "Reference" "U17"
+			(at 87.63 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2EDR7259X"
+			(at 87.63 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OpenCE:DSO14-300mi"
+			(at 116.84 331.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-2EDR8259H-DataSheet-v01_03-EN.pdf?fileId=8ac78c8c85c38e410185c577ad3e1b1b"
+			(at 116.84 431.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "2-channel isolated gate driver for Si and SiC MOSFETs and GaN HEMTs power switches"
+			(at 87.63 236.728 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "2.65"
+			(at 116.84 631.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Infineon"
+			(at 116.84 731.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "MF" "Infineon"
+			(at 87.63 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "2EDR7259X"
+			(at 87.63 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_CONRAD" ""
+			(at 87.63 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_FARNELL" ""
+			(at 87.63 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_LCSC" "C3655822"
+			(at 87.63 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_MOUSER" "726-2EDR7259XXUMA1"
+			(at 87.63 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "OC_REICHELT" ""
+			(at 87.63 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "dbeb51b3-70d6-4185-a00e-36b27d08231b")
+		)
+		(pin "4"
+			(uuid "266ad3bf-e557-4d39-97a8-be0d393516c3")
+		)
+		(pin "9"
+			(uuid "8ee4a560-1139-4282-acb9-00ad30bf55bf")
+		)
+		(pin "3"
+			(uuid "de924481-12bb-40ac-bb4c-862cd3ca7adb")
+		)
+		(pin "6"
+			(uuid "6566299f-2c58-4ec0-91ca-f20aba70202e")
+		)
+		(pin "7"
+			(uuid "65456e72-e3e5-4d10-946b-8e68426d3034")
+		)
+		(pin "10"
+			(uuid "8242d961-b65a-4677-8fe6-40c1bb36b628")
+		)
+		(pin "8"
+			(uuid "0ae79bb8-caf6-4ef1-a863-47970f0e9330")
+		)
+		(pin "5"
+			(uuid "191caf61-19f8-4258-9e79-330e444ca61b")
+		)
+		(pin "2"
+			(uuid "4cdd5dfc-7bee-4ea6-a87d-032de5688da5")
+		)
+		(pin "13"
+			(uuid "7b32bff0-a9a9-4dce-a67d-770336315863")
+		)
+		(pin "14"
+			(uuid "81ccc404-e723-4c0e-bffb-8148a8a6f5f7")
+		)
+		(pin "1"
+			(uuid "c3a7300a-dc9b-4a69-8e08-c394bbfbf62b")
+		)
+		(pin "12"
+			(uuid "9baf16d0-0032-4396-be73-3a932e29b141")
+		)
+		(instances
+			(project "OpenMI"
+				(path "/2d959e19-1572-42a0-a8fd-da8463ad4e66/efbfb180-c2bb-45aa-ab04-e5a4cb37fddc"
+					(reference "U17")
 					(unit 1)
 				)
 			)
